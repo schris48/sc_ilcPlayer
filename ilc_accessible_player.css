@@ -139,6 +139,22 @@
   box-shadow: 0 0 5px #fff;
 }
 
+/*==== Localization Support ====*/
+[lang="ar"], [lang="he"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[lang="ja"] {
+  font-family: "Noto Sans JP", "SuisseIntl", Helvetica, Arial, sans-serif;
+}
+
+.vjs-menu-content {
+  min-width: 180px;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
 /*==== Responsive and Touch Styling ====*/
 @media (max-width: 620px) {
   .vjs-layout-medium .vjs-skip-back,
