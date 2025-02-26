@@ -101,6 +101,42 @@
   visibility: visible;
 }
 
+/* Ensure skip back and skip forward buttons are visible */
+.vjs-skip-back,
+.vjs-skip-ahead {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  width: 40px; /* Adjust size of the button */
+  height: 40px; /* Adjust size of the button */
+  margin-left: 5px; /* Space between buttons */
+}
+
+.vjs-skip-back:hover,
+.vjs-skip-ahead:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Hover effect */
+}
+
+.vjs-skip-back .vjs-icon-placeholder,
+.vjs-skip-ahead .vjs-icon-placeholder {
+  font-size: 20px;  /* Icon size */
+}
+
+.vjs-skip-back .vjs-control-text,
+.vjs-skip-ahead .vjs-control-text {
+  display: none;  /* Hide the text if you prefer just icons */
+}
+
+.vjs-control-bar .vjs-skip-back,
+.vjs-control-bar .vjs-skip-ahead {
+  z-index: 2; /* Ensure buttons are on top of other elements */
+}
+
 /*==== Accessibility Enhancements ====*/
 .vjs-control-bar .vjs-button:focus,
 .vjs-button:focus,
