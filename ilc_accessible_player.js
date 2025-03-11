@@ -1,5 +1,5 @@
-// Load plugin
-videojs.registerPlugin('ilcResponsivePlugin', function() {
+// Register the ilc_accessible_player plugin
+videojs.registerPlugin('ilc_accessible_player', function() {
   var ilcVideoPlayer = this;
 
   // Remove picture-in-picture button if present
