@@ -223,6 +223,8 @@
   line-height: 30px; /* Center text vertically */
   cursor: pointer;
   margin-right: 10px; /* Spacing */
+  position: relative; /* Ensure positioning */
+  z-index: 2; /* Ensure on top */
 }
 
 /* Styling for the forward button */
@@ -237,6 +239,8 @@
   line-height: 30px; /* Center text vertically */
   cursor: pointer;
   margin-left: 10px; /* Spacing */
+  position: relative; /* Ensure positioning */
+  z-index: 2; /* Ensure on top */
 }
 
 /* Hover effects for buttons */
