@@ -1,4 +1,4 @@
-videojs.registerPlugin('backForwardButtons', function() {
+videojs.registerPlugin('backFwdBtns', function() {
   // +++ Create divs for buttons +++
   var vPlayer = this,
       jumpAmount = 15,
