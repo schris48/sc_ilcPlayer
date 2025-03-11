@@ -210,3 +210,36 @@
 .vjs-touch-enabled .vjs-dock-text {
   padding: 1em 10% 0em 1em;
 }
+
+/* Styling for the back button */
+.vjs-back-button {
+  display: inline-block;
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  border-radius: 50%; /* Rounded button */
+  text-align: center;
+  line-height: 30px; /* Center text vertically */
+  cursor: pointer;
+  margin-right: 10px; /* Spacing */
+}
+
+/* Styling for the forward button */
+.vjs-forward-button {
+  display: inline-block;
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  border-radius: 50%; /* Rounded button */
+  text-align: center;
+  line-height: 30px; /* Center text vertically */
+  cursor: pointer;
+  margin-left: 10px; /* Spacing */
+}
+
+/* Hover effects for buttons */
+.vjs-back-button:hover, .vjs-forward-button:hover {
+  background-color: #555; /* Darker background on hover */
+}
