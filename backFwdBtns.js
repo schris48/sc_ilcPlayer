@@ -6,12 +6,23 @@ videojs.registerPlugin('backFwdBtns', function() {
         newElementBB = document.createElement("div"),
         newElementFB = document.createElement("div");
 
+    // Wait for the localization plugin to be ready
+    function waitForLocalization() {
+        if (window.localization && window.localization.getLocalizedText) {
+            // Localization is available, proceed with setup
+            localizeButtonText();
+        } else {
+            // Wait for the localization plugin to be ready
+            setTimeout(waitForLocalization, 50); // Check again after 50ms
+        }
+    }
+
     // Function to localize button text using centralized localization
     function localizeButtonText() {
         const skipBackText = window.localization.getLocalizedText('skipBack');
         const skipForwardText = window.localization.getLocalizedText('skipForward');
 
-        // Set button text and accessibility attributes after button elements are created
+        // Set button text and accessibility attributes
         if (newElementBB) {
             newElementBB.querySelector('.vjs-control-text').textContent = skipBackText;
             newElementBB.setAttribute('aria-label', skipBackText);
@@ -25,12 +36,15 @@ videojs.registerPlugin('backFwdBtns', function() {
         }
     }
 
+    // Initial wait for localization before proceeding
+    waitForLocalization();
+
     // Event listener for language change (will trigger when language is changed globally)
     document.addEventListener('languageChanged', function() {
         localizeButtonText();
     });
 
-    // Assign button HTML structure
+    // Assign button HTML
     newElementBB.innerHTML = "<button class='vjs-control vjs-button vjs-skip-back' type='button'><span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span></button>";
     newElementFB.innerHTML = "<button class='vjs-control vjs-button vjs-skip-ahead' type='button'><span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span></button>";
 
@@ -44,9 +58,6 @@ videojs.registerPlugin('backFwdBtns', function() {
     } else {
         console.log('Error: Control bar or volume panel not found.');
     }
-
-    // Initial button text update after DOM insertion
-    localizeButtonText();
 
     // Event handlers for button functionality
     newElementBB.addEventListener("click", function() {
