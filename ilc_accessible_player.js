@@ -50,6 +50,14 @@
         return localizationData[currentLanguage][key] || localizationData.en[key];
     }
 
+    // Function to update Video.js language settings
+    function updateVideoJsLanguage() {
+        if (videojs) {
+            videojs.addLanguage(currentLanguage, localizationData[currentLanguage]);
+            videojs.options.language = currentLanguage;
+        }
+    }
+
     // Function to change the language dynamically
     function changeLanguage(newLanguage) {
         if (localizationData[newLanguage]) {
@@ -62,7 +70,7 @@
 
     // Listen for language changes and update relevant parts of the page
     document.addEventListener('languageChanged', function() {
-        // Call function to localize buttons for both the player and skip buttons
+        updateVideoJsLanguage(); // Ensure Video.js uses the correct translations
         localizeButtons();
         localizeSkipButtons();
     });
