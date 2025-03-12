@@ -11,7 +11,7 @@ videojs.registerPlugin('backFwdBtns', function() {
         const skipBackText = window.localization.getLocalizedText('skipBack');
         const skipForwardText = window.localization.getLocalizedText('skipForward');
 
-        // Set button text and accessibility attributes
+        // Set button text and accessibility attributes after button elements are created
         if (newElementBB) {
             newElementBB.querySelector('.vjs-control-text').textContent = skipBackText;
             newElementBB.setAttribute('aria-label', skipBackText);
@@ -25,15 +25,12 @@ videojs.registerPlugin('backFwdBtns', function() {
         }
     }
 
-    // Initial button text update
-    localizeButtonText();
-
     // Event listener for language change (will trigger when language is changed globally)
     document.addEventListener('languageChanged', function() {
         localizeButtonText();
     });
 
-    // Assign button HTML
+    // Assign button HTML structure
     newElementBB.innerHTML = "<button class='vjs-control vjs-button vjs-skip-back' type='button'><span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span></button>";
     newElementFB.innerHTML = "<button class='vjs-control vjs-button vjs-skip-ahead' type='button'><span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span></button>";
 
@@ -47,6 +44,9 @@ videojs.registerPlugin('backFwdBtns', function() {
     } else {
         console.log('Error: Control bar or volume panel not found.');
     }
+
+    // Initial button text update after DOM insertion
+    localizeButtonText();
 
     // Event handlers for button functionality
     newElementBB.addEventListener("click", function() {
