@@ -1,28 +1,41 @@
 videojs.registerPlugin('backFwdBtns', function() {
     var vPlayer = this,
         jumpAmount = 15,
-        controlBar,
-        insertBeforeNode,
-        newElementBB = document.createElement("div"),
-        newElementFB = document.createElement("div");
+        controlBar = vPlayer.$(".vjs-control-bar"),
+        insertBeforeNode = vPlayer.$(".vjs-volume-panel");
 
-    // Wait for the localization plugin to be ready
-    function waitForLocalization() {
-        if (window.localization && window.localization.getLocalizedText) {
-            // Localization is available, proceed with setup
-            localizeButtonText();
-        } else {
-            // Wait for the localization plugin to be ready
-            setTimeout(waitForLocalization, 50); // Check again after 50ms
-        }
+    if (!controlBar) {
+        console.error('Error: Control bar not found.');
+        return;
     }
 
-    // Function to localize button text using centralized localization
+    // Create Skip Back Button
+    var newElementBB = document.createElement("button");
+    newElementBB.className = 'vjs-control vjs-button vjs-skip-back';
+    newElementBB.setAttribute('type', 'button');
+    newElementBB.innerHTML = "<span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span>";
+
+    // Create Skip Forward Button
+    var newElementFB = document.createElement("button");
+    newElementFB.className = 'vjs-control vjs-button vjs-skip-ahead';
+    newElementFB.setAttribute('type', 'button');
+    newElementFB.innerHTML = "<span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span>";
+
+    // Ensure insertion before volume panel (fallback to appending at the end)
+    if (insertBeforeNode) {
+        controlBar.insertBefore(newElementBB, insertBeforeNode);
+        controlBar.insertBefore(newElementFB, insertBeforeNode);
+    } else {
+        controlBar.appendChild(newElementBB);
+        controlBar.appendChild(newElementFB);
+        console.warn('Warning: Volume panel not found. Buttons appended at the end.');
+    }
+
+    // Function to localize button text
     function localizeButtonText() {
         const skipBackText = window.localization.getLocalizedText('skipBack');
         const skipForwardText = window.localization.getLocalizedText('skipForward');
 
-        // Set button text and accessibility attributes
         if (newElementBB) {
             newElementBB.querySelector('.vjs-control-text').textContent = skipBackText;
             newElementBB.setAttribute('aria-label', skipBackText);
@@ -36,42 +49,22 @@ videojs.registerPlugin('backFwdBtns', function() {
         }
     }
 
-    // Initial wait for localization before proceeding
-    waitForLocalization();
+    // Update button text after adding to DOM
+    localizeButtonText();
 
-    // Event listener for language change (will trigger when language is changed globally)
+    // Listen for language changes
     document.addEventListener('languageChanged', function() {
         localizeButtonText();
     });
 
-    // Assign button HTML
-    newElementBB.innerHTML = "<button class='vjs-control vjs-button vjs-skip-back' type='button'><span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span></button>";
-    newElementFB.innerHTML = "<button class='vjs-control vjs-button vjs-skip-ahead' type='button'><span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span></button>";
-
-    // Get control bar and insert buttons
-    controlBar = vPlayer.$(".vjs-control-bar");
-    insertBeforeNode = vPlayer.$(".vjs-volume-panel");
-
-    if (controlBar && insertBeforeNode) {
-        controlBar.insertBefore(newElementBB, insertBeforeNode);
-        controlBar.insertBefore(newElementFB, insertBeforeNode);
-    } else {
-        console.log('Error: Control bar or volume panel not found.');
-    }
-
     // Event handlers for button functionality
     newElementBB.addEventListener("click", function() {
-        var newTime,
-            videoTime = vPlayer.currentTime();
-        newTime = Math.max(videoTime - jumpAmount, 0);
+        var newTime = Math.max(vPlayer.currentTime() - jumpAmount, 0);
         vPlayer.currentTime(newTime);
     });
 
     newElementFB.addEventListener("click", function() {
-        var newTime,
-            videoTime = vPlayer.currentTime(),
-            videoDuration = vPlayer.duration();
-        newTime = Math.min(videoTime + jumpAmount, videoDuration);
+        var newTime = Math.min(vPlayer.currentTime() + jumpAmount, vPlayer.duration());
         vPlayer.currentTime(newTime);
     });
 });
