@@ -212,7 +212,7 @@
 }
 
 /* Styling for the back button */
-.vjs-back-button {
+.vjs-skip-back {
   display: inline-block;
   width: 30px; /* Adjust size as needed */
   height: 30px; /* Adjust size as needed */
@@ -228,7 +228,7 @@
 }
 
 /* Styling for the forward button */
-.vjs-forward-button {
+.vjs-skip-ahead {
   display: inline-block;
   width: 30px; /* Adjust size as needed */
   height: 30px; /* Adjust size as needed */
@@ -244,6 +244,6 @@
 }
 
 /* Hover effects for buttons */
-.vjs-back-button:hover, .vjs-forward-button:hover {
+.vjs-skip-back:hover, .vjs-skip-ahead:hover {
   background-color: #555; /* Darker background on hover */
 }
