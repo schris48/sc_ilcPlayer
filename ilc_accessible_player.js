@@ -43,65 +43,35 @@
         }
     };
 
-    // Set default language (can be dynamically detected or set by user preference)
-    let currentLanguage = 'en'; // Default to English
+    let currentLanguage = 'en'; // Default language
 
-    // Function to localize button text based on the selected language
-    function localizeButtons() {
-        // Get all buttons (replace with actual class or ID selectors for your video player)
-        const skipBackButton = document.querySelector('.vjs-skip-back'); // Replace with actual class or ID
-        const skipForwardButton = document.querySelector('.vjs-skip-forward'); // Replace with actual class or ID
-        const playButton = document.querySelector('.vjs-play-control'); // Replace with actual class or ID
-        const muteButton = document.querySelector('.vjs-mute-control'); // Replace with actual class or ID
-
-        // Apply the localization text
-        if (skipBackButton) {
-            skipBackButton.setAttribute('aria-label', localizationData[currentLanguage].skipBack);
-            skipBackButton.setAttribute('title', localizationData[currentLanguage].skipBack);
-        }
-
-        if (skipForwardButton) {
-            skipForwardButton.setAttribute('aria-label', localizationData[currentLanguage].skipForward);
-            skipForwardButton.setAttribute('title', localizationData[currentLanguage].skipForward);
-        }
-
-        if (playButton) {
-            playButton.setAttribute('aria-label', localizationData[currentLanguage].play);
-            playButton.setAttribute('title', localizationData[currentLanguage].play);
-        }
-
-        if (muteButton) {
-            muteButton.setAttribute('aria-label', localizationData[currentLanguage].mute);
-            muteButton.setAttribute('title', localizationData[currentLanguage].mute);
-        }
+    // Centralized function to get localized text
+    function getLocalizedText(key) {
+        return localizationData[currentLanguage][key] || localizationData.en[key];
     }
 
     // Function to change the language dynamically
     function changeLanguage(newLanguage) {
         if (localizationData[newLanguage]) {
             currentLanguage = newLanguage;
-            localizeButtons();
+            document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
         } else {
             console.warn("Language not supported: " + newLanguage);
         }
     }
 
-    // Initialize localization when the script is loaded
-    localizeButtons();
+    // Listen for language changes and update relevant parts of the page
+    document.addEventListener('languageChanged', function() {
+        // Call function to localize buttons for both the player and skip buttons
+        localizeButtons();
+        localizeSkipButtons();
+    });
 
-    // Example of changing the language dynamically (this can be triggered by a user action or setting change)
-    // For instance, we could detect the user's language setting or let them choose
-    // changeLanguage('fr'); // Uncomment this line to switch to French
-    // changeLanguage('de'); // Uncomment this line to switch to German
-    // changeLanguage('ja'); // Uncomment this line to switch to Japanese
-    // changeLanguage('es'); // Uncomment this line to switch to Spanish
+    // Expose the changeLanguage function to global scope
+    window.changeLanguage = changeLanguage;
 
-    // Add event listeners or functionality to trigger language changes from UI elements (e.g., buttons or dropdowns)
-    // Example: Assuming there's a language selector dropdown with an ID of `language-selector`
-    const languageSelector = document.querySelector('#language-selector');
-    if (languageSelector) {
-        languageSelector.addEventListener('change', function(event) {
-            changeLanguage(event.target.value);
-        });
-    }
+    // Export centralized localization functions for use in other plugins
+    window.localization = {
+        getLocalizedText
+    };
 })();
