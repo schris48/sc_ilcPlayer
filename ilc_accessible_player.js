@@ -1,64 +1,18 @@
 (function () {
-    // Localization data (translations for multiple languages)
     const localizationData = {
-        en: {
-            skipBack: "Skip Back 15 Seconds",
-            skipForward: "Skip Forward 15 Seconds",
-            play: "Play",
-            pause: "Pause",
-            mute: "Mute",
-            unmute: "Unmute",
-            volume: "Volume",
-            fullscreen: "Fullscreen",
-            exitFullscreen: "Exit Fullscreen"
-        },
-        fr: {
-            skipBack: "Reculer de 15 secondes",
-            skipForward: "Avancer de 15 secondes",
-            play: "Jouer",
-            pause: "Pause",
-            mute: "Muet",
-            unmute: "Annuler le muet",
-            volume: "Volume",
-            fullscreen: "Plein écran",
-            exitFullscreen: "Quitter le plein écran"
-        },
-        de: {
-            skipBack: "15 Sekunden zurückspringen",
-            skipForward: "15 Sekunden vorspulen",
-            play: "Abspielen",
-            pause: "Pause",
-            mute: "Stummschalten",
-            unmute: "Stummschaltung aufheben",
-            volume: "Lautstärke",
-            fullscreen: "Vollbild",
-            exitFullscreen: "Vollbildmodus beenden"
-        },
-        ja: {
-            skipBack: "15秒戻す",
-            skipForward: "15秒進む",
-            play: "再生",
-            pause: "一時停止",
-            mute: "ミュート",
-            unmute: "ミュート解除",
-            volume: "音量",
-            fullscreen: "フルスクリーン",
-            exitFullscreen: "フルスクリーン解除"
-        },
-        es: {
-            skipBack: "Retroceder 15 segundos",
-            skipForward: "Avanzar 15 segundos",
-            play: "Reproducir",
-            pause: "Pausa",
-            mute: "Silenciar",
-            unmute: "Quitar silencio",
-            volume: "Volumen",
-            fullscreen: "Pantalla completa",
-            exitFullscreen: "Salir de pantalla completa"
-        }
+        en: { skipBack: "Skip Back 15 Seconds", skipForward: "Skip Forward 15 Seconds", play: "Play", pause: "Pause", mute: "Mute", unmute: "Unmute", volume: "Volume", fullscreen: "Fullscreen", exitFullscreen: "Exit Fullscreen" },
+        fr: { skipBack: "Reculer de 15 secondes", skipForward: "Avancer de 15 secondes", play: "Jouer", pause: "Pause", mute: "Muet", unmute: "Annuler le muet", volume: "Volume", fullscreen: "Plein écran", exitFullscreen: "Quitter le plein écran" },
+        de: { skipBack: "15 Sekunden zurückspringen", skipForward: "15 Sekunden vorspulen", play: "Abspielen", pause: "Pause", mute: "Stummschalten", unmute: "Stummschaltung aufheben", volume: "Lautstärke", fullscreen: "Vollbild", exitFullscreen: "Vollbildmodus beenden" },
+        ja: { skipBack: "15秒戻す", skipForward: "15秒進む", play: "再生", pause: "一時停止", mute: "ミュート", unmute: "ミュート解除", volume: "音量", fullscreen: "フルスクリーン", exitFullscreen: "フルスクリーン解除" },
+        es: { skipBack: "Retroceder 15 segundos", skipForward: "Avanzar 15 segundos", play: "Reproducir", pause: "Pausa", mute: "Silenciar", unmute: "Quitar silencio", volume: "Volumen", fullscreen: "Pantalla completa", exitFullscreen: "Salir de pantalla completa" }
     };
 
-    let currentLanguage = 'en'; // Default language
+    function getBrowserLanguage() {
+        const lang = navigator.language.split('-')[0]; // Get primary language (e.g., 'fr' from 'fr-CA')
+        return localizationData[lang] ? lang : 'en'; // Default to English if not found
+    }
+
+    let currentLanguage = getBrowserLanguage();
 
     function getLocalizedText(key) {
         return localizationData[currentLanguage][key] || localizationData.en[key];
@@ -103,20 +57,20 @@
         });
     }
 
-    // Update localization when language changes
     document.addEventListener('languageChanged', function () {
         localizeVideoJsControls();
     });
 
-    // Ensure localization happens on load and when Video.js updates controls
     document.addEventListener('DOMContentLoaded', function () {
         localizeVideoJsControls();
 
-        // Keep observing Video.js for dynamic updates
         const observer = new MutationObserver(() => localizeVideoJsControls());
         observer.observe(document.body, { childList: true, subtree: true });
     });
 
     window.changeLanguage = changeLanguage;
     window.localization = { getLocalizedText };
+
+    // Ensure localization applies on load
+    document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
 })();
