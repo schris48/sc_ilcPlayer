@@ -52,6 +52,7 @@ videojs.registerPlugin('ilc_accessible_player', function() {
     closeButton.className = 'bcRtnButton';
     closeButton.setAttribute('type', 'button');
     closeButton.setAttribute('title', 'Hide Transcript');
+    closeButton.setAttribute('aria-label', 'Hide Transcript');
     closeButton.textContent = 'Hide Transcript';
 
     transcriptFooter.appendChild(closeButton);
@@ -89,5 +90,30 @@ videojs.registerPlugin('ilc_accessible_player', function() {
       transcriptButton.style.visibility = isFullscreen ? 'hidden' : 'visible';
       transcriptButton.setAttribute('aria-hidden', isFullscreen ? 'true' : 'false');
     });
+  });
+
+  // Ensure back-forward buttons are initialized
+  ilcVideoPlayer.ready(function() {
+    if (typeof backFwdBtns === 'function') {
+      ilcVideoPlayer.backFwdBtns();
+    }
+  });
+
+  // Add accessible markup to back-forward buttons
+  ilcVideoPlayer.on('ready', function() {
+    var backButton = ilcVideoPlayer.el().querySelector('.vjs-back-button');
+    var forwardButton = ilcVideoPlayer.el().querySelector('.vjs-forward-button');
+
+    if (backButton) {
+      backButton.setAttribute('aria-label', 'Skip Backward 15 seconds');
+      backButton.setAttribute('role', 'button');
+      backButton.setAttribute('tabindex', '0');
+    }
+
+    if (forwardButton) {
+      forwardButton.setAttribute('aria-label', 'Skip Forward 15 seconds');
+      forwardButton.setAttribute('role', 'button');
+      forwardButton.setAttribute('tabindex', '0');
+    }
   });
 });
