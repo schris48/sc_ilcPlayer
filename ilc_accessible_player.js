@@ -74,7 +74,8 @@ const translations = {
 
 // Get the user's language (defaults to English if unsupported)
 const userLanguage = navigator.language.split('-')[0];
-const localizedText = translations[userLanguage] || translations["en"];
+let currentLanguage = translations[userLanguage] ? userLanguage : 'en'; // Ensure currentLanguage is defined
+const localizedText = translations[currentLanguage];
 
 // Load plugin
 videojs.registerPlugin('ilcResponsivePlugin', function() {
@@ -136,13 +137,15 @@ videojs.registerPlugin('ilcResponsivePlugin', function() {
       ilcVideoPlayer.el().after(bcTextContainer);
 
       // Load the text track content into the container
-      fetch(metadataTrack.src)
-        .then(response => response.text())
-        .then(data => {
-          const contentStart = data.indexOf("-->") + 16;
-          bcTextContent.innerHTML = data.slice(contentStart);
-        })
-        .catch(error => console.error('Error loading transcript:', error));
+      if (metadataTrack?.src) {
+        fetch(metadataTrack.src)
+          .then(response => response.text())
+          .then(data => {
+            const contentStart = data.indexOf("-->") + 16;
+            bcTextContent.innerHTML = data.slice(contentStart);
+          })
+          .catch(error => console.error('Error loading transcript:', error));
+      }
 
       // Hide transcript button in fullscreen
       ilcVideoPlayer.on('fullscreenchange', function() {
@@ -217,4 +220,14 @@ videojs.registerPlugin('ilcResponsivePlugin', function() {
   window.changeLanguage = function(newLanguage) {
     if (translations[newLanguage]) {
       currentLanguage = newLanguage;
-      document.dispatch
+      document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
+    } else {
+      console.warn("Language not supported: " + newLanguage);
+    }
+  };
+
+  window.localization = { getLocalizedText };
+
+  // Ensure localization applies on load
+  document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
+});
