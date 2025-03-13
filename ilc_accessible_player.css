@@ -43,6 +43,23 @@
   content: "\e000";
 }
 
+/*Mimics the behaviour of the standard brightcove player buttons.*/
+.vjs-transcript-control {
+	cursor: pointer;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"] {
+	font-family: tvo-custom;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
+	content: "\e000";
+}
+
 /*==== General Styling ====*/
 .bcTextContainer {
   font-family: SuisseIntl, Helvetica, Arial, sans-serif;
