@@ -2,9 +2,10 @@
 
 /*==== Icons ====*/
 
+
 @font-face {
     font-family: 'VideoJS_tvo';
-    src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot');
+   src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot');
     src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot?#iefix') format('embedded-opentype'),
          url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.woff') format('woff'),
          url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.ttf') format('truetype'),
@@ -13,62 +14,14 @@
     font-style: normal;
 }
 
-/*==== Font Definitions for English ====*/
+/*==== Font Definitions ====*/
 @font-face {
-  font-family: "tvo-custom-en";
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-en.eot");
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-en.eot?#iefix") format("embedded-opentype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-en.woff") format("woff"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-en.ttf") format("truetype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-en.svg#tvo-custom-en") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/*==== Font Definitions for French ====*/
-@font-face {
-  font-family: "tvo-custom-fr";
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-fr.eot");
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-fr.eot?#iefix") format("embedded-opentype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-fr.woff") format("woff"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-fr.ttf") format("truetype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-fr.svg#tvo-custom-fr") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/*==== Font Definitions for German ====*/
-@font-face {
-  font-family: "tvo-custom-de";
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-de.eot");
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-de.eot?#iefix") format("embedded-opentype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-de.woff") format("woff"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-de.ttf") format("truetype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-de.svg#tvo-custom-de") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/*==== Font Definitions for Japanese ====*/
-@font-face {
-  font-family: "tvo-custom-ja";
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-ja.eot");
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-ja.eot?#iefix") format("embedded-opentype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-ja.woff") format("woff"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-ja.ttf") format("truetype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-ja.svg#tvo-custom-ja") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/*==== Font Definitions for Spanish ====*/
-@font-face {
-  font-family: "tvo-custom-es";
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-es.eot");
-  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-es.eot?#iefix") format("embedded-opentype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-es.woff") format("woff"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-es.ttf") format("truetype"),
-       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom-es.svg#tvo-custom-es") format("svg");
+  font-family: "tvo-custom";
+  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.eot");
+  src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.eot?#iefix") format("embedded-opentype"),
+       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.woff") format("woff"),
+       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.ttf") format("truetype"),
+       url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.svg#tvo-custom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -76,7 +29,7 @@
 [data-icon]:before,
 [class^="icon-"],
 [class*=" icon-"] {
-  font-family: "tvo-custom-en" !important;
+  font-family: "tvo-custom" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -88,6 +41,69 @@
 
 .icon-file-text-o:before {
   content: "\e000";
+}
+
+/*Mimics the behaviour of the standard brightcove player buttons.*/
+.vjs-transcript-control {
+	cursor: pointer;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"] {
+	font-family: tvo-custom;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
+	content: "\e000";
+}
+
+/*==== General Styling ====*/
+.bcTextContainer {
+  font-family: SuisseIntl, Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bcTextContent {
+  height: calc(100% - 42px);
+  overflow: auto;
+  background-color: white;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.bcTextContent:focus {
+  outline: 1px dotted #212121;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.bcTextFooter {
+  height: 42px;
+  background-color: grey;
+  box-sizing: border-box;
+}
+
+.bcRtnButton {
+  float: right;
+  margin-top: 12px;
+  margin-right: 40px;
+  border: solid white 1px;
+  color: white;
+  background-color: grey;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.bcRtnButton:focus {
+  text-shadow: 0 0 1em #fff;
+  outline: 1px dotted #212121;
 }
 
 /*==== VideoJS Customizations ====*/
@@ -956,11 +972,21 @@ video.vjs-tech:focus{
  outline: none;
 }
 
+
+
+
+
 /*==== Fullscreen Mode ====*/
 
 .not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control{
   opacity: 1;
 }
+
+
+
+
+
+
 
 
 
@@ -1493,9 +1519,6 @@ video.vjs-tech:focus{
     font-size: 1.3em;
     font-weight: 600;
 }
-
-
-
 
 /*==== Other ====*/
 
