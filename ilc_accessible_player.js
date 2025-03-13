@@ -7,6 +7,14 @@
         es: { skipBack: "Retroceder 15 segundos", skipForward: "Avanzar 15 segundos", play: "Reproducir", pause: "Pausa", mute: "Silenciar", unmute: "Quitar silencio", volume: "Volumen", fullscreen: "Pantalla completa", exitFullscreen: "Salir de pantalla completa" }
     };
 
+    const iconFonts = {
+        en: "tvo-custom-en",
+        fr: "tvo-custom-fr",
+        de: "tvo-custom-de",
+        ja: "tvo-custom-ja",
+        es: "tvo-custom-es"
+    };
+
     function getBrowserLanguage() {
         const lang = navigator.language.split('-')[0]; // Get primary language (e.g., 'fr' from 'fr-CA')
         return localizationData[lang] ? lang : 'en'; // Default to English if not found
@@ -22,9 +30,17 @@
         if (localizationData[newLanguage]) {
             currentLanguage = newLanguage;
             document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
+            loadIconFont(newLanguage);
         } else {
             console.warn("Language not supported: " + newLanguage);
         }
+    }
+
+    function loadIconFont(language) {
+        const fontFamily = iconFonts[language] || iconFonts.en;
+        document.querySelectorAll('[data-icon]:before, [class^="icon-"], [class*=" icon-"]').forEach(element => {
+            element.style.fontFamily = fontFamily;
+        });
     }
 
     function localizeVideoJsControls() {
@@ -63,6 +79,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         localizeVideoJsControls();
+        loadIconFont(currentLanguage);
 
         const observer = new MutationObserver(() => localizeVideoJsControls());
         observer.observe(document.body, { childList: true, subtree: true });
