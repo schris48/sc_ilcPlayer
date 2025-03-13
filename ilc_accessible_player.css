@@ -956,7 +956,46 @@ video.vjs-tech:focus{
  outline: none;
 }
 
+/*Add the hi-lite on our custom button when it gets focus.
+This mimics the behaviour of the standard player buttons.*/
+.bcRtnButton:focus {
+	text-shadow: 0 0 1em #fff
+}
 
+/*Setting button border to zero kills the default focus styles on Firefox.
+We have to re-set it with this, which mimics the default behaviour.*/
+.bcRtnButton:-moz-focusring {
+	outline: 1px dotted #212121;
+}
+
+/*Re-sets the default Brightcove player button behaviour on Firefox in
+case anyone has disabled it in CSS by setting button::-moz-focus-inner {border: 0;}.
+A lot of people do this because it's ugly, but this is normally left on in the Brightcove player */
+.vjs-control-bar .vjs-button:-moz-focusring {
+	outline: 1px dotted #212121;
+}
+
+/*Required only for v6 player*/
+.vjs-custom-control-spacer.vjs-spacer {
+	display: block;
+}
+
+/*Mimics the behaviour of the standard brightcove player buttons.*/
+.vjs-transcript-control {
+	cursor: pointer;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"] {
+	font-family: tvo-custom;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
+	content: "\e000";
+}
 
 
 
@@ -965,12 +1004,6 @@ video.vjs-tech:focus{
 .not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control{
   opacity: 1;
 }
-
-
-
-
-
-
 
 
 
