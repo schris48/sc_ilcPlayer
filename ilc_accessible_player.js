@@ -1,76 +1,220 @@
-(function () {
-    const localizationData = {
-        en: { skipBack: "Skip Back 15 Seconds", skipForward: "Skip Forward 15 Seconds", play: "Play", pause: "Pause", mute: "Mute", unmute: "Unmute", volume: "Volume", fullscreen: "Fullscreen", exitFullscreen: "Exit Fullscreen" },
-        fr: { skipBack: "Reculer de 15 secondes", skipForward: "Avancer de 15 secondes", play: "Jouer", pause: "Pause", mute: "Muet", unmute: "Annuler le muet", volume: "Volume", fullscreen: "Plein écran", exitFullscreen: "Quitter le plein écran" },
-        de: { skipBack: "15 Sekunden zurückspringen", skipForward: "15 Sekunden vorspulen", play: "Abspielen", pause: "Pause", mute: "Stummschalten", unmute: "Stummschaltung aufheben", volume: "Lautstärke", fullscreen: "Vollbild", exitFullscreen: "Vollbildmodus beenden" },
-        ja: { skipBack: "15秒戻す", skipForward: "15秒進む", play: "再生", pause: "一時停止", mute: "ミュート", unmute: "ミュート解除", volume: "音量", fullscreen: "フルスクリーン", exitFullscreen: "フルスクリーン解除" },
-        es: { skipBack: "Retroceder 15 segundos", skipForward: "Avanzar 15 segundos", play: "Reproducir", pause: "Pausa", mute: "Silenciar", unmute: "Quitar silencio", volume: "Volumen", fullscreen: "Pantalla completa", exitFullscreen: "Salir de pantalla completa" }
-    };
+// Translation dictionary for localization
+const translations = {
+  en: {
+    transcriptButtonTitle: "Transcript",
+    displayTranscript: "Display Transcript",
+    hideTranscript: "Hide Transcript",
+    skipBack: "Skip Back 15 Seconds",
+    skipForward: "Skip Forward 15 Seconds",
+    play: "Play",
+    pause: "Pause",
+    mute: "Mute",
+    unmute: "Unmute",
+    volume: "Volume",
+    fullscreen: "Fullscreen",
+    exitFullscreen: "Exit Fullscreen"
+  },
+  fr: {
+    transcriptButtonTitle: "Transcription",
+    displayTranscript: "Afficher la transcription",
+    hideTranscript: "Cacher la transcription",
+    skipBack: "Reculer de 15 secondes",
+    skipForward: "Avancer de 15 secondes",
+    play: "Jouer",
+    pause: "Pause",
+    mute: "Muet",
+    unmute: "Annuler le muet",
+    volume: "Volume",
+    fullscreen: "Plein écran",
+    exitFullscreen: "Quitter le plein écran"
+  },
+  de: {
+    transcriptButtonTitle: "Transkript",
+    displayTranscript: "Transkript anzeigen",
+    hideTranscript: "Transkript verbergen",
+    skipBack: "15 Sekunden zurückspringen",
+    skipForward: "15 Sekunden vorspulen",
+    play: "Abspielen",
+    pause: "Pause",
+    mute: "Stummschalten",
+    unmute: "Stummschaltung aufheben",
+    volume: "Lautstärke",
+    fullscreen: "Vollbild",
+    exitFullscreen: "Vollbildmodus beenden"
+  },
+  ja: {
+    transcriptButtonTitle: "トランスクリプト",
+    displayTranscript: "トランスクリプトを表示",
+    hideTranscript: "トランスクリプトを非表示",
+    skipBack: "15秒戻す",
+    skipForward: "15秒進む",
+    play: "再生",
+    pause: "一時停止",
+    mute: "ミュート",
+    unmute: "ミュート解除",
+    volume: "音量",
+    fullscreen: "フルスクリーン",
+    exitFullscreen: "フルスクリーン解除"
+  },
+  es: {
+    transcriptButtonTitle: "Transcripción",
+    displayTranscript: "Mostrar transcripción",
+    hideTranscript: "Ocultar transcripción",
+    skipBack: "Retroceder 15 segundos",
+    skipForward: "Avanzar 15 segundos",
+    play: "Reproducir",
+    pause: "Pausa",
+    mute: "Silenciar",
+    unmute: "Quitar silencio",
+    volume: "Volumen",
+    fullscreen: "Pantalla completa",
+    exitFullscreen: "Salir de pantalla completa"
+  }
+};
 
-    function getBrowserLanguage() {
-        const lang = navigator.language.split('-')[0]; // Get primary language (e.g., 'fr' from 'fr-CA')
-        return localizationData[lang] ? lang : 'en'; // Default to English if not found
+// Get the user's language (defaults to English if unsupported)
+const userLanguage = navigator.language.split('-')[0];
+const localizedText = translations[userLanguage] || translations["en"];
+
+// Load plugin
+videojs.registerPlugin('ilcResponsivePlugin', function() {
+  const ilcVideoPlayer = this;
+
+  // Initialize player
+  ilcVideoPlayer.on('loadstart', function() {
+    const textTracks = ilcVideoPlayer.mediainfo.textTracks;
+
+    // Find the first metadata track
+    const metadataTrack = Array.from(textTracks).find(track => track.kind === "metadata");
+    if (metadataTrack) {
+      
+      // Create transcript button
+      const bcTxtButton = document.createElement('button');
+      bcTxtButton.className = 'vjs-transcript-control vjs-control vjs-button';
+      bcTxtButton.style.zIndex = '1';
+      bcTxtButton.type = 'button';
+      bcTxtButton.title = localizedText.transcriptButtonTitle;
+      bcTxtButton.setAttribute('aria-disabled', 'false');
+      bcTxtButton.setAttribute('aria-label', localizedText.transcriptButtonTitle);
+
+      const bcSpanPlaceholder = document.createElement('span');
+      bcSpanPlaceholder.setAttribute('aria-hidden', 'true');
+      bcSpanPlaceholder.className = 'vjs-icon-placeholder';
+
+      const bcSpanText = document.createElement('span');
+      bcSpanText.className = 'vjs-control-text';
+      bcSpanText.setAttribute('aria-live', 'polite');
+      bcSpanText.textContent = localizedText.displayTranscript;
+
+      bcTxtButton.append(bcSpanPlaceholder, bcSpanText);
+      ilcVideoPlayer.controlBar.customControlSpacer.el().appendChild(bcTxtButton);
+
+      // Create transcript container
+      const bcTextContainer = document.createElement('div');
+      bcTextContainer.className = 'bcTextContainer';
+      bcTextContainer.style.display = 'none';
+      bcTextContainer.setAttribute('aria-hidden', 'true');
+
+      const bcTextContent = document.createElement('div');
+      bcTextContent.className = 'bcTextContent';
+      bcTextContent.setAttribute('tabindex', '0');
+      bcTextContent.setAttribute('role', 'region');
+      bcTextContent.setAttribute('aria-label', localizedText.transcriptButtonTitle);
+
+      const bcTextFooter = document.createElement('div');
+      bcTextFooter.className = 'bcTextFooter';
+
+      const bcRtnButton = document.createElement('button');
+      bcRtnButton.className = 'bcRtnButton';
+      bcRtnButton.title = localizedText.hideTranscript;
+      bcRtnButton.type = 'button';
+      bcRtnButton.textContent = localizedText.hideTranscript;
+      bcRtnButton.setAttribute('aria-label', localizedText.hideTranscript);
+
+      bcTextFooter.appendChild(bcRtnButton);
+      bcTextContainer.append(bcTextContent, bcTextFooter);
+      ilcVideoPlayer.el().after(bcTextContainer);
+
+      // Load the text track content into the container
+      fetch(metadataTrack.src)
+        .then(response => response.text())
+        .then(data => {
+          const contentStart = data.indexOf("-->") + 16;
+          bcTextContent.innerHTML = data.slice(contentStart);
+        })
+        .catch(error => console.error('Error loading transcript:', error));
+
+      // Hide transcript button in fullscreen
+      ilcVideoPlayer.on('fullscreenchange', function() {
+        const isFullscreen = ilcVideoPlayer.isFullscreen();
+        bcTxtButton.style.visibility = isFullscreen ? "hidden" : "visible";
+        bcTxtButton.setAttribute('aria-hidden', isFullscreen);
+      });
+
+      // Show transcript on button click
+      bcTxtButton.addEventListener('click', function() {
+        ilcVideoPlayer.pause();
+        ilcVideoPlayer.el().style.display = 'none';
+        ilcVideoPlayer.el().setAttribute('aria-hidden', 'true');
+        bcTextContainer.style.display = 'block';
+        bcTextContainer.setAttribute('aria-hidden', 'false');
+        bcTextContent.focus();
+      });
+
+      // Hide transcript on return button click
+      bcRtnButton.addEventListener('click', function() {
+        bcTextContainer.style.display = 'none';
+        bcTextContainer.setAttribute('aria-hidden', 'true');
+        ilcVideoPlayer.el().style.display = 'block';
+        ilcVideoPlayer.el().setAttribute('aria-hidden', 'false');
+        bcTxtButton.focus();
+      });
     }
+  });
 
-    let currentLanguage = getBrowserLanguage();
+  // Localize video.js controls
+  function localizeVideoJsControls() {
+    const controls = [
+      { selector: '.vjs-play-control', keyPlay: 'play', keyPause: 'pause' },
+      { selector: '.vjs-mute-control', keyMute: 'mute', keyUnmute: 'unmute' },
+      { selector: '.vjs-volume-panel', key: 'volume' },
+      { selector: '.vjs-fullscreen-control', keyEnter: 'fullscreen', keyExit: 'exitFullscreen' },
+      { selector: '.vjs-replay-control', key: 'skipBack' },
+      { selector: '.vjs-forward-control', key: 'skipForward' }
+    ];
 
-    function getLocalizedText(key) {
-        return localizationData[currentLanguage][key] || localizationData.en[key];
-    }
-
-    function changeLanguage(newLanguage) {
-        if (localizationData[newLanguage]) {
-            currentLanguage = newLanguage;
-            document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
+    controls.forEach(control => {
+      const button = document.querySelector(control.selector);
+      if (button) {
+        if (control.keyPlay && control.keyPause) {
+          button.setAttribute('title', button.classList.contains('vjs-paused') ? localizedText.play : localizedText.pause);
+          button.setAttribute('aria-label', button.classList.contains('vjs-paused') ? localizedText.play : localizedText.pause);
+        } else if (control.keyMute && control.keyUnmute) {
+          button.setAttribute('title', button.classList.contains('vjs-vol-0') ? localizedText.unmute : localizedText.mute);
+          button.setAttribute('aria-label', button.classList.contains('vjs-vol-0') ? localizedText.unmute : localizedText.mute);
+        } else if (control.keyEnter && control.keyExit) {
+          button.setAttribute('title', document.fullscreenElement ? localizedText.exitFullscreen : localizedText.fullscreen);
+          button.setAttribute('aria-label', document.fullscreenElement ? localizedText.exitFullscreen : localizedText.fullscreen);
         } else {
-            console.warn("Language not supported: " + newLanguage);
+          button.setAttribute('title', localizedText[control.key]);
+          button.setAttribute('aria-label', localizedText[control.key]);
         }
-    }
-
-    function localizeVideoJsControls() {
-        const controls = [
-            { selector: '.vjs-play-control', keyPlay: 'play', keyPause: 'pause' },
-            { selector: '.vjs-mute-control', keyMute: 'mute', keyUnmute: 'unmute' },
-            { selector: '.vjs-volume-panel', key: 'volume' },
-            { selector: '.vjs-fullscreen-control', keyEnter: 'fullscreen', keyExit: 'exitFullscreen' },
-            { selector: '.vjs-replay-control', key: 'skipBack' },
-            { selector: '.vjs-forward-control', key: 'skipForward' }
-        ];
-
-        controls.forEach(control => {
-            const button = document.querySelector(control.selector);
-            if (button) {
-                if (control.keyPlay && control.keyPause) {
-                    button.setAttribute('title', button.classList.contains('vjs-paused') ? getLocalizedText('play') : getLocalizedText('pause'));
-                    button.setAttribute('aria-label', button.classList.contains('vjs-paused') ? getLocalizedText('play') : getLocalizedText('pause'));
-                } else if (control.keyMute && control.keyUnmute) {
-                    button.setAttribute('title', button.classList.contains('vjs-vol-0') ? getLocalizedText('unmute') : getLocalizedText('mute'));
-                    button.setAttribute('aria-label', button.classList.contains('vjs-vol-0') ? getLocalizedText('unmute') : getLocalizedText('mute'));
-                } else if (control.keyEnter && control.keyExit) {
-                    button.setAttribute('title', document.fullscreenElement ? getLocalizedText('exitFullscreen') : getLocalizedText('fullscreen'));
-                    button.setAttribute('aria-label', document.fullscreenElement ? getLocalizedText('exitFullscreen') : getLocalizedText('fullscreen'));
-                } else {
-                    button.setAttribute('title', getLocalizedText(control.key));
-                    button.setAttribute('aria-label', getLocalizedText(control.key));
-                }
-            }
-        });
-    }
-
-    document.addEventListener('languageChanged', function () {
-        localizeVideoJsControls();
+      }
     });
+  }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        localizeVideoJsControls();
+  document.addEventListener('languageChanged', function () {
+    localizeVideoJsControls();
+  });
 
-        const observer = new MutationObserver(() => localizeVideoJsControls());
-        observer.observe(document.body, { childList: true, subtree: true });
-    });
+  document.addEventListener('DOMContentLoaded', function () {
+    localizeVideoJsControls();
 
-    window.changeLanguage = changeLanguage;
-    window.localization = { getLocalizedText };
+    const observer = new MutationObserver(() => localizeVideoJsControls());
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
 
-    // Ensure localization applies on load
-    document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
-})();
+  window.changeLanguage = function(newLanguage) {
+    if (translations[newLanguage]) {
+      currentLanguage = newLanguage;
+      document.dispatch
