@@ -50,7 +50,8 @@
             { selector: '.vjs-volume-panel', key: 'volume' },
             { selector: '.vjs-fullscreen-control', keyEnter: 'fullscreen', keyExit: 'exitFullscreen' },
             { selector: '.vjs-replay-control', key: 'skipBack' },
-            { selector: '.vjs-forward-control', key: 'skipForward' }
+            { selector: '.vjs-forward-control', key: 'skipForward' },
+            { selector: '.vjs-transcript-control', key: 'transcript' } // Added transcript control
         ];
 
         controls.forEach(control => {
