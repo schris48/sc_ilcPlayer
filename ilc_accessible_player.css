@@ -169,9 +169,9 @@ visibility: visible;
 
 
 /* Play Toggle */
-
+/* 
 .video-js .vjs-play-control {
-}
+} */
 
 
 .vjs-control-bar {
@@ -238,7 +238,7 @@ min-width: 1em;
 }
 
 .video-js .vjs-time-control.vjs-control{
-/* margin:0px 0px 0px 5px; */
+margin:0px 0px 0px 5px;
 }
 
 
@@ -252,8 +252,8 @@ min-width: 1em;
 }
 
 
-.video-js .vjs-progress-control:hover .vjs-progress-holder {
-}
+/* .video-js .vjs-progress-control:hover .vjs-progress-holder {
+} */
 
 .vjs-progress-control{
 transition: 0.2s all;
@@ -1630,16 +1630,10 @@ video.vjs-tech:focus{
     font-weight: 600;
 }
 
-
-
-
 /*==== Other ====*/
-
-
 .vjs-chromecast-receiver .vjs-chromecast-receiver-button {
     padding: 0em 0.6em 0.6em 0.6em;
 }
-
 
 .vjs-share-control{
   display: none !important;
