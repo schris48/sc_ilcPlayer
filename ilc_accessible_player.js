@@ -114,7 +114,7 @@
                     // Create transcript button
                     var bcTxtButton = document.createElement('button');
                     bcTxtButton.className = 'vjs-transcript-control vjs-control vjs-button';
-                    bcTxtButton.setAttribute('style', 'z-index:1'); // If button appears under control bar it will not work on mobile.
+                    bcTxtButton.setAttribute('style', 'z-index:1'); // Ensure visibility
                     bcTxtButton.setAttribute('type', 'button');
                     bcTxtButton.setAttribute('title', 'Transcript');
                     bcTxtButton.setAttribute('aria-disabled', 'false');
@@ -125,10 +125,15 @@
                     bcSpanText.className = 'vjs-control-text';
                     bcSpanText.setAttribute('aria-live', 'polite');
                     var bcSpanTextText = document.createTextNode("Display Transcript");
-                    bcTxtButton.appendChild(bcSpanPlaceholder);
                     bcSpanText.appendChild(bcSpanTextText);
+                    bcTxtButton.appendChild(bcSpanPlaceholder);
                     bcTxtButton.appendChild(bcSpanText);
-                    $(ilcVideoPlayer.controlBar.customControlSpacer.el()).html(bcTxtButton);
+
+                    // Create the custom control spacer and append the button
+                    var customControlSpacer = document.createElement('div');
+                    customControlSpacer.className = 'vjs-custom-control-spacer vjs-spacer';
+                    customControlSpacer.appendChild(bcTxtButton);
+                    ilcVideoPlayer.controlBar.el().appendChild(customControlSpacer);
 
                     // Create text box + button
                     var bcTextContainer = document.createElement('div');
