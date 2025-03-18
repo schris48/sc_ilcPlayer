@@ -67,40 +67,6 @@ A lot of people do this because it's ugly, but this is normally left on in the B
 	display: block;
 }
 
-/*Mimics the behaviour of the standard brightcove player buttons.*/
-.vjs-transcript-control {
-	cursor: pointer;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"] {
-	font-family: tvo-custom;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
-	content: "\e000";
-}
-
-/*Mimics the behaviour of the standard brightcove player buttons.*/
-.vjs-transcript-control {
-	cursor: pointer;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"] {
-	font-family: tvo-custom;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
-	content: "\e000";
-}
-
 /*==== General Styling ====*/
 .bcTextContainer {
   font-family: SuisseIntl, Helvetica, Arial, sans-serif;
@@ -490,6 +456,11 @@ transform: scale(1.1);
  -moz-transition: 0.2s all;
  -ms-transition: 0.2s all;
  -o-transition: 0.2s all;
+}
+
+/*Mimics the behaviour of the standard brightcove player buttons.*/
+.vjs-transcript-control {
+	cursor: pointer;
 }
 
 .vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
