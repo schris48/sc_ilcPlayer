@@ -93,7 +93,7 @@
     document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
 
     // Register the combined plugin
-    videojs.registerPlugin('ilcResponsivePlugin', function() {
+    videojs.registerPlugin('localization', function() {
         var ilcVideoPlayer = this;
 
         // Remove the picture-in-picture button in the player which is enabled by default.
@@ -104,22 +104,17 @@
 
         // Initialize player
         ilcVideoPlayer.on('loadstart', function() {
-            console.log('loadstart event triggered');
-            console.log(ilcVideoPlayer.mediainfo.textTracks); // Log available text tracks
-
             // Get all available text tracks for the currently loaded video
             var numTracks = ilcVideoPlayer.mediainfo.textTracks.length;
 
             // Check if any of the tracks are a metadata track
             for (var i = 0; i < numTracks; i++) {
-                console.log('Text track kind:', ilcVideoPlayer.mediainfo.textTracks[i].kind); // Log text track kind
-
                 // If a metadata track is found, create text box functionality
                 if (ilcVideoPlayer.mediainfo.textTracks[i].kind == "metadata") {
                     // Create transcript button
                     var bcTxtButton = document.createElement('button');
                     bcTxtButton.className = 'vjs-transcript-control vjs-control vjs-button';
-                    bcTxtButton.setAttribute('style', 'z-index:1'); // If button appears under control bar it will not work on mobile.
+                    bcTxtButton.setAttribute('style', 'z-index:1'); // Ensure visibility
                     bcTxtButton.setAttribute('type', 'button');
                     bcTxtButton.setAttribute('title', 'Transcript');
                     bcTxtButton.setAttribute('aria-disabled', 'false');
@@ -130,10 +125,15 @@
                     bcSpanText.className = 'vjs-control-text';
                     bcSpanText.setAttribute('aria-live', 'polite');
                     var bcSpanTextText = document.createTextNode("Display Transcript");
-                    bcTxtButton.appendChild(bcSpanPlaceholder);
                     bcSpanText.appendChild(bcSpanTextText);
+                    bcTxtButton.appendChild(bcSpanPlaceholder);
                     bcTxtButton.appendChild(bcSpanText);
-                    $(ilcVideoPlayer.controlBar.customControlSpacer.el()).html(bcTxtButton);
+
+                    // Create the custom control spacer and append the button
+                    var customControlSpacer = document.createElement('div');
+                    customControlSpacer.className = 'vjs-custom-control-spacer vjs-spacer';
+                    customControlSpacer.appendChild(bcTxtButton);
+                    ilcVideoPlayer.controlBar.el().appendChild(customControlSpacer);
 
                     // Create text box + button
                     var bcTextContainer = document.createElement('div');
@@ -155,46 +155,47 @@
                     bcTextFooter.appendChild(bcRtnButton);
                     bcTextContainer.appendChild(bcTextFooter);
                     $(bcTextContainer).insertAfter(ilcVideoPlayer.el());
-                     // Load the text track into the text box
-                     var $url = ilcVideoPlayer.mediainfo.textTracks[i].src;
-                     $.get($url, function(data, status) {
-                         var newdata = data.slice(data.indexOf("-->") + 16);
-                         bcTextContent.innerHTML = newdata;
-                     });
- 
-                     // Hide transcript button if the video is full screen
-                     ilcVideoPlayer.on('fullscreenchange', function(evt) {
-                         if (ilcVideoPlayer.isFullscreen()) {
-                             bcTxtButton.style.visibility = "hidden";
-                             bcTxtButton.setAttribute('aria-hidden', 'true');
-                         } else if (!ilcVideoPlayer.isFullscreen()) {
-                             bcTxtButton.style.visibility = "visible";
-                             bcTxtButton.setAttribute('aria-hidden', 'false');
-                         }
-                     });
- 
-                     // Display transcript if transcript button clicked
-                     $(bcTxtButton).click(function() {
-                         ilcVideoPlayer.pause();
-                         ilcVideoPlayer.el().style.display = "none";
-                         ilcVideoPlayer.el().setAttribute('aria-hidden', 'true');
-                         bcTextContainer.style.display = "block";
-                         bcTextContainer.setAttribute('aria-hidden', 'false');
-                         bcTextContent.focus();
-                     });
- 
-                     // Hide transcript if hide transcript button clicked
-                     $(bcRtnButton).click(function() {
-                         bcTextContainer.style.display = "none";
-                         bcTextContainer.setAttribute('aria-hidden', 'true');
-                         ilcVideoPlayer.el().style.display = "block";
-                         ilcVideoPlayer.el().setAttribute('aria-hidden', 'false');
-                         bcTxtButton.focus();
-                     });
- 
-                     break; // Do not continue looping if at least 1 metadata track was found
-                 } // End If: transcript file exists
-             } // End loop: all text tracks
-         }); // End: initialize player
-     }); // End: plugin
- })();
+
+                    // Load the text track into the text box
+                    var $url = ilcVideoPlayer.mediainfo.textTracks[i].src;
+                    $.get($url, function(data, status) {
+                        var newdata = data.slice(data.indexOf("-->") + 16);
+                        bcTextContent.innerHTML = newdata;
+                    });
+
+                    // Hide transcript button if the video is full screen
+                    ilcVideoPlayer.on('fullscreenchange', function(evt) {
+                        if (ilcVideoPlayer.isFullscreen()) {
+                            bcTxtButton.style.visibility = "hidden";
+                            bcTxtButton.setAttribute('aria-hidden', 'true');
+                        } else if (!ilcVideoPlayer.isFullscreen()) {
+                            bcTxtButton.style.visibility = "visible";
+                            bcTxtButton.setAttribute('aria-hidden', 'false');
+                        }
+                    });
+
+                    // Display transcript if transcript button clicked
+                    $(bcTxtButton).click(function() {
+                        ilcVideoPlayer.pause();
+                        ilcVideoPlayer.el().style.display = "none";
+                        ilcVideoPlayer.el().setAttribute('aria-hidden', 'true');
+                        bcTextContainer.style.display = "block";
+                        bcTextContainer.setAttribute('aria-hidden', 'false');
+                        bcTextContent.focus();
+                    });
+
+                    // Hide transcript if hide transcript button clicked
+                    $(bcRtnButton).click(function() {
+                        bcTextContainer.style.display = "none";
+                        bcTextContainer.setAttribute('aria-hidden', 'true');
+                        ilcVideoPlayer.el().style.display = "block";
+                        ilcVideoPlayer.el().setAttribute('aria-hidden', 'false');
+                        bcTxtButton.focus();
+                    });
+
+                    break; // Do not continue looping if at least 1 metadata track was found
+                } // End If: transcript file exists
+            } // End loop: all text tracks
+        }); // End: initialize player
+    }); // End: plugin
+})();
