@@ -93,7 +93,7 @@
     document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
 
     // Register the combined plugin
-    videojs.registerPlugin('ilcResponsivePlugin', function() {
+    videojs.registerPlugin('localization', function() {
         var ilcVideoPlayer = this;
 
         // Remove the picture-in-picture button in the player which is enabled by default.
