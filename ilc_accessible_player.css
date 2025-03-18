@@ -43,21 +43,23 @@
   content: "\e000";
 }
 
-/*Mimics the behaviour of the standard brightcove player buttons.*/
-.vjs-transcript-control {
-	cursor: pointer;
+/*Add the hi-lite on our custom button when it gets focus.
+This mimics the behaviour of the standard player buttons.*/
+.bcRtnButton:focus {
+	text-shadow: 0 0 1em #fff
 }
 
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"] {
-	font-family: tvo-custom;
-  font-weight: 400;
-  font-style: normal;
+/*Setting button border to zero kills the default focus styles on Firefox.
+We have to re-set it with this, which mimics the default behaviour.*/
+.bcRtnButton:-moz-focusring {
+	outline: 1px dotted #212121;
 }
 
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
-	content: "\e000";
+/*Re-sets the default Brightcove player button behaviour on Firefox in
+case anyone has disabled it in CSS by setting button::-moz-focus-inner {border: 0;}.
+A lot of people do this because it's ugly, but this is normally left on in the Brightcove player */
+.vjs-control-bar .vjs-button:-moz-focusring {
+	outline: 1px dotted #212121;
 }
 
 /*==== General Styling ====*/
@@ -439,37 +441,6 @@ transform: scale(1.1);
 }
 
 
-.vjs-control.vjs-subs-caps-button .vjs-button{
- transition: 0.2s all;
- -webkit-transition: 0.2s all;
- -moz-transition: 0.2s all;
- -ms-transition: 0.2s all;
- -o-transition: 0.2s all;
-}
-
-.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
-line-height: 2;
-font-size: 1.5em;
-}
-
-/*Add the hi-lite on our custom button when it gets focus.
-This mimics the behaviour of the standard player buttons.*/
-.bcRtnButton:focus {
-	text-shadow: 0 0 1em #fff
-}
-
-/*Setting button border to zero kills the default focus styles on Firefox.
-We have to re-set it with this, which mimics the default behaviour.*/
-.bcRtnButton:-moz-focusring {
-	outline: 1px dotted #212121;
-}
-
-/*Re-sets the default Brightcove player button behaviour on Firefox in
-case anyone has disabled it in CSS by setting button::-moz-focus-inner {border: 0;}.
-A lot of people do this because it's ugly, but this is normally left on in the Brightcove player */
-.vjs-control-bar .vjs-button:-moz-focusring {
-	outline: 1px dotted #212121;
-}
 
 /*Required only for v6 player*/
 .vjs-custom-control-spacer.vjs-spacer {
@@ -492,8 +463,39 @@ A lot of people do this because it's ugly, but this is normally left on in the B
 .vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
 	content: "\e000";
 }
-/*==== Menu ====*/
 
+/*Mimics the behaviour of the standard brightcove player buttons.*/
+.vjs-transcript-control {
+	cursor: pointer;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"] {
+	font-family: tvo-custom;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
+	content: "\e000";
+}
+
+.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
+  line-height: 2;
+  font-size: 1.5em;
+  }
+  
+
+.vjs-control.vjs-subs-caps-button .vjs-button{
+ transition: 0.2s all;
+ -webkit-transition: 0.2s all;
+ -moz-transition: 0.2s all;
+ -ms-transition: 0.2s all;
+ -o-transition: 0.2s all;
+}
+
+/*==== Menu ====*/
 
 .vjs-menu {
 color: #fff;
@@ -553,9 +555,6 @@ text-shadow: none;
 opacity: 1;
 }
 
-
-
-
 /* Caption Dialog */
 
 .vjs-modal-dialog.vjs-text-track-settings {
@@ -570,11 +569,9 @@ border-radius: 10px;
 padding: 4px;
 }
 
-
 .vjs-text-track-settings fieldset span>select {
  max-width: initial;
 }
-
 
 .video-js .vjs-control:focus, .video-js .vjs-control:focus:before, .video-js .vjs-control:hover:before,.bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:active, .bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus, .bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover{
 text-shadow: none;
@@ -603,12 +600,96 @@ transition: 0.2s all;
  background-image: initial;
 }
 
-
-
-
 /*==== Transcript ====*/
 
+.bcTextContainer {
+	font-family: SuisseIntl, Helvetica, Arial, sans-serif;
+	position: absolute;
+  top: 0px;
+	height:100%;
+	width:100%;
+	box-sizing: border-box;
+}
 
+.bcTextContent {
+  height: calc(100% - 42px);
+  overflow: auto;
+	background-color: white;
+	font-size: 14px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid grey;
+}
+
+/*Fix for IE bug.
+Dotted outline that appears when text box gets focus is duplicated repeadedly when the text is scrolled.
+Fix is to replace default focus behaviour with the following.
+FF, IE and Edge use the first rule. Chrome, Safari and Opera use the second rule (-webkit prefix).
+These rules duplicate the look and feel of each browser's default behaviour.*/
+.bcTextContent:focus {
+	outline: 1px dotted #212121;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.bcTextFooter {
+  height: 42px;
+  background-color: grey;
+	box-sizing: border-box;
+}
+
+.bcRtnButton {
+  float: right;
+  margin-top: 12px;
+  margin-right: 40px;
+  border: solid white 1px;
+  color: white;
+  background-color: grey;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+/*Add the hi-lite on our custom button when it gets focus.
+This mimics the behaviour of the standard player buttons.*/
+.bcRtnButton:focus {
+	text-shadow: 0 0 1em #fff
+}
+
+/*Setting button border to zero kills the default focus styles on Firefox.
+We have to re-set it with this, which mimics the default behaviour.*/
+.bcRtnButton:-moz-focusring {
+	outline: 1px dotted #212121;
+}
+
+/*Re-sets the default Brightcove player button behaviour on Firefox in
+case anyone has disabled it in CSS by setting button::-moz-focus-inner {border: 0;}.
+A lot of people do this because it's ugly, but this is normally left on in the Brightcove player */
+.vjs-control-bar .vjs-button:-moz-focusring {
+	outline: 1px dotted #212121;
+}
+
+/*Required only for v6 player*/
+.vjs-custom-control-spacer.vjs-spacer {
+	display: block;
+}
+
+/*Mimics the behaviour of the standard brightcove player buttons.*/
+.vjs-transcript-control {
+	cursor: pointer;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"] {
+	font-family: tvo-custom;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*Mimics how font icons are added for standard Brightcove player buttons.*/
+.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
+	content: "\e000";
+}
+
+/* 
 .bcTextContainer {
 font-family: Helvetica, Arial, sans-serif;
 top: 0;
@@ -680,7 +761,7 @@ background: #fff !important;
 color: #000 !important;
 }
 
-
+ */
 
 
 
@@ -1548,6 +1629,9 @@ video.vjs-tech:focus{
     font-size: 1.3em;
     font-weight: 600;
 }
+
+
+
 
 /*==== Other ====*/
 
