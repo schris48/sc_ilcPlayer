@@ -1,116 +1,105 @@
-// Translation dictionary for localization
-const translations = {
-  en: {
-    transcriptButtonTitle: "Transcript",
-    displayTranscript: "Display Transcript",
-    hideTranscript: "Hide Transcript"
-  },
-  fr: {
-    transcriptButtonTitle: "Transcription",
-    displayTranscript: "Afficher la transcription",
-    hideTranscript: "Cacher la transcription"
-  }
-};
+//Load plugin
+videojs.registerPlugin('transcript', function() {
+  var ilcVideoPlayer = this;
 
-// Get the user's language (defaults to English if unsupported)
-const userLanguage = navigator.language.split('-')[0];
-const localizedText = translations[userLanguage] || translations["en"];
-
-// Load plugin
-videojs.registerPlugin('ilcResponsivePlugin', function() {
-  const ilcVideoPlayer = this;
-
-  // Remove the picture-in-picture button in the player
-  const pipControl = ilcVideoPlayer.el().querySelector(".vjs-picture-in-picture-control");
-  if (pipControl) {
-    pipControl.remove();
+  //Remove the picture-in-picture button in the player which is enabled by default.
+  pip_control = ilcVideoPlayer.el().getElementsByClassName("vjs-picture-in-picture-control")[0]; //Get pip element from DOM
+  if (typeof(pip_control) != 'undefined' && pip_control != null) { //Check first if pip element is defined/not null, not all browsers enable it
+    pip_control.parentNode.removeChild(pip_control);
   }
 
-  // Initialize player
-  ilcVideoPlayer.on('loadstart', function() {
-    const textTracks = ilcVideoPlayer.mediainfo.textTracks;
-
-    // Find the first metadata track
-    const metadataTrack = Array.from(textTracks).find(track => track.kind === "metadata");
-    if (metadataTrack) {
+  //Initialize player
+  ilcVideoPlayer.on('loadstart',function(){
+    
+    //Get all available text tracks for the currently loaded video
+    var numTracks = ilcVideoPlayer.mediainfo.textTracks.length;
+    
+    //Check if any of the tracks are a metadata track
+    for (var i = 0; i < numTracks; i++) {
       
-      // Create transcript button
-      const bcTxtButton = document.createElement('button');
-      bcTxtButton.className = 'vjs-transcript-control vjs-control vjs-button';
-      bcTxtButton.style.zIndex = '1';
-      bcTxtButton.type = 'button';
-      bcTxtButton.title = localizedText.transcriptButtonTitle;
-      bcTxtButton.setAttribute('aria-disabled', 'false');
+      //If a metadata track is found, create text box functionality
+      if(ilcVideoPlayer.mediainfo.textTracks[i].kind == "metadata"){
 
-      const bcSpanPlaceholder = document.createElement('span');
-      bcSpanPlaceholder.setAttribute('aria-hidden', 'true');
-      bcSpanPlaceholder.className = 'vjs-icon-placeholder';
-
-      const bcSpanText = document.createElement('span');
-      bcSpanText.className = 'vjs-control-text';
-      bcSpanText.setAttribute('aria-live', 'polite');
-      bcSpanText.textContent = localizedText.displayTranscript;
-
-      bcTxtButton.append(bcSpanPlaceholder, bcSpanText);
-      ilcVideoPlayer.controlBar.customControlSpacer.el().appendChild(bcTxtButton);
-
-      // Create transcript container
-      const bcTextContainer = document.createElement('div');
-      bcTextContainer.className = 'bcTextContainer';
-      bcTextContainer.style.display = 'none';
-      bcTextContainer.setAttribute('aria-hidden', 'true');
-
-      const bcTextContent = document.createElement('div');
-      bcTextContent.className = 'bcTextContent';
-      bcTextContent.setAttribute('tabindex', '0');
-
-      const bcTextFooter = document.createElement('div');
-      bcTextFooter.className = 'bcTextFooter';
-
-      const bcRtnButton = document.createElement('button');
-      bcRtnButton.className = 'bcRtnButton';
-      bcRtnButton.title = localizedText.hideTranscript;
-      bcRtnButton.type = 'button';
-      bcRtnButton.textContent = localizedText.hideTranscript;
-
-      bcTextFooter.appendChild(bcRtnButton);
-      bcTextContainer.append(bcTextContent, bcTextFooter);
-      ilcVideoPlayer.el().after(bcTextContainer);
-
-      // Load the text track content into the container
-      fetch(metadataTrack.src)
-        .then(response => response.text())
-        .then(data => {
-          const contentStart = data.indexOf("-->") + 16;
-          bcTextContent.innerHTML = data.slice(contentStart);
-        })
-        .catch(error => console.error('Error loading transcript:', error));
-
-      // Hide transcript button in fullscreen
-      ilcVideoPlayer.on('fullscreenchange', function() {
-        const isFullscreen = ilcVideoPlayer.isFullscreen();
-        bcTxtButton.style.visibility = isFullscreen ? "hidden" : "visible";
-        bcTxtButton.setAttribute('aria-hidden', isFullscreen);
-      });
-
-      // Show transcript on button click
-      bcTxtButton.addEventListener('click', function() {
-        ilcVideoPlayer.pause();
-        ilcVideoPlayer.el().style.display = 'none';
-        ilcVideoPlayer.el().setAttribute('aria-hidden', 'true');
-        bcTextContainer.style.display = 'block';
-        bcTextContainer.setAttribute('aria-hidden', 'false');
-        bcTextContent.focus();
-      });
-
-      // Hide transcript on return button click
-      bcRtnButton.addEventListener('click', function() {
-        bcTextContainer.style.display = 'none';
+        //Create transcript button
+        var bcTxtButton = document.createElement('button');
+        bcTxtButton.className = 'vjs-transcript-control vjs-control vjs-button';
+        bcTxtButton.setAttribute('style', 'z-index:1'); //If button appears under control bar it will not work on moble.
+        bcTxtButton.setAttribute('type', 'button');
+        bcTxtButton.setAttribute('title', 'Transcript');
+        bcTxtButton.setAttribute('aria-disabled', 'false');
+        var bcSpanPlaceholder = document.createElement('span');
+        bcSpanPlaceholder.setAttribute('aria-hidden', 'true');
+        bcSpanPlaceholder.className = 'vjs-icon-placeholder';
+        var bcSpanText = document.createElement('span');
+        bcSpanText.className = 'vjs-control-text';
+        bcSpanText.setAttribute('aria-live', 'polite');
+        var bcSpanTextText = document.createTextNode("Display Transcript");
+        bcTxtButton.appendChild(bcSpanPlaceholder);
+        bcSpanText.appendChild(bcSpanTextText);
+        bcTxtButton.appendChild(bcSpanText);
+        $(ilcVideoPlayer.controlBar.customControlSpacer.el()).html(bcTxtButton);
+        
+        //Create text box + button
+        var bcTextContainer = document.createElement('div');
+        var bcTextContent = document.createElement('div');
+        var bcTextFooter = document.createElement('div');
+        var bcRtnButton = document.createElement('button');
+        var rtnBtnText = document.createTextNode("Hide Transcript");
+        bcTextContainer.style.display = "none";
         bcTextContainer.setAttribute('aria-hidden', 'true');
-        ilcVideoPlayer.el().style.display = 'block';
-        ilcVideoPlayer.el().setAttribute('aria-hidden', 'false');
-        bcTxtButton.focus();
-      });
-    }
-  });
-});
+        bcTextContainer.className = 'bcTextContainer';
+        bcTextContent.className = 'bcTextContent';
+        bcTextContent.setAttribute('tabindex','0');
+        bcTextFooter.className = 'bcTextFooter';
+        bcRtnButton.className = 'bcRtnButton';
+        bcRtnButton.setAttribute('title','Hide Transcript');
+        bcRtnButton.setAttribute('type', 'button');
+        bcRtnButton.appendChild(rtnBtnText);
+        bcTextContainer.appendChild(bcTextContent);
+        bcTextFooter.appendChild(bcRtnButton);
+        bcTextContainer.appendChild(bcTextFooter);
+        $(bcTextContainer).insertAfter(ilcVideoPlayer.el());
+        
+        //Load the text track into the text box
+        $url = ilcVideoPlayer.mediainfo.textTracks[i].src;
+        $.get($url, function(data, status){
+          var newdata = data.slice(data.indexOf("-->") + 16);
+          bcTextContent.innerHTML = newdata;
+        });
+
+        //Hide transcript button if the video is full screen
+        ilcVideoPlayer.on('fullscreenchange', function(evt) {
+          if(ilcVideoPlayer.isFullscreen()) {
+            bcTxtButton.style.visibility = "hidden";
+            bcTxtButton.setAttribute('aria-hidden', 'true');
+          }else if(!ilcVideoPlayer.isFullscreen()){
+            bcTxtButton.style.visibility = "visible";
+            bcTxtButton.setAttribute('aria-hidden', 'false');
+          }
+        });
+
+        //Display transcript if transcript button clicked
+        $(bcTxtButton).click(function(){
+          ilcVideoPlayer.pause();
+          ilcVideoPlayer.el().style.display = "none";
+          ilcVideoPlayer.el().setAttribute('aria-hidden', 'true');
+          bcTextContainer.style.display = "block";
+          bcTextContainer.setAttribute('aria-hidden', 'false');
+          bcTextContent.focus();
+        });
+      
+        //Hide transcript if hide transcript button clicked
+        $(bcRtnButton).click(function(){
+          bcTextContainer.style.display = "none";
+          bcTextContainer.setAttribute('aria-hidden', 'true');
+          ilcVideoPlayer.el().style.display = "block";
+          ilcVideoPlayer.el().setAttribute('aria-hidden', 'false');
+          bcTxtButton.focus();
+        });
+
+        break; //Do not continue looping if at least 1 metadata track was found
+        
+      } //End If: transcript file exists
+    }; //End loop: all txt trks
+  }) //End: initialize player
+}); //End: plugin
