@@ -3,19 +3,19 @@
 /*==== Icons ====*/
 
 
-/* @font-face {
-    font-family: 'VideoJS_tvo';
-   src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot');
-    src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot?#iefix') format('embedded-opentype'),
-         url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.woff') format('woff'),
-         url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.ttf') format('truetype'),
-         url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.svg#VideoJS_tvo') format('svg');
-    font-weight: normal;
-    font-style: normal;
-} */
+@font-face {
+  font-family: 'VideoJS_tvo';
+  src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot');
+  src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot?#iefix') format('embedded-opentype'),
+       url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.woff') format('woff'),
+       url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.ttf') format('truetype'),
+       url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.svg#VideoJS_tvo') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*==== Font Definitions ====*/
-@font-face {
+/* @font-face {
   font-family: "tvo-custom";
   src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.eot");
   src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.eot?#iefix") format("embedded-opentype"),
@@ -24,7 +24,7 @@
        url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.svg#tvo-custom") format("svg");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 [data-icon]:before,
 [class^="icon-"],
