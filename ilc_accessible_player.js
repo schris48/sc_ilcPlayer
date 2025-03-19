@@ -1,11 +1,11 @@
 // Define the localization plugin
-videojs.registerPlugin('localization', function() {
+videojs.registerPlugin('ilcResponsivePlugin', function() {
     const localizationData = {
-        en: { skipBack: "Skip Back 15 Seconds", skipForward: "Skip Forward 15 Seconds", play: "Play", pause: "Pause", mute: "Mute", unmute: "Unmute", volume: "Volume", fullscreen: "Fullscreen", exitFullscreen: "Exit Fullscreen", transcript: "Display Transcript" },
-        fr: { skipBack: "Reculer de 15 secondes", skipForward: "Avancer de 15 secondes", play: "Jouer", pause: "Pause", mute: "Muet", unmute: "Annuler le muet", volume: "Volume", fullscreen: "Plein écran", exitFullscreen: "Quitter le plein écran", transcript: "Afficher la transcription" },
-        de: { skipBack: "15 Sekunden zurückspringen", skipForward: "15 Sekunden vorspulen", play: "Abspielen", pause: "Pause", mute: "Stummschalten", unmute: "Stummschaltung aufheben", volume: "Lautstärke", fullscreen: "Vollbild", exitFullscreen: "Vollbildmodus beenden", transcript: "Transkript anzeigen" },
-        ja: { skipBack: "15秒戻す", skipForward: "15秒進む", play: "再生", pause: "一時停止", mute: "ミュート", unmute: "ミュート解除", volume: "音量", fullscreen: "フルスクリーン", exitFullscreen: "フルスクリーン解除", transcript: "トランスクリプトを表示" },
-        es: { skipBack: "Retroceder 15 segundos", skipForward: "Avanzar 15 segundos", play: "Reproducir", pause: "Pausa", mute: "Silenciar", unmute: "Quitar silencio", volume: "Volumen", fullscreen: "Pantalla completa", exitFullscreen: "Salir de pantalla completa", transcript: "Mostrar transcripción" }
+        en: { skipBack: "Skip Back 15 Seconds", skipForward: "Skip Forward 15 Seconds", play: "Play", pause: "Pause", mute: "Mute", unmute: "Unmute", volume: "Volume", fullscreen: "Fullscreen", exitFullscreen: "Exit Fullscreen", transcript: "Display Transcript", hideTranscript: "Hide Transcript" },
+        fr: { skipBack: "Reculer de 15 secondes", skipForward: "Avancer de 15 secondes", play: "Jouer", pause: "Pause", mute: "Muet", unmute: "Annuler le muet", volume: "Volume", fullscreen: "Plein écran", exitFullscreen: "Quitter le plein écran", transcript: "Afficher la transcription", hideTranscript: "Masquer la transcription" },
+        de: { skipBack: "15 Sekunden zurückspringen", skipForward: "15 Sekunden vorspulen", play: "Abspielen", pause: "Pause", mute: "Stummschalten", unmute: "Stummschaltung aufheben", volume: "Lautstärke", fullscreen: "Vollbild", exitFullscreen: "Vollbildmodus beenden", transcript: "Transkript anzeigen", hideTranscript: "Transkript ausblenden" },
+        ja: { skipBack: "15秒戻す", skipForward: "15秒進む", play: "再生", pause: "一時停止", mute: "ミュート", unmute: "ミュート解除", volume: "音量", fullscreen: "フルスクリーン", exitFullscreen: "フルスクリーン解除", transcript: "トランスクリプトを表示", hideTranscript: "トランスクリプトを非表示" },
+        es: { skipBack: "Retroceder 15 segundos", skipForward: "Avanzar 15 segundos", play: "Reproducir", pause: "Pausa", mute: "Silenciar", unmute: "Quitar silencio", volume: "Volumen", fullscreen: "Pantalla completa", exitFullscreen: "Salir de pantalla completa", transcript: "Mostrar transcripción", hideTranscript: "Ocultar transcripción" }
     };
 
     const iconFonts = {
@@ -94,8 +94,8 @@ videojs.registerPlugin('localization', function() {
     document.dispatchEvent(new CustomEvent('languageChanged', { detail: currentLanguage }));
 });
 
-// Define the transcript plugin
-videojs.registerPlugin('transcript', function() {
+// Define the ilcResponsivePlugin plugin
+videojs.registerPlugin('ilcResponsivePlugin', function() {
     var ilcVideoPlayer = this;
 
     // Remove the picture-in-picture button in the player which is enabled by default.
@@ -136,7 +136,7 @@ videojs.registerPlugin('transcript', function() {
                 var bcTextContent = document.createElement('div');
                 var bcTextFooter = document.createElement('div');
                 var bcRtnButton = document.createElement('button');
-                var rtnBtnText = document.createTextNode(window.localization.getLocalizedText('transcript'));
+                var rtnBtnText = document.createTextNode(window.localization.getLocalizedText('hideTranscript'));
                 bcTextContainer.style.display = "none";
                 bcTextContainer.setAttribute('aria-hidden', 'true');
                 bcTextContainer.className = 'bcTextContainer';
@@ -144,7 +144,7 @@ videojs.registerPlugin('transcript', function() {
                 bcTextContent.setAttribute('tabindex', '0');
                 bcTextFooter.className = 'bcTextFooter';
                 bcRtnButton.className = 'bcRtnButton';
-                bcRtnButton.setAttribute('title', window.localization.getLocalizedText('transcript'));
+                bcRtnButton.setAttribute('title', window.localization.getLocalizedText('hideTranscript'));
                 bcRtnButton.setAttribute('type', 'button');
                 bcRtnButton.appendChild(rtnBtnText);
                 bcTextContainer.appendChild(bcTextContent);
@@ -196,9 +196,11 @@ videojs.registerPlugin('transcript', function() {
 }); // End: plugin
 
 // Initialize the player with plugins
-const player = videojs('my-video', {
-    plugins: {
-        localization: {},
-        transcript: {}
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    const player = videojs('my-video', {
+        plugins: {
+            localization: {},
+            ilcResponsivePlugin: {}
+        }
+    });
 });
