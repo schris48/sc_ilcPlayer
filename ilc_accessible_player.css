@@ -1,8 +1,6 @@
 @charset "UTF-8";
 
 /*==== Icons ====*/
-
-
 @font-face {
   font-family: 'VideoJS_tvo';
   src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot');
@@ -15,7 +13,7 @@
 }
 
 /*==== Font Definitions ====*/
-/* @font-face {
+@font-face {
   font-family: "tvo-custom";
   src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.eot");
   src: url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.eot?#iefix") format("embedded-opentype"),
@@ -24,7 +22,7 @@
        url("https://players.brightcove.net/23648095001/ilc/fonts/tvo-custom.svg#tvo-custom") format("svg");
   font-weight: normal;
   font-style: normal;
-} */
+}
 
 [data-icon]:before,
 [class^="icon-"],
@@ -41,25 +39,6 @@
 
 .icon-file-text-o:before {
   content: "\e000";
-}
-
-/*Add the hi-lite on our custom button when it gets focus.
-This mimics the behaviour of the standard player buttons.*/
-/* .bcRtnButton:focus {
-	text-shadow: 0 0 1em #fff
-} */
-
-/*Setting button border to zero kills the default focus styles on Firefox.
-We have to re-set it with this, which mimics the default behaviour.*/
-.bcRtnButton:-moz-focusring {
-	outline: 1px dotted #212121;
-}
-
-/*Re-sets the default Brightcove player button behaviour on Firefox in
-case anyone has disabled it in CSS by setting button::-moz-focus-inner {border: 0;}.
-A lot of people do this because it's ugly, but this is normally left on in the Brightcove player */
-.vjs-control-bar .vjs-button:-moz-focusring {
-	outline: 1px dotted #212121;
 }
 
 /*==== General Styling ====*/
@@ -108,6 +87,14 @@ A lot of people do this because it's ugly, but this is normally left on in the B
   outline: 1px dotted #212121;
 }
 
+.bcRtnButton:-moz-focusring {
+  outline: 1px dotted #212121;
+}
+
+.vjs-control-bar .vjs-button:-moz-focusring {
+  outline: 1px dotted #212121;
+}
+
 /*==== VideoJS Customizations ====*/
 .video-js .vjs-big-play-button {
   background: rgba(0,0,0,0.55);
@@ -122,290 +109,281 @@ A lot of people do this because it's ugly, but this is normally left on in the B
 }
 
 /*==== Control Bar ====*/
-
-
 .video-js .vjs-control-bar {
   color: #fff;
- background: none;
- visibility: hidden;
- height: 4.5em;
- width: 100%;
- padding: 0px 10px 0px 10px;
- overflow: visible !important;
- z-index: 1;
+  background: none;
+  visibility: hidden;
+  height: 4.5em;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  overflow: visible !important;
+  z-index: 1;
 }
 
-
-
 .video-js .vjs-control-bar:after {
-content: "";
-background: rgb(22 23 37 / 75%);
-background: linear-gradient(0deg,rgba(30,34,48,0.8) 5%,rgba(30,34,48,0) 75%, rgba(30,34,40,0) 100%);
-width: 100%;
-height: 120px;
-position: absolute;
-bottom: 0;
-left: 0;
-z-index: -1;
-transition: 0.4s opacity ease;
-transition-delay: 0s;
+  content: "";
+  background: rgb(22 23 37 / 75%);
+  background: linear-gradient(0deg,rgba(30,34,48,0.8) 5%,rgba(30,34,48,0) 75%, rgba(30,34,40,0) 100%);
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.4s opacity ease;
+  transition-delay: 0s;
 }
 
 .video-js.vjs-playing.vjs-user-active.not-hover .vjs-control-bar:after,
-.video-js.vjs-playing.vjs-user-inactive .vjs-control-bar:after{
- opacity: 0;
- transition-delay: 5s;
+.video-js.vjs-playing.vjs-user-inactive .vjs-control-bar:after {
+  opacity: 0;
+  transition-delay: 5s;
 }
 
-.video-js .vjs-control.vjs-button{
-margin: 0px 4px 0px 0px;
+.video-js .vjs-control.vjs-button {
+  margin: 0px 4px 0px 0px;
 }
 
 .vjs-has-started .vjs-control-bar {
-visibility: visible;
+  visibility: visible;
 }
-
-
-
-
-/* Play Toggle */
-
-/* .video-js .vjs-play-control {
-} */
-
 
 .vjs-control-bar {
-display: flex;
-opacity: 1;
-visibility: visible;
-display: initial;
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  display: initial;
 }
 
-.vjs-paused .vjs-dock-text, .vjs-paused .vjs-control-bar, .not-hover .vjs-control-bar{
-opacity: 1 !important;
+.vjs-paused .vjs-dock-text, .vjs-paused .vjs-control-bar, .not-hover .vjs-control-bar {
+  opacity: 1 !important;
 }
 
-.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible){
-   transform: translateY(6.65em) !important;
+.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible) {
+  transform: translateY(6.65em) !important;
 }
-
 
 /* Volume Bar */
 .vjs-volume-bar.vjs-slider-bar.vjs-slider.vjs-slider-horizontal {
-color: #E7131A;
-height: 8px;
-border-radius: 40px;
-left: 0px;
+  color: #E7131A;
+  height: 8px;
+  border-radius: 40px;
+  left: 0px;
 }
 
 .video-js .vjs-volume-bar {
- top: 16px;
- margin: 0;
+  top: 16px;
+  margin: 0;
 }
 
-
-/* Volume Level */
 .video-js .vjs-volume-level {
-background: #fff;
-border-radius: 40px;
-height: 8px;
-
+  background: #fff;
+  border-radius: 40px;
+  height: 8px;
 }
 
 .video-js .vjs-volume-level:before {
-color: #eee;
-height: 10px;
-display: none;
+  color: #eee;
+  height: 10px;
+  display: none;
 }
-
 
 .video-js .vjs-volume-panel {
- margin-right: 10px;
- margin-left: 4px;
+  margin-right: 10px;
+  margin-left: 4px;
 }
-
 
 /* Current Time Display */
-.video-js .vjs-time-control{
-padding: 0;
-font-size: 0.85rem;
-color: #fff;
-line-height: 3em;
+.video-js .vjs-time-control {
+  padding: 0;
+  font-size: 0.85rem;
+  color: #fff;
+  line-height: 3em;
 }
 
-.video-js .vjs-time-control{
-min-width: 1em;
+.video-js .vjs-time-control {
+  min-width: 1em;
 }
 
-.video-js .vjs-time-control.vjs-control{
-margin:0px 0px 0px 5px;
+.video-js .vjs-time-control.vjs-control {
+  margin: 0px 0px 0px 5px;
 }
 
-
-
-
-/* Progess Bar */
-
+/* Progress Bar */
 .video-js .vjs-progress-control .vjs-progress-holder {
- margin: 0px 15px 0px 15px;
- width: 100%;
+  margin: 0px 15px 0px 15px;
+  width: 100%;
 }
 
-
-/* .video-js .vjs-progress-control:hover .vjs-progress-holder {
-} */
-
-.vjs-progress-control{
-transition: 0.2s all;
-   -webkit-transition:0.2s all;
- -moz-transition:0.2s all;
- -ms-transition: 0.2s all;
- -o-transition: 0.2s all;
+.vjs-progress-control {
+  transition: 0.2s all;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
 }
 
-.vjs-mouse .vjs-progress-control
-{
-height: 0.5em !important;
-top: -0.5em !important;
+.vjs-mouse .vjs-progress-control {
+  height: 0.5em !important;
+  top: -0.5em !important;
 }
-.vjs-mouse .vjs-progress-control:hover
-{
-height: 0.8em !important;
-top: -0.8em !important;
+
+.vjs-mouse .vjs-progress-control:hover {
+  height: 0.8em !important;
+  top: -0.8em !important;
 }
+
 .video-js .vjs-progress-control.vjs-control {
-color: #fff;
-width: 100%;
+  color: #fff;
+  width: 100%;
 }
 
 .vjs-button>.vjs-icon-placeholder:before {
- font-size: 2.6em;
- line-height: 1.6em;
+  font-size: 2.6em;
+  line-height: 1.6em;
 }
 
-
-
-
 /* Captions */
-
-.vjs-subs-caps-button.vjs-button{
-margin-right: 2px;
+.vjs-subs-caps-button.vjs-button {
+  margin-right: 2px;
 }
 
 .vjs-subs-caps-button.vjs-button>.vjs-icon-placeholder:before {
- font-size: 2.9em;
- line-height: 1.5em;
+  font-size: 2.9em;
+  line-height: 1.5em;
 }
 
-
 /* Airplay */
-.video-js .vjs-airplay-button{
-background: none;
+.video-js .vjs-airplay-button {
+  background: none;
 }
 
 .video-js .vjs-airplay-button:hover {
-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .video-js .vjs-airplay-button .vjs-icon-placeholder:before {
-content: '\F128';
-font-size: 2.65em;
+  content: '\F128';
+  font-size: 2.65em;
 }
-
-
 
 /* Play Progress Bar */
 .vjs-slider,
 .vjs-load-progress,
 .vjs-slider-bar {
-border-radius: 40px;
+  border-radius: 40px;
 }
 
-.video-js .vjs-slider{
-background: rgba(225,225,225,0.6);
-margin-bottom: 10px !important
+.video-js .vjs-slider {
+  background: rgba(225,225,225,0.6);
+  margin-bottom: 10px !important;
 }
 
 .video-js .vjs-load-progress, .video-js .vjs-load-progress div {
- background: rgba(225, 225,225,0.8);
-border-radius: 40px !important;
+  background: rgba(225, 225,225,0.8);
+  border-radius: 40px !important;
 }
 
 .video-js .vjs-play-progress.vjs-slider-bar {
-color: #E7131A;
-background-color: #E7131A;
+  color: #E7131A;
+  background-color: #E7131A;
 }
 
 .video-js .vjs-play-progress.vjs-slider-bar:after {
-content: "" !important;
-border-radius: 100px;
-background: #E7131A;
-width: 16px;
-height: 16px;
-position: absolute;
-right: -5px;
-top: -5px;
-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.3);
-transition: 0.05s all ease-in;
-   -webkit-transition:0.05s all ease-in;
- -moz-transition:0.05s all ease-in;
- -ms-transition: 0.05s all ease-in;
- -o-transition: 0.05s all ease-in;
+  content: "" !important;
+  border-radius: 100px;
+  background: #E7131A;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.3);
+  transition: 0.05s all ease-in;
+  -webkit-transition: 0.05s all ease-in;
+  -moz-transition: 0.05s all ease-in;
+  -ms-transition: 0.05s all ease-in;
+  -o-transition: 0.05s all ease-in;
 }
 
-
 .video-js .vjs-progress-control:hover .vjs-slider-bar:after {
-width: 20px;
-height: 20px;
-top: -6px;
-right: -7px;
+  width: 20px;
+  height: 20px;
+  top: -6px;
+  right: -7px;
 }
 
 .video-js .vjs-slider:focus {
- text-shadow: 0 0 0em #fff;
- box-shadow: 0 0 0em #fff;
- border-radius: 40px !important;
+  text-shadow: 0 0 0em #fff;
+  box-shadow: 0 0 0em #fff;
+  border-radius: 40px !important;
 }
 
-
-.video-js.vjs-playing.vjs-user-inactive .vjs-control-bar{
-opacity: 0;
-transform: translateY(6.65em) !important;
-transition: 0.4s transform;
+.video-js.vjs-playing.vjs-user-inactive .vjs-control-bar {
+  opacity: 0;
+  transform: translateY(6.65em) !important;
+  transition: 0.4s transform;
 }
 
-
-.vjs-paused .vjs-control-bar{
-transform: translateY(0em) !important;
+.vjs-paused .vjs-control-bar {
+  transform: translateY(0em) !important;
 }
-
-
-
-
 
 /* Control Icon Font */
 .video-js .vjs-big-play-button .vjs-icon-placeholder:before,
-.video-js .vjs-big-play-button .vjs-icon-placeholder:before,
 .video-js .vjs-play-control .vjs-icon-placeholder:before,
-.vjs-icon-play:before,.video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder:before,
-.vjs-icon-pause:before, .video-js .vjs-captions-button .vjs-icon-placeholder:before,
+.vjs-icon-play:before,
+.video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder:before,
+.vjs-icon-pause:before,
+.video-js .vjs-captions-button .vjs-icon-placeholder:before,
 .video-js:lang(en) .vjs-subs-caps-button .vjs-icon-placeholder:before,
 .video-js:lang(fr-CA) .vjs-subs-caps-button .vjs-icon-placeholder:before,
-.vjs-icon-captions:before, .video-js .vjs-icon-placeholder, .vjs-icon-volume-mute,
+.vjs-icon-captions:before,
+.video-js .vjs-icon-placeholder,
+.vjs-icon-volume-mute:before,
 .video-js .vjs-mute-control .vjs-icon-placeholder:before,
-.vjs-icon-volume-high:before, .video-js .vjs-mute-control.vjs-vol-0 .vjs-icon-placeholder:before,
-.vjs-icon-volume-mute:before, .video-js .vjs-mute-control.vjs-vol-1 .vjs-icon-placeholder:before, .vjs-icon-volume-mute:before, .video-js .vjs-mute-control.vjs-vol-2 .vjs-icon-placeholder:before, .vjs-icon-volume-mute:before, .video-js .vjs-mute-control.vjs-vol-3 .vjs-icon-placeholder:before, .vjs-icon-volume-mute:before, .video-js .vjs-picture-in-picture-control .vjs-icon-placeholder:before, .vjs-icon-picture-in-picture-enter:before, .video-js.vjs-picture-in-picture .vjs-picture-in-picture-control .vjs-icon-placeholder:before, .vjs-icon-picture-in-picture-exit:before, .video-js .vjs-fullscreen-control .vjs-icon-placeholder:before, .vjs-icon-fullscreen-enter:before, .video-js.vjs-fullscreen .vjs-fullscreen-control .vjs-icon-placeholder:before, .vjs-icon-fullscreen-exit:before, .video-js .vjs-control.vjs-close-button .vjs-icon-placeholder:before, .vjs-icon-cancel:before, .video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before, .vjs-icon-replay:before, .video-js .vjs-airplay-button .vjs-icon-placeholder:before, .video-js .vjs-chapters-button .vjs-icon-placeholder:before,
-.vjs-icon-chapters:before, .vjs-icon-share:before, .vjs-icon-cog:before, .video-js .vjs-play-progress:before,
-.video-js .vjs-volume-level:before, .vjs-icon-circle:before, .vjs-seek-to-live-control .vjs-icon-placeholder:before, .vjs-icon-circle-outline:before, .vjs-icon-circle-inner-circle:before, .vjs-icon-hd:before, .video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before,
-.vjs-icon-replay:before, .vjs-icon-next-item:before, .vjs-icon-previous-item:before
-{
-font-family: 'VideoJS_tvo' !important;
+.vjs-icon-volume-high:before,
+.video-js .vjs-mute-control.vjs-vol-0 .vjs-icon-placeholder:before,
+.vjs-icon-volume-mute:before,
+.video-js .vjs-mute-control.vjs-vol-1 .vjs-icon-placeholder:before,
+.vjs-icon-volume-mute:before,
+.video-js .vjs-mute-control.vjs-vol-2 .vjs-icon-placeholder:before,
+.vjs-icon-volume-mute:before,
+.video-js .vjs-mute-control.vjs-vol-3 .vjs-icon-placeholder:before,
+.vjs-icon-volume-mute:before,
+.video-js .vjs-picture-in-picture-control .vjs-icon-placeholder:before,
+.vjs-icon-picture-in-picture-enter:before,
+.video-js.vjs-picture-in-picture .vjs-picture-in-picture-control .vjs-icon-placeholder:before,
+.vjs-icon-picture-in-picture-exit:before,
+.video-js .vjs-fullscreen-control .vjs-icon-placeholder:before,
+.vjs-icon-fullscreen-enter:before,
+.video-js.vjs-fullscreen .vjs-fullscreen-control .vjs-icon-placeholder:before,
+.vjs-icon-fullscreen-exit:before,
+.video-js .vjs-control.vjs-close-button .vjs-icon-placeholder:before,
+.vjs-icon-cancel:before,
+.video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before,
+.vjs-icon-replay:before,
+.video-js .vjs-airplay-button .vjs-icon-placeholder:before,
+.video-js .vjs-chapters-button .vjs-icon-placeholder:before,
+.vjs-icon-chapters:before,
+.vjs-icon-share:before,
+.vjs-icon-cog:before,
+.video-js .vjs-play-progress:before,
+.video-js .vjs-volume-level:before,
+.vjs-icon-circle:before,
+.vjs-seek-to-live-control .vjs-icon-placeholder:before,
+.vjs-icon-circle-outline:before,
+.vjs-icon-circle-inner-circle:before,
+.vjs-icon-hd:before,
+.video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before,
+.vjs-icon-replay:before,
+.vjs-icon-next-item:before,
+.vjs-icon-previous-item:before {
+  font-size: 2.6em;
+  line-height: 1.6em;
 }
 
-
-
 /* Control bar button colours */
-
 .vjs-button,
 .vjs-fullscreen-control.vjs-control,
 button.vjs-mute-control,
@@ -414,15 +392,14 @@ button.vjs-mute-control,
 .video-js .vjs-play-control .vjs-icon-placeholder:before,
 .vjs-icon-play:before,
 .vjs-volume-level:before {
-color: #eee;
-background-color: rgba(0,0,0,0) !important;
-transition: 0.1s all ease-in-out;
-    -webkit-transition: 0.1s all ease-in-out;
- -moz-transition: 0.1s all ease-in-out;
- -ms-transition:  0.1s all ease-in-out;
- -o-transition: 0.1s all ease-in-out;
+  color: #eee;
+  background-color: rgba(0,0,0,0) !important;
+  transition: 0.1s all ease-in-out;
+  -webkit-transition: 0.1s all ease-in-out;
+  -moz-transition: 0.1s all ease-in-out;
+  -ms-transition: 0.1s all ease-in-out;
+  -o-transition: 0.1s all ease-in-out;
 }
-
 
 /* Control bar button colours - HOVER */
 .vjs-fullscreen-control.vjs-control:hover,
@@ -434,207 +411,164 @@ button.vjs-mute-control:hover,
 .vjs-volume-level:hover:before,
 .vjs-control.vjs-subs-caps-button.vjs-hover .vjs-button,
 .vjs-control.vjs-volume-panel-horizontal.vjs-hover .vjs-button {
-color: #fff;
-border: 0 !important;
-transform: scale(1.1);
-
-}
-
-
-
-/*Required only for v6 player*/
-.vjs-custom-control-spacer.vjs-spacer {
-	display: block;
-}
-
-/*Mimics the behaviour of the standard brightcove player buttons.*/
-.vjs-transcript-control {
-	cursor: pointer;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"] {
-	font-family: tvo-custom;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
-	content: "\e000";
-}
-
-/*Mimics the behaviour of the standard brightcove player buttons.*/
-.vjs-transcript-control {
-	cursor: pointer;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"] {
-	font-family: tvo-custom;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
-	content: "\e000";
-}
-
-.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
-  line-height: 2;
-  font-size: 1.5em;
-  }
-  
-
-.vjs-control.vjs-subs-caps-button .vjs-button{
- transition: 0.2s all;
- -webkit-transition: 0.2s all;
- -moz-transition: 0.2s all;
- -ms-transition: 0.2s all;
- -o-transition: 0.2s all;
+  color: #fff;
+  border: 0 !important;
+  transform: scale(1.1);
 }
 
 /*==== Menu ====*/
-
 .vjs-menu {
-color: #fff;
+  color: #fff;
 }
 
 ul.vjs-menu-content {
-padding: 0 !important;
-margin: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
-border-radius: 4px;
-padding: 4px 0px 0px 0px !important;
-background-color: #1E222E !important;
-bottom: 26px;
+  border-radius: 4px;
+  padding: 4px 0px 0px 0px !important;
+  background-color: #1E222E !important;
+  bottom: 26px;
 }
 
 .vjs-menu-content li {
-font-size: 14px !important;
-line-height: 18px !important;
-margin: 0px 4px 4px 4px !important;
-background-color: rgba(225,225,225,0.1) !important;
-opacity: 0.8;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  margin: 0px 4px 4px 4px !important;
+  background-color: rgba(225,225,225,0.1) !important;
+  opacity: 0.8;
 }
 
-.vjs-menu-content li.vjs-texttrack-settings{
- background-color: rgba(225,225,225,0) !important;
-
+.vjs-menu-content li.vjs-texttrack-settings {
+  background-color: rgba(225,225,225,0) !important;
 }
 
 .vjs-menu-content li span {
-color: #fff !important;
-letter-spacing: 0 !important;
-font-weight: normal !important;
-text-transform: capitalize;
-font-size: 0.85em;
-
+  color: #fff !important;
+  letter-spacing: 0 !important;
+  font-weight: normal !important;
+  text-transform: capitalize;
+  font-size: 0.85em;
 }
 
 .vjs-menu-content li:last-child {
-margin: 0;
+  margin: 0;
 }
 
 .vjs-menu-content li.vjs-selected {
-border-left: 5px #E7131A solid;
-background-color: #fff !important;
-opacity: 1;
+  border-left: 5px #E7131A solid;
+  background-color: #fff !important;
+  opacity: 1;
 }
 
 li.vjs-selected span {
-color: #000 !important;
+  color: #000 !important;
 }
 
-
-.vjs-menu-button-popup .vjs-menu .vjs-menu-item:active, .vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus, .vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover{
-text-shadow: none;
-opacity: 1;
+.vjs-menu-button-popup .vjs-menu .vjs-menu-item:active,
+.vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus,
+.vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover {
+  text-shadow: none;
+  opacity: 1;
 }
 
 /* Caption Dialog */
-
 .vjs-modal-dialog.vjs-text-track-settings {
-background-color: #161725;
-background-color: #161725e3;
-color: #fff;
-height: 100%;
+  background-color: #161725;
+  background-color: #161725e3;
+  color: #fff;
+  height: 100%;
 }
 
 .vjs-track-setting select {
-border-radius: 10px;
-padding: 4px;
+  border-radius: 10px;
+  padding: 4px;
 }
 
 .vjs-text-track-settings fieldset span>select {
- max-width: initial;
+  max-width: initial;
 }
 
-.video-js .vjs-control:focus, .video-js .vjs-control:focus:before, .video-js .vjs-control:hover:before,.bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:active, .bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus, .bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover{
-text-shadow: none;
+.video-js .vjs-control:focus,
+.video-js .vjs-control:focus:before,
+.video-js .vjs-control:hover:before,
+.bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:active,
+.bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus,
+.bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover {
+  text-shadow: none;
 }
 
 .vjs-track-settings-controls button {
-background-color: #225BE4;
-background-image: none;
-color: #FFF;
-cursor: pointer;
-border-radius: 20px;
-padding: 4px 20px;
-transition: 0.2s all;
-   -webkit-transition: 0.2s all;
- -moz-transition: 0.2s all;
- -ms-transition: 0.2s all;
- -o-transition: 0.2s all;
+  background-color: #225BE4;
+  background-image: none;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 4px 20px;
+  transition: 0.2s all;
+  -
+
+Modifier dans Pages
+
+
+
+
+Il est possible que le contenu généré par IA soit incorrect
+You said:
+
+Could you please continue where you left off?
+Copilot said:
+Copilot
+Absolutely, I'll continue from where I left off:
+
+  transition: 0.2s all;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
 }
 
 .vjs-track-settings-controls button:hover {
- color: #fff;
- transform: scale(1.1);
+  color: #fff;
+  transform: scale(1.1);
 }
 
-.vjs-track-settings-controls button:active, .vjs-track-settings-controls button:focus {
- background-image: initial;
+.vjs-track-settings-controls button:active,
+.vjs-track-settings-controls button:focus {
+  background-image: initial;
 }
 
 /*==== Transcript ====*/
-
 .bcTextContainer {
-	font-family: SuisseIntl, Helvetica, Arial, sans-serif;
-	position: absolute;
+  font-family: SuisseIntl, Helvetica, Arial, sans-serif;
+  position: absolute;
   top: 0px;
-	height:100%;
-	width:100%;
-	box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .bcTextContent {
   height: calc(100% - 42px);
   overflow: auto;
-	background-color: white;
-	font-size: 14px;
-	padding: 10px;
-	box-sizing: border-box;
-	border: 1px solid grey;
+  background-color: white;
+  font-size: 14px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid grey;
 }
 
-/*Fix for IE bug.
-Dotted outline that appears when text box gets focus is duplicated repeadedly when the text is scrolled.
-Fix is to replace default focus behaviour with the following.
-FF, IE and Edge use the first rule. Chrome, Safari and Opera use the second rule (-webkit prefix).
-These rules duplicate the look and feel of each browser's default behaviour.*/
 .bcTextContent:focus {
-	outline: 1px dotted #212121;
+  outline: 1px dotted #212121;
   outline: 5px auto -webkit-focus-ring-color;
 }
 
 .bcTextFooter {
   height: 42px;
   background-color: grey;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .bcRtnButton {
@@ -644,482 +578,298 @@ These rules duplicate the look and feel of each browser's default behaviour.*/
   border: solid white 1px;
   color: white;
   background-color: grey;
-	cursor: pointer;
-	font-size: 14px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-/*Add the hi-lite on our custom button when it gets focus.
-This mimics the behaviour of the standard player buttons.*/
 .bcRtnButton:focus {
-	text-shadow: 0 0 1em #fff
+  text-shadow: 0 0 1em #fff;
+  outline: 1px dotted #212121;
 }
 
-/*Setting button border to zero kills the default focus styles on Firefox.
-We have to re-set it with this, which mimics the default behaviour.*/
 .bcRtnButton:-moz-focusring {
-	outline: 1px dotted #212121;
+  outline: 1px dotted #212121;
 }
 
-/*Re-sets the default Brightcove player button behaviour on Firefox in
-case anyone has disabled it in CSS by setting button::-moz-focus-inner {border: 0;}.
-A lot of people do this because it's ugly, but this is normally left on in the Brightcove player */
 .vjs-control-bar .vjs-button:-moz-focusring {
-	outline: 1px dotted #212121;
+  outline: 1px dotted #212121;
 }
-
-/*Required only for v6 player*/
-.vjs-custom-control-spacer.vjs-spacer {
-	display: block;
-}
-
-/*Mimics the behaviour of the standard brightcove player buttons.*/
-.vjs-transcript-control {
-	cursor: pointer;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"] {
-	font-family: tvo-custom;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/*Mimics how font icons are added for standard Brightcove player buttons.*/
-.vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
-	content: "\e000";
-}
-
-/* 
-.bcTextContainer {
-font-family: Helvetica, Arial, sans-serif;
-top: 0;
-width: 100%;
-height: 260px;
-position: initial !important;
-box-sizing: border-box;
-}
-
-.bcTextContent {
-font-family: Helvetica, Arial, sans-serif;
-color: #000;
-font-size: 15px;
-padding: 20px;
-}
-
-.bcRtnButton {
-float: right;
-margin: 0;
-border: solid #fff 1px;
-cursor: pointer;
-font-size: 14px;
-padding: 4px 20px !important;
-background: #fff;
-color: #000;
-border-radius: 30px;
-border: 0;
-}
-
-.bcRtnButton:hover {
-background: #fff !important;
-color: #000 !important;
-border: 0 !important;
-}
-
-.bcTextFooter {
-height: 42px !important;
-padding: 10px !important;
-}
-
-.video-js .vjs-control.vjs-close-button {
-color: #eee;
-}
-
-.video-js .vjs-control.vjs-close-button {
- cursor: pointer;
- height: 2em;
- position: absolute;
- right: 1em;
- top: 1em;
- z-index: 2;
- color: #eee;
-}
-
-.video-js .vjs-control.vjs-close-button .vjs-icon-placeholder:before{
-font-size: 1.7em;
-}
-
-.vjs-text-track-settings legend {
- color: #fff;
- margin: 0 0 5px 0;
- font-weight: 600;
-}
-
-
-
-.vjs-track-settings-controls .vjs-default-button {
-background: #fff !important;
-color: #000 !important;
-}
-
- */
-
-
 
 /*==== Player Title ====*/
-
-
-.video-js .vjs-dock-text{
-left: 0;
-margin: 0;
-top:0;
-opacity:1;
-height: 100%;
-padding: 1.3em 25% 2em 2em;
-background: linear-gradient(-12deg, rgba(30, 34, 48, 0) 60%, rgba(30, 34, 48,1) 100%);
-transition: 0.4s all;
--webkit-transition:0.4s all;
- -moz-transition: 0.4s all;
- -ms-transition: 0.4s all;
- -o-transition: 0.4s all;
-text-shadow: 0px 1px 0px rgba(0,0,0,0.5) !important;
-overflow: visible;
-text-align: left;
-
+.video-js .vjs-dock-text {
+  left: 0;
+  margin: 0;
+  top: 0;
+  opacity: 1;
+  height: 100%;
+  padding: 1.3em 25% 2em 2em;
+  background: linear-gradient(-12deg, rgba(30, 34, 48, 0) 60%, rgba(30, 34, 48,1) 100%);
+  transition: 0.4s all;
+  -webkit-transition: 0.4s all;
+  -moz-transition: 0.4s all;
+  -ms-transition: 0.4s all;
+  -o-transition: 0.4s all;
+  text-shadow: 0px 1px 0px rgba(0,0,0,0.5) !important;
+  overflow: visible;
+  text-align: left;
 }
 
 .video-js .vjs-dock-title {
- border-left: 4px #E7131A solid;
- padding-left: 10px;
- font-weight: 700;
- letter-spacing: 0px;
- line-height: 1.333;
- margin-bottom: 0em;
- font-size: 1.2em;
- max-width: 850px;
- text-align: left;
+  border-left: 4px #E7131A solid;
+  padding-left: 10px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 1.333;
+  margin-bottom: 0em;
+  font-size: 1.2em;
+  max-width: 850px;
+  text-align: left;
 }
 
 .video-js .vjs-dock-description {
- border-left: 4px #E7131A solid;
- padding-left: 10px;
- font-weight: 400;
- line-height: 1.5;
- font-size: 1.1em;
- letter-spacing:0;
- max-width: 850px;
- text-align: left;
-
+  border-left: 4px #E7131A solid;
+  padding-left: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1.1em;
+  letter-spacing: 0;
+  max-width: 850px;
+  text-align: left;
 }
-
-
 
 .vjs-has-started.vjs-user-inactive .vjs-dock-shelf,
 .vjs-has-started.vjs-user-inactive .vjs-dock-text,
 .not-hover.vjs-has-started.vjs-user-active .vjs-dock-shelf,
-.not-hover.vjs-has-started.vjs-user-active .vjs-dock-text{
- opacity: 0;
- -webkit-transition: opacity .4s;
- -moz-transition: opacity .4s;
- -ms-transition: opacity .4s;
- -o-transition: opacity .4s;
- transition: opacity .4s;
+.not-hover.vjs-has-started.vjs-user-active .vjs-dock-text {
+  opacity: 0;
+  -webkit-transition: opacity .4s;
+  -moz-transition: opacity .4s;
+  -ms-transition: opacity .4s;
+  -o-transition: opacity .4s;
+  transition: opacity .4s;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*==== Custom Controls ====*/
-
-
-/*  Skip buttons */
-.vjs-skip-back, .vjs-skip-ahead{
-opacity: 0.94;
-transition: 0.2s;
--webkit-transition: 0.2s;
--moz-transition: 0.2s;
--ms-transition: 0.2s;
--o-transition: 0.2s;
-height: 100%;
-text-align: center;
-width: 3.4em !important;
-margin-right: 0px;
+/* Skip buttons */
+.vjs-skip-back, .vjs-skip-ahead {
+  opacity: 0.94;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  height: 100%;
+  text-align: center;
+  width: 3.4em !important;
+  margin-right: 0px;
 }
 
-.vjs-skip-back:hover, .vjs-skip-ahead:hover{
-opacity: 1;
-cursor: pointer;
-transform: scale(1.1);
+.vjs-skip-back:hover, .vjs-skip-ahead:hover {
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-
-.vjs-skip-back .vjs-icon-placeholder:before, .vjs-skip-ahead .vjs-icon-placeholder:before{
- font-family: 'VideoJS_tvo';
- font-size: 2.6em;
- line-height: 1.6em;
+.vjs-skip-back .vjs-icon-placeholder:before, .vjs-skip-ahead .vjs-icon-placeholder:before {
+  font-family: 'VideoJS_tvo';
+  font-size: 2.6em;
+  line-height: 1.6em;
 }
 
 .vjs-skip-back .vjs-icon-placeholder:before {
- content: "\f12A" !important;
+  content: "\f12A" !important;
 }
 
 .vjs-skip-ahead .vjs-icon-placeholder:before {
- content: "\f129" !important;
+  content: "\f129" !important;
 }
 
-
-@media (max-width: 620px){
-
-.vjs-layout-medium .vjs-skip-back, .vjs-layout-medium .vjs-skip-ahead{
- display: none;
+@media (max-width: 620px) {
+  .vjs-layout-medium .vjs-skip-back, .vjs-layout-medium .vjs-skip-ahead {
+    display: none;
+  }
 }
-}
-
-
-
-
-
-
-
-
 
 /* Playback Rate */
-
-
-.vjs-playback-rate{
-margin-right: 10px !important;
+.vjs-playback-rate {
+  margin-right: 10px !important;
 }
 
 .vjs-playback-rate .vjs-playback-rate-value {
- pointer-events: none;
- text-align: center;
- font-size: 1.6em;
- line-height: 2.5em;
- font-weight: 600;
+  pointer-events: none;
+  text-align: center;
+  font-size: 1.6em;
+  line-height: 2.5em;
+  font-weight: 600;
 }
+
 .vjs-playback-rate:hover .vjs-playback-rate-value {
-transform: scale(1.1);
+  transform: scale(1.1);
 }
-
-
-
-
-
 
 /* Thumbnail scrubber */
-
-.vjs-play-progress .vjs-time-tooltip{
-display: none !important;
+.vjs-play-progress .vjs-time-tooltip {
+  display: none !important;
 }
 
-
-.vjs-mouse-display .vjs-time-tooltip{
- background: none;
- padding: 6px 12px 12px 12px;
- line-height: 1;
- top: -2.5em;
- font-size: 14px !important;
+.vjs-mouse-display .vjs-time-tooltip {
+  background: none;
+  padding: 6px 12px 12px 12px;
+  line-height: 1;
+  top: -2.5em;
+  font-size: 14px !important;
 }
 
-
-
-.vjs-mouse-display .vjs-time-tooltip:after{
-content: '';
-display: block;
-position: absolute;
-left: 30%;
-height: 0px;
-width: 0px;
-bottom: -0.4em;
-border-radius: 0px;
-border-right: 10px solid transparent;
-border-top: 12px solid rgba(22, 23, 37, 1);
-border-left: 10px solid transparent;
+.vjs-mouse-display .vjs-time-tooltip:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 30%;
+  height: 0px;
+  width: 0px;
+  bottom: -0.4em;
+  border-radius: 0px;
+  border-right: 10px solid transparent;
+  border-top: 12px solid rgba(22, 23, 37, 1);
+  border-left: 10px solid transparent;
 }
 
-
-.video-js .vjs-thumbnail-display{
-bottom: 1em !important;
-border-radius: 4px;
-overflow: hidden;
--webkit-box-shadow: none !important; 
-box-shadow: none !important; 
-}
-.video-js .vjs-thumbnail-display:after{
-content: '';
-background: rgb(22 23 37 / 75%);
-background: linear-gradient(0deg, rgba(22, 23, 37, 1) 0%, rgba(22, 23, 37, 0) 20%);
-width: 100%;
-height: 100px;
-position: absolute;
-bottom: 0;
-left: 0;
+.video-js .vjs-thumbnail-display {
+  bottom: 1em !important;
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 
-
-
-.video-js .vjs-progress-control .vjs-mouse-display{
-width: 0;
+.video-js .vjs-thumbnail-display:after {
+  content: '';
+  background: rgb(22 23 37 / 75%);
+  background: linear-gradient(0deg, rgba(22, 23, 37, 1) 0%, rgba(22, 23, 37, 0) 20%);
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
-
-
-
-
+.video-js .vjs-progress-control .vjs-mouse-display {
+  width: 0;
+}
 
 /*==== Error Screen ====*/
-
-
 .vjs-errors-dialog {
-text-align: left;
- border-radius: 4px;
- border: 0;
- overflow: hidden;
- position: absolute;
- top: 0;
- bottom: 0;
- left: 0;
- right: 0;
- width: 100%;
- padding-left: 0;
- padding-right: 0;
- background: #161725;
- text-align: center;
+  text-align: left;
+  border-radius: 4px;
+  border: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  background: #161725;
+  text-align: center;
 }
 
 .vjs-errors-headline {
- font-size: 1.7em;
- font-weight: 700;
- padding: 0em 5em;
- margin: 0;
- position: absolute;
- top: 50%;
- -ms-transform: translateY(-50%);
- transform: translateY(-50%);
+  font-size: 1.7em;
+  font-weight: 700;
+  padding: 0em 5em;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .vjs-errors-headline:before {
- content: '\F130';
- font-family: 'VideoJS_tvo';
- color: #225BE4;
- font-size: 6em;
- line-height:1em;
- display: block;
- position: relative;
- top:0;
- left: 0;
- box-sizing: border-box;
-
+  content: '\F130';
+  font-family: 'VideoJS_tvo';
+  color: #225BE4;
+  font-size: 6em;
+  line-height: 1em;
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
 }
 
-
 .vjs-touch-enabled .vjs-errors-headline {
- font-size: 1.4em;
- padding: 0em 1em;
- margin: 0 auto;
- width: 100%;
- top: 50%;
+  font-size: 1.4em;
+  padding: 0em 1em;
+  margin: 0 auto;
+  width: 100%;
+  top: 50%;
 }
 
 .vjs-touch-enabled.vjs-layout-x-small .vjs-errors-headline,
 .vjs-touch-enabled.vjs-layout-small .vjs-errors-headline {
- font-size: 1em;
+  font-size: 1em;
 }
 
-
-
 .vjs-errors-code, .vjs-errors-ref-id, .vjs-errors-details {
- display: none;
+  display: none;
 }
 
 .vjs-errors-ok-button-container {
- display: block;
- position: absolute;
- bottom: 45px;
- left: 15px;
- right: 15px;
- text-align: center;
+  display: block;
+  position: absolute;
+  bottom: 45px;
+  left: 15px;
+  right: 15px;
+  text-align: center;
 }
-
 
 .video-js .vjs-errors-dialog .vjs-control.vjs-close-button,
-.video-js .vjs-errors-dialog  .vjs-errors-ok-button-container{
- display: none;
+.video-js .vjs-errors-dialog .vjs-errors-ok-button-container {
+  display: none;
 }
 
-
-.vjs-errors-ok-button{
-font-weight: 600;
-background-color: blue !important;
-border-radius: 50px;
-transition: 0.2s all;
-   -webkit-transition: 0.2s all;
- -moz-transition: 0.2s all;
- -ms-transition: 0.2s all;
- -o-transition: 0.2s all;
+.vjs-errors-ok-button {
+  font-weight: 600;
+  background-color: blue !important;
+  border-radius: 50px;
+  transition: 0.2s all;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
 }
 
 .vjs-errors-ok-button:hover {
- border: 0px #FFF solid;
- color: #fff;
- transform: scale(1.1);
+  border: 0px #FFF solid;
+  color: #fff;
+  transform: scale(1.1);
 }
 
-
-.vjs-contextmenu-ui-menu{display:none;}
-
-
-video.vjs-tech:focus{
- outline: none;
+.vjs-contextmenu-ui-menu {
+  display: none;
 }
 
-
-
-
+video.vjs-tech:focus {
+  outline: none;
+}
 
 /*==== Fullscreen Mode ====*/
-
-.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control{
+.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control {
   opacity: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* ==== Touch Device Styling ==== */
-
-
-/* General     outline: -webkit-focus-ring-color auto 1px;
-}*/
-
+/*==== Touch Device Styling ====*/
 .vjs-touch-enabled.video-js .vjs-slider:focus,
-.vjs-touch-enabled.video-js .vjs-button:focus{
-    outline: none;
-    
+.vjs-touch-enabled.video-js .vjs-button:focus {
+  outline: none;
 }
 
-
 /* Touch Layout Tiny */
-
 .vjs-touch-enabled.vjs-layout-tiny.video-js .vjs-big-play-button,
 .vjs-layout-tiny.video-js .vjs-big-play-button {
-    transform: scale(0.4) !important;
+  transform: scale(0.4) !important;
 }
 
 .vjs-touch-enabled.vjs-layout-tiny.video-js .vjs-dock-text,
@@ -1127,38 +877,33 @@ video.vjs-tech:focus{
 .vjs-touch-enabled.vjs-layout-tiny.video-js .vjs-button,
 .vjs-layout-tiny.video-js .vjs-button,
 .vjs-touch-enabled.vjs-layout-tiny.video-js .vjs-progress-control,
-.vjs-layout-tiny.video-js .vjs-progress-control
- { display: none;
+.vjs-layout-tiny.video-js .vjs-progress-control {
+  display: none;
 }
 
-
 .vjs-touch-enabled.vjs-layout-tiny.video-js .vjs-control-bar,
-.vjs-layout-tiny.video-js .vjs-control-bar{
+.vjs-layout-tiny.video-js .vjs-control-bar {
   height: 1.5em;
 }
 
-
-
-.vjs-touch-enabled.vjs-layout-tiny.video-js .vjs-progress-control  .vjs-progress-holder,
-.vjs-layout-tiny.video-js .vjs-progress-control .vjs-progress-holder{
-    margin: 0 auto;
-    width: 80%;
+.vjs-touch-enabled.vjs-layout-tiny.video-js .vjs-progress-control .vjs-progress-holder,
+.vjs-layout-tiny.video-js .vjs-progress-control .vjs-progress-holder {
+  margin: 0 auto;
+  width: 80%;
 }
 
-
 /* Touch Layout XSmall */
-
 .vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-button>.vjs-icon-placeholder:before {
-    font-size: 1.8em !important;
-    line-height: 1.2em;
+  font-size: 1.8em !important;
+  line-height: 1.2em;
 }
 
 .vjs-layout-x-small .vjs-control.vjs-button.vjs-skip-back,
 .vjs-layout-x-small .vjs-control.vjs-button.vjs-skip-ahead {
-    display: none;
+  display: none;
 }
 
-.vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-control-bar{
+.vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-control-bar {
   height: 2.3em;
 }
 
@@ -1175,150 +920,126 @@ video.vjs-tech:focus{
 .vjs-touch-enabled.vjs-layout-x-small.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-x-small.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-x-small.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-x-small.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control{
-   height: 0.6em;
-   top: -1em;
+.vjs-touch-enabled.vjs-layout-x-small.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control {
+  height: 0.6em;
+  top: -1em;
 }
 
-
-.vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-play-progress.vjs-slider-bar:after{
+.vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-play-progress.vjs-slider-bar:after {
   width: 16px;
   height: 16px;
   top: -4px;
 }
-.vjs-touch-enabled.vjs-layout-x-small.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible){
+
+.vjs-touch-enabled.vjs-layout-x-small.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible) {
   transform: translateY(3.4em) !important;
   opacity: 1;
   width: 100%;
   margin: 0 !important;
 }
-.video-js.vjs-layout-x-small.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible){
+
+.video-js.vjs-layout-x-small.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible) {
   transform: translateY(6em) !important;
   opacity: 1 !important;
 }
-.vjs-touch-enabled.vjs-layout-x-small.video-js.video-js .vjs-button{
+
+.vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-button {
   width: 2em;
 }
+
 .vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-button>.vjs-icon-placeholder:before {
-    font-size: 1.4em !important;
-    line-height: 0.6em;
+  font-size: 1.4em !important;
+  line-height: 0.6em;
 }
+
 .vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-control-bar {
-    height: 1.6em;
+  height: 1.6em;
 }
-
-
-
 
 .vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-dock-title,
 .vjs-layout-x-small.video-js .vjs-dock-title {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 
-
 .vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-dock-description,
-.vjs-layout-x-small.video-js .vjs-dock-description  {
-    font-size: 0.8em;
+.vjs-layout-x-small.video-js .vjs-dock-description {
+  font-size: 0.8em;
 }
 
 .vjs-touch-enabled.vjs-layout-x-small .vjs-dock-text,
 .vjs-layout-x-small .vjs-dock-text {
-    padding: 0.8em 2em 0em 0.8em;
+  padding: 0.8em 2em 0em 0.8em;
 }
-
-
-
-
-
 
 /* Touch Layout Small */
-
 .vjs-layout-small .vjs-control.vjs-button.vjs-skip-back,
 .vjs-layout-small .vjs-control.vjs-button.vjs-skip-ahead {
-    display: none;
+  display: none;
 }
+
 .vjs-layout-small .vjs-current-time,
-.vjs-touch-enabled.vjs-layout-small .vjs-current-time{
-    display: initial !important;
+.vjs-touch-enabled.vjs-layout-small .vjs-current-time {
+  display: initial !important;
 }
+
 .vjs-layout-small.video-js .vjs-volume-panel,
-.vjs-touch-enabled.vjs-layout-small.video-js .vjs-volume-panel{
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-
+.vjs-touch-enabled.vjs-layout-small.video-js .vjs-volume-panel {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 
-
-
-.vjs-layout-small.video-js .vjs-control.vjs-button{
-    margin: 0;
-    width: 3.5em;
+.vjs-layout-small.video-js .vjs-control.vjs-button {
+  margin: 0;
+  width: 3.5em;
 }
 
-
-.vjs-touch-enabled.vjs-layout-small.video-js .vjs-current-time.vjs-time-control.vjs-control{
+.vjs-touch-enabled.vjs-layout-small.video-js .vjs-current-time.vjs-time-control.vjs-control {
   line-height: 3em !important;
   margin: 0;
 }
 
-
-
 .vjs-layout-small .vjs-button>.vjs-icon-placeholder:before,
-.vjs-layout-x-small .vjs-button>.vjs-icon-placeholder:before  {
-    font-size: 2.1em !important;
-    line-height: 2em !important;
-}
-
-
-.vjs-layout-small .vjs-subs-caps-button.vjs-button>.vjs-icon-placeholder:before{
+.vjs-layout-x-small .vjs-button>.vjs-icon-placeholder:before {
   font-size: 2.1em !important;
   line-height: 2em !important;
 }
 
-
-
-.vjs-touch-enabled.vjs-layout-small .vjs-button>.vjs-icon-placeholder:before{
-    font-size: 1.7em !important;
-    line-height: 1.8em !important;
+.vjs-layout-small .vjs-subs-caps-button.vjs-button>.vjs-icon-placeholder:before {
+  font-size: 2.1em !important;
+  line-height: 2em !important;
 }
 
+.vjs-touch-enabled.vjs-layout-small .vjs-button>.vjs-icon-placeholder:before {
+  font-size: 1.7em !important;
+  line-height: 1.8em !important;
+}
 
-.vjs-touch-enabled.vjs-layout-small .vjs-subs-caps-button.vjs-button>.vjs-icon-placeholder:before{
+.vjs-touch-enabled.vjs-layout-small .vjs-subs-caps-button.vjs-button>.vjs-icon-placeholder:before {
   font-size: 1.8em !important;
   line-height: 1.7em !important;
 }
 
-
-
-.vjs-touch-enabled.vjs-layout-x-small .vjs-button>.vjs-icon-placeholder:before
-{
-    font-size: 1.7em !important;
-    line-height: 0.75em !important;
+.vjs-touch-enabled.vjs-layout-x-small .vjs-button>.vjs-icon-placeholder:before {
+  font-size: 1.7em !important;
+  line-height: 0.75em !important;
 }
 
-
-
-
-
-.vjs-touch-enabled.vjs-layout-small.video-js .vjs-control-bar{
-    height: 3em !important;
+.vjs-touch-enabled.vjs-layout-small.video-js .vjs-control-bar {
+  height: 3em !important;
 }
 
-
-
-
+.vjs-layout-small.video-js .vjs-progress-control,
+.vjs-layout-small.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
 .vjs-layout-small.video-js .vjs-progress-control,
 .vjs-layout-small.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
 .vjs-layout-small.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-progress-control,
 .vjs-layout-small.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-progress-control,
 .vjs-layout-small.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control,
 .vjs-layout-small.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-progress-control,
-.vjs-layout-small.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control{
+.vjs-layout-small.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control {
   height: 0.8em !important;
   top: -0.5em;
 }
-
-
 
 .vjs-touch-enabled.vjs-layout-small.video-js .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-small.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
@@ -1326,56 +1047,54 @@ video.vjs-tech:focus{
 .vjs-touch-enabled.vjs-layout-small.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-small.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-small.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-small.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control{
+.vjs-touch-enabled.vjs-layout-small.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control {
   height: 0.5em !important;
   top: -0.4em;
 }
 
-
-.vjs-touch-enabled.vjs-layout-small.video-js .vjs-play-progress.vjs-slider-bar:after{
+.vjs-touch-enabled.vjs-layout-small.video-js .vjs-play-progress.vjs-slider-bar:after {
   width: 14px;
   height: 14px;
   top: -3px;
 }
 
-.vjs-touch-enabled.vjs-layout-small.video-js .vjs-control.vjs-button{
-    width: 2.8em;
+.vjs-touch-enabled.vjs-layout-small.video-js .vjs-control.vjs-button {
+  width: 2.8em;
 }
 
 .vjs-layout-x-small.video-js .vjs-big-play-button,
 .vjs-layout-small.video-js .vjs-big-play-button,
 .vjs-touch-enabled.vjs-layout-x-small.video-js .vjs-big-play-button,
-.vjs-touch-enabled.vjs-layout-small.video-js .vjs-big-play-button{
+.vjs-touch-enabled.vjs-layout-small.video-js .vjs-big-play-button {
   transform: scale(0.65);
 }
 
-
-.vjs-touch-enabled.vjs-layout-small.video-js:hover .vjs-big-play-button,.vjs-layout-small.video-js:hover .vjs-big-play-button,.vjs-touch-enabled.vjs-layout-x-small.video-js:hover .vjs-big-play-button,.vjs-layout-x-small.video-js:hover .vjs-big-play-button{
+.vjs-touch-enabled.vjs-layout-small.video-js:hover .vjs-big-play-button,
+.vjs-layout-small.video-js:hover .vjs-big-play-button,
+.vjs-touch-enabled.vjs-layout-x-small.video-js:hover .vjs-big-play-button,
+.vjs-layout-x-small.video-js:hover .vjs-big-play-button {
   transform: scale(0.75) !important;
 }
 
-.vjs-touch-enabled.vjs-layout-small.video-js .vjs-dock-title,.vjs-touch-enabled.vjs-layout-small.video-js .vjs-dock-description,.vjs-layout-small.video-js .vjs-dock-title,.vjs-layout-small.video-js .vjs-dock-description{
+.vjs-touch-enabled.vjs-layout-small.video-js .vjs-dock-title,
+.vjs-touch-enabled.vjs-layout-small.video-js .vjs-dock-description,
+.vjs-layout-small.video-js .vjs-dock-title,
+.vjs-layout-small.video-js .vjs-dock-description {
   font-size: 1em !important;
 }
 
-
-.vjs-touch-enabled.vjs-layout-small.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible){
+.vjs-touch-enabled.vjs-layout-small.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible) {
   transform: translateY(4em) !important;
   opacity: 1;
 }
 
 .vjs-touch-enabled.vjs-layout-small .vjs-dock-text,
 .vjs-layout-small .vjs-dock-text {
-    padding: 1em 10% 0em 1em;
+  padding: 1em 10% 0em 1em;
 }
 
-
-
-
-
 /* Touch Layout Medium */
-
-.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-control-bar{
+.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-control-bar {
   height: 3.5em;
 }
 
@@ -1385,11 +1104,10 @@ video.vjs-tech:focus{
 .vjs-touch-enabled.vjs-layout-medium.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-medium.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-medium.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-medium.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control{
+.vjs-touch-enabled.vjs-layout-medium.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control {
   height: 0.6em;
   top: -0.5em;
 }
-
 
 .vjs-touch-enabled.vjs-layout-medium.video-js .vjs-play-progress.vjs-slider-bar:after {
   width: 18px;
@@ -1402,124 +1120,102 @@ video.vjs-tech:focus{
   line-height: 3em !important;
 }
 
-
-
 .vjs-touch-enabled.vjs-layout-medium .vjs-dock-text,
 .vjs-layout-medium .vjs-dock-text {
-    padding: 1em 15% 0em 1em;
+  padding: 1em 15% 0em 1em;
 }
 
-
 .vjs-touch-enabled.vjs-layout-medium .vjs-skip-back,
-.vjs-touch-enabled.vjs-layout-medium .vjs-skip-ahead{
+.vjs-touch-enabled.vjs-layout-medium .vjs-skip-ahead {
   width: 2.8em !important;
 }
 
-.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-big-play-button,.vjs-layout-medium.video-js .vjs-big-play-button{
+.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-big-play-button,
+.vjs-layout-medium.video-js .vjs-big-play-button {
   transform: scale(1);
 }
 
-.vjs-touch-enabled.vjs-layout-medium.video-js:hover .vjs-big-play-button,.vjs-layout-medium.video-js:hover .vjs-big-play-button {
+.vjs-touch-enabled.vjs-layout-medium.video-js:hover .vjs-big-play-button,
+.vjs-layout-medium.video-js:hover .vjs-big-play-button {
   transform: scale(1.2) !important;
 }
 
-
-.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-dock-title,.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-dock-description,.vjs-layout-medium.video-js .vjs-dock-ttext,.vjs-layout-medium.video-js .vjs-dock-description{
+.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-dock-title,
+.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-dock-description,
+.vjs-layout-medium.video-js .vjs-dock-title,
+.vjs-layout-medium.video-js .vjs-dock-description {
   font-size: 1em;
 }
 
-
-.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-dock-title,.vjs-touch-enabled.vjs-layout-medium.video-js .vjs-dock-description,.vjs-layout-medium.video-js .vjs-dock-title,.vjs-layout-medium.video-js .vjs-dock-description{
-  font-size: 1em;
+.vjs-layout-medium .vjs-button>.vjs-icon-placeholder:before {
+  font-size: 2.3em !important;
+  line-height: 2em !important;
 }
 
-
-
-.vjs-layout-medium .vjs-button>.vjs-icon-placeholder:before{
-    font-size: 2.3em !important;
-    line-height: 2em!important;
-}
-
-
-.vjs-layout-medium .vjs-subs-caps-button.vjs-button>.vjs-icon-placeholder:before{
+.vjs-layout-medium .vjs-subs-caps-button.vjs-button>.vjs-icon-placeholder:before {
   font-size: 2.5em !important;
-  line-height: 1.9em!important;
+  line-height: 1.9em !important;
 }
 
-
-
-.vjs-touch-enabled.vjs-layout-medium .vjs-button>.vjs-icon-placeholder:before
-{
-    font-size: 1.8em !important;
-    line-height: 2em!important;
-}
-
-
-.vjs-touch-enabled.vjs-layout-medium .vjs-subs-caps-button.vjs-button>.vjs-icon-placeholder:before{
+.vjs-touch-enabled.vjs-layout-medium .vjs-button>.vjs-icon-placeholder:before {
   font-size: 1.8em !important;
-  line-height: 2em!important;
+  line-height: 2em !important;
 }
 
-
-.vjs-touch-enabled.vjs-layout-medium .vjs-control.vjs-button{
-    width: 2.8em;
+.vjs-touch-enabled.vjs-layout-medium .vjs-subs-caps-button.vjs-button>.vjs-icon-placeholder:before {
+  font-size: 1.8em !important;
+  line-height: 2em !important;
 }
 
+.vjs-touch-enabled.vjs-layout-medium .vjs-control.vjs-button {
+  width: 2.8em;
+}
 
-
-.vjs-layout-medium.video-js .video-js .vjs-volume-bar{
+.vjs-layout-medium.video-js .video-js .vjs-volume-bar {
   top: 16px;
 }
 
-
 .vjs-touch-enabled.vjs-layout-medium .vjs-playback-rate .vjs-playback-rate-value {
-    pointer-events: none;
-    text-align: center;
-    font-size: 1.3em;
-    line-height: 2.5em;
-    font-weight: 600;
+  pointer-events: none;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 2.5em;
+  font-weight: 600;
 }
 
-
-
-
-
-
-
-.vjs-layout-medium .vjs-playback-rate .vjs-playback-rate-value{
-    line-height: 2.8em;
+.vjs-layout-medium .vjs-playback-rate .vjs-playback-rate-value {
+  line-height: 2.8em;
 }
-
-
-
-
-
-
 
 /* Touch Layout Large */
-
-.vjs-touch-enabled.vjs-layout-large.video-js .vjs-play-progress.vjs-slider-bar:after{
+.vjs-touch-enabled.vjs-layout-large.video-js .vjs-play-progress.vjs-slider-bar:after {
   width: 30px;
   height: 30px;
   top: -8px;
 }
-.vjs-touch-enabled.vjs-layout-large.video-js .vjs-time-control{
+
+.vjs-touch-enabled.vjs-layout-large.video-js .vjs-time-control {
   font-size: 1.3em;
 }
 
-.vjs-touch-enabled.vjs-layout-large.video-js .vjs-progress-control, .vjs-touch-enabled.vjs-layout-large.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
+.vjs-touch-enabled.vjs-layout-large.video-js .vjs-progress-control,
+.vjs-touch-enabled.vjs-layout-large.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-large.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-large.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-large.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-large.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-large.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control{
+.vjs-touch-enabled.vjs-layout-large.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control {
   height: 1em;
   top: -1em;
 }
 
+.vjs-touch-enabled.vjs-layout-large.video-js .vjs-big-play-button,
+.vjs-layout-large.video-js .vjs-big-play-button {
+  transform: scale(1.3);
+}
 
 .vjs-touch-enabled.vjs-layout-large.video-js .vjs-big-play-button,
-.vjs-layout-large.video-js .vjs-big-play-button{
+.vjs-layout-large.video-js .vjs-big-play-button {
   transform: scale(1.3);
 }
 
@@ -1528,119 +1224,34 @@ video.vjs-tech:focus{
   transform: scale(1.6) !important;
 }
 
-
-
-
 /* Touch Layout XLarge */
-
-
-.vjs-touch-enabled.vjs-layout-x-large.video-js .vjs-play-progress.vjs-slider-bar:after{
+.vjs-touch-enabled.vjs-layout-x-large.video-js .vjs-play-progress.vjs-slider-bar:after {
   width: 30px;
   height: 30px;
   top: -8px;
 }
-.vjs-touch-enabled.vjs-layout-x-large.video-js .vjs-time-control{
+
+.vjs-touch-enabled.vjs-layout-x-large.video-js .vjs-time-control {
   font-size: 1.3em;
 }
 
-.vjs-touch-enabled.vjs-layout-x-large.video-js .vjs-progress-control, .vjs-touch-enabled.vjs-layout-x-large.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
+.vjs-touch-enabled.vjs-layout-x-large.video-js .vjs-progress-control,
+.vjs-touch-enabled.vjs-layout-x-large.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-x-large.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-x-large.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-x-large.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control,
 .vjs-touch-enabled.vjs-layout-x-large.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-x-large.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control{
+.vjs-touch-enabled.vjs-layout-x-large.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control {
   height: 1em;
   top: -1em;
 }
 
-
 .vjs-touch-enabled.vjs-layout-x-large.video-js .vjs-big-play-button,
-.vjs-layout-x-large.video-js .vjs-big-play-button{
+.vjs-layout-x-large.video-js .vjs-big-play-button {
   transform: scale(1.3);
 }
 
 .vjs-touch-enabled.vjs-layout-x-large.video-js:hover .vjs-big-play-button,
 .vjs-layout-x-large.video-js:hover .vjs-big-play-button {
   transform: scale(1.6) !important;
-}
-
-
-
-
-/* Touch Layout Huge */
-
-
-.vjs-touch-enabled.vjs-layout-huge.video-js .vjs-play-progress.vjs-slider-bar:after{
-  width: 25px;
-  height: 25px;
-  top: -5px;
-}
-.vjs-touch-enabled.vjs-layout-huge.video-js .vjs-time-control{
-  font-size: 1.3em;
-}
-
-.vjs-touch-enabled.vjs-layout-huge.video-js .vjs-progress-control, .vjs-touch-enabled.vjs-layout-huge.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-huge.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-huge.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-huge.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-huge.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-progress-control,
-.vjs-touch-enabled.vjs-layout-huge.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control{
-  height: 1em;
-  top: -1em;
-}
-
-
-.vjs-touch-enabled.vjs-layout-huge.video-js .vjs-big-play-button,
-.vjs-layout-huge.video-js .vjs-big-play-button{
-  transform: scale(1.3);
-}
-
-.vjs-touch-enabled.vjs-layout-huge.video-js:hover .vjs-big-play-button,
-.vjs-layout-huge.video-js:hover .vjs-big-play-button {
-  transform: scale(1.6) !important;
-}
-
-.video-js.vjs-playing.vjs-layout-huge.vjs-user-inactive .vjs-control-bar {
-    transform: translateY(6.65em)!important;
-}
-
-
-
-
-
-/* ==== LIVE ==== */
-
-.vjs-seek-to-live-control {
-    font-weight: 600;
-    font-size: 1.3em !important;
-}
-
-.vjs-layout-large .vjs-seek-to-live-control,
-.vjs-layout-x-large .vjs-seek-to-live-control {
-    font-size: 1.5em;
-}
-
-.vjs-liveui .vjs-mouse-display .vjs-time-tooltip{
-    background: rgba(22, 23, 37, 1) !important;
-}
-
-.vjs-live-display {
-    line-height: 3em;
-    font-size: 1.3em;
-    font-weight: 600;
-}
-
-
-
-
-/*==== Other ====*/
-
-
-.vjs-chromecast-receiver .vjs-chromecast-receiver-button {
-    padding: 0em 0.6em 0.6em 0.6em;
-}
-
-
-.vjs-share-control{
-  display: none !important;
 }
