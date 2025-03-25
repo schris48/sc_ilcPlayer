@@ -129,6 +129,7 @@ A lot of people do this because it's ugly, but this is normally left on in the B
 }
 
 /* Styles for skip back and skip forward buttons */
+
 .vjs-skip-back, .vjs-skip-ahead {
   display: inline-block;
   width: 30px;
@@ -145,4 +146,41 @@ A lot of people do this because it's ugly, but this is normally left on in the B
   font-family: tvo-custom;
   font-size: 20px; /* Adjust size as needed */
   color: #fff; /* Example icon color */
+}
+
+
+
+/*  Skip buttons */
+.vjs-skip-back, .vjs-skip-ahead{
+  opacity: 0.94;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  height: 100%;
+  text-align: center;
+  width: 3.4em !important;
+  margin-right: 0px;
+}
+
+.vjs-skip-back:hover, .vjs-skip-ahead:hover{
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+.vjs-skip-back .vjs-icon-placeholder:before, .vjs-skip-ahead .vjs-icon-placeholder:before{
+    font-family: 'VideoJS_tvo';
+    font-size: 2.6em;
+    line-height: 1.6em;
+}
+
+.vjs-skip-back .vjs-icon-placeholder:before {
+    content: "\f12A" !important;
+}
+
+.vjs-skip-ahead .vjs-icon-placeholder:before {
+    content: "\f129" !important;
 }
