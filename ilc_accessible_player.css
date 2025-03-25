@@ -190,3 +190,255 @@ A lot of people do this because it's ugly, but this is normally left on in the B
 .vjs-skip-ahead .vjs-icon-placeholder:before {
     content: "\f129" !important;
 }
+
+.bc-player-Z5VxR5vq0_default *,.bc-player-Z5VxR5vq0_default :after,.bc-player-Z5VxR5vq0_default :before {
+      /* display: inline-block; */
+      box-sizing: inherit;
+      font-size: inherit;
+      color: inherit;
+      line-height: inherit
+  }
+
+  .bc-player-Z5VxR5vq0_default {
+      width: 300px;
+      height: 150px;
+      font-size: 14px;
+      overflow: hidden
+  }
+
+  .bc-player-Z5VxR5vq0_default.vjs-fluid.vjs-16-9:not(.vjs-audio-only-mode),.bc-player-Z5VxR5vq0_default.vjs-fluid:not(.vjs-audio-only-mode) {
+      padding-top: 56.25%
+  }
+
+  .bc-player-Z5VxR5vq0_default.vjs-fluid.vjs-4-3:not(.vjs-audio-only-mode) {
+      padding-top: 75%
+  }
+
+  .bc-player-Z5VxR5vq0_default.vjs-fill:not(.vjs-audio-only-mode) {
+      width: 100%;
+      height: 100%
+  }
+
+  .bc-iframe,.bc-iframe body,.bc-player-Z5VxR5vq0_default,.bc-player-Z5VxR5vq0_default .vjs-poster {
+      background-color: #151B17
+  }
+
+  .bc-iframe,.bc-iframe .bc-player-Z5VxR5vq0_default,.bc-iframe body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden
+  }
+
+  .bc-player-Z5VxR5vq0_default.vjs-fullscreen,.bc-player-Z5VxR5vq0_default.vjs-fullscreen .vjs-tech {
+      width: 100%!important;
+      height: 100%!important
+  }
+
+  .bc-player-Z5VxR5vq0_default .vjs-track-setting select {
+      color: #000;
+      background-color: #fff
+  }
+
+  .bc-player-Z5VxR5vq0_default .vjs-audio-button .vjs-menu-item,.bc-player-Z5VxR5vq0_default .vjs-chapters-button .vjs-menu-item,.bc-player-Z5VxR5vq0_default .vjs-descriptions-button .vjs-menu-item,.bc-player-Z5VxR5vq0_default .vjs-subs-caps-button .vjs-menu-item {
+      text-transform: none
+  }
+
+  .bc-player-Z5VxR5vq0_default.vjs-waiting-for-autoplay .vjs-big-play-button {
+      opacity: 0
+  }
+
+  .bc-player-Z5VxR5vq0_default .vjs-progress-control .vjs-mouse-display {
+      z-index: 2
+  }
+
+  /*! @name @brightcove/player-core @version 0.31.4 @license UNLICENSED */
+  .vjs-modal-dialog.vjs-player-info-modal {
+      background: rgba(0,0,0,.9)
+  }
+
+  .vjs-modal-dialog.vjs-player-info-modal .vjs-modal-dialog-content {
+      overflow: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1em
+  }
+
+  @media screen and (max-width: 640px) {
+      .vjs-modal-dialog.vjs-player-info-modal .vjs-modal-dialog-content {
+          grid-template-columns:1fr
+      }
+  }
+
+  .vjs-modal-dialog.vjs-player-info-modal h2 {
+      font-size: 1.1667em;
+      margin: 0 0 .4286em
+  }
+
+  .vjs-modal-dialog.vjs-player-info-modal table {
+      border-bottom: 1px solid #333;
+      border-collapse: collapse;
+      border-top: 1px solid #333;
+      margin-bottom: 1.5em;
+      width: 100%
+  }
+
+  .vjs-modal-dialog.vjs-player-info-modal table.vjs-two td,.vjs-modal-dialog.vjs-player-info-modal table.vjs-two th {
+      width: 50%
+  }
+
+  .vjs-modal-dialog.vjs-player-info-modal table.vjs-three td,.vjs-modal-dialog.vjs-player-info-modal table.vjs-three th {
+      width: 33.333%
+  }
+
+  .vjs-modal-dialog.vjs-player-info-modal th {
+      font-weight: 400;
+      text-align: left
+  }
+
+  .vjs-modal-dialog.vjs-player-info-modal td {
+      border-bottom: 1px solid #333;
+      opacity: .5
+  }
+
+  .vjs-modal-dialog.vjs-player-info-modal tr:last-child td {
+      border-bottom: 0
+  }
+
+  .vjs-modal-dialog.vjs-player-info-modal tr:hover td {
+      opacity: 1
+  }
+
+  .vjs-error-display {
+      color: #fff;
+      display: none;
+      font-family: Helvetica,Arial,sans serif;
+      font-size: 16px;
+      line-height: 1.428
+  }
+
+  .vjs-error .vjs-error-display {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,.5)
+  }
+
+  .vjs-error .vjs-error-display .vjs-modal-dialog-content {
+      font-size: 14px
+  }
+
+  .vjs-errors-dialog {
+      text-align: left;
+      border: 1px #999 solid;
+      overflow: hidden;
+      position: absolute;
+      top: 2%;
+      bottom: 2%;
+      left: 5%;
+      right: 5%;
+      padding-left: 1%;
+      padding-right: 1%;
+      background: rgba(24,24,24,.8);
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000)"
+  }
+
+  .vjs-errors-details {
+      margin-top: 15px
+  }
+
+  .vjs-errors-message {
+      border: 1px #999 solid;
+      background-color: #2c2c2c;
+      overflow: auto;
+      margin-top: 15px;
+      padding: 15px
+  }
+
+  .vjs-errors-ok-button-container {
+      display: block;
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      text-align: center
+  }
+
+  .vjs-errors-ok-button {
+      display: block;
+      margin: 0 auto;
+      width: 80px;
+      height: 36px;
+      background-color: #000;
+      border: 1px #999 solid;
+      border-radius: 5px;
+      color: #999;
+      font-size: 14px;
+      cursor: pointer
+  }
+
+  .vjs-errors-ok-button:hover {
+      border: 1px #FFF solid;
+      color: #CCC
+  }
+
+  .vjs-errors-content-container {
+      overflow: auto;
+      position: absolute;
+      padding-bottom: 15px;
+      top: 0;
+      left: 15px;
+      right: 15px;
+      bottom: 61px
+  }
+
+  .vjs-errors-headline {
+      font-size: 14px;
+      font-weight: 700;
+      padding-right: 3em
+  }
+
+  .vjs-errors-dialog .vjs-control.vjs-close-button {
+      width: 3em;
+      height: 3em;
+      top: 0
+  }
+
+  .vjs-errors-flashmessage {
+      float: right;
+      font-size: 9px;
+      font-style: italic
+  }
+
+  .vjs-xs.vjs-error-display {
+      font-size: 14px;
+      background-color: #000
+  }
+
+  .vjs-xs.vjs-error-display .vjs-errors-details,.vjs-xs.vjs-error-display .vjs-errors-message {
+      display: none
+  }
+
+  .vjs-xs .vjs-errors-content-container {
+      top: 0
+  }
+
+  .vjs-xs .vjs-errors-headline {
+      font-size: 16px;
+      font-weight: 700
+  }
+
+  .vjs-xs .vjs-errors-dialog {
+      border: none;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0
+  }
+
+  .vjs-xs.vjs-errors-flashmessage {
+      display: none
+  }
