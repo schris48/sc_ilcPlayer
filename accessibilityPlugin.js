@@ -2,73 +2,73 @@ videojs.registerPlugin('accessibilityPlugin', function() {
   var player = this;
 
   // Localization strings
-var localization = {
-  en: {
-    play: 'Play',
-    pause: 'Pause',
-    mute: 'Mute',
-    unmute: 'Unmute',
-    volume: 'Volume',
-    fullscreen: 'Fullscreen',
-    exitFullscreen: 'Exit Fullscreen',
-    transcript: 'Display Transcript',
-    captions: 'Captions',
-    skipBack: 'Skip Back 15 Seconds',
-    skipForward: 'Skip Forward 15 Seconds'
-  },
-  fr: {
-    play: 'Lecture',
-    pause: 'Pause',
-    mute: 'Muet',
-    unmute: 'Réactiver le son',
-    volume: 'Volume',
-    fullscreen: 'Plein écran',
-    exitFullscreen: 'Quitter le plein écran',
-    transcript: 'Afficher le texte',
-    captions: 'Sous-titres',
-    skipBack: 'Reculer de 15 secondes',
-    skipForward: 'Avancer de 15 secondes'
-  },
-  es: {
-    play: 'Reproducir',
-    pause: 'Pausa',
-    mute: 'Silenciar',
-    unmute: 'Reactivar sonido',
-    volume: 'Volumen',
-    fullscreen: 'Pantalla completa',
-    exitFullscreen: 'Salir de pantalla completa',
-    transcript: 'Mostrar texto',
-    captions: 'Subtítulos',
-    skipBack: 'Retroceder 15 segundos',
-    skipForward: 'Avanzar 15 segundos'
-  },
-  de: {
-    play: 'Wiedergabe',
-    pause: 'Pause',
-    mute: 'Stummschalten',
-    unmute: 'Ton einschalten',
-    volume: 'Lautstärke',
-    fullscreen: 'Vollbild',
-    exitFullscreen: 'Vollbildmodus beenden',
-    transcript: 'Text anzeigen',
-    captions: 'Untertitel',
-    skipBack: '15 Sekunden zurückspringen',
-    skipForward: '15 Sekunden vorspulen'
-  },
-  ja: {
-    play: '再生',
-    pause: '一時停止',
-    mute: 'ミュート',
-    unmute: 'ミュート解除',
-    volume: '音量',
-    fullscreen: '全画面表示',
-    exitFullscreen: '全画面表示を終了',
-    transcript: '文字起こしを表示',
-    captions: '字幕',
-    skipBack: '15秒戻す',
-    skipForward: '15秒進む'
-  }
-};
+  var localization = {
+    en: {
+      play: 'Play',
+      pause: 'Pause',
+      mute: 'Mute',
+      unmute: 'Unmute',
+      volume: 'Volume',
+      fullscreen: 'Fullscreen',
+      exitFullscreen: 'Exit Fullscreen',
+      transcript: 'Display Transcript',
+      captions: 'Captions',
+      skipBack: 'Skip Back 15 Seconds',
+      skipForward: 'Skip Forward 15 Seconds'
+    },
+    fr: {
+      play: 'Jouer',
+      pause: 'Pause',
+      mute: 'Muet',
+      unmute: 'Annuler le muet',
+      volume: 'Volume',
+      fullscreen: 'Plein écran',
+      exitFullscreen: 'Quitter le plein écran',
+      transcript: 'Afficher la transcription',
+      captions: 'Sous-titres',
+      skipBack: 'Reculer de 15 secondes',
+      skipForward: 'Avancer de 15 secondes'
+    },
+    es: {
+      play: 'Reproducir',
+      pause: 'Pausa',
+      mute: 'Silenciar',
+      unmute: 'Quitar silencio',
+      volume: 'Volumen',
+      fullscreen: 'Pantalla completa',
+      exitFullscreen: 'Salir de pantalla completa',
+      transcript: 'Mostrar transcripción',
+      captions: 'Subtítulos',
+      skipBack: 'Retroceder 15 segundos',
+      skipForward: 'Avanzar 15 segundos'
+    },
+    de: {
+      play: 'Abspielen',
+      pause: 'Pause',
+      mute: 'Stummschalten',
+      unmute: 'Stummschaltung aufheben',
+      volume: 'Lautstärke',
+      fullscreen: 'Vollbild',
+      exitFullscreen: 'Vollbildmodus beenden',
+      transcript: 'Transkript anzeigen',
+      captions: 'Untertitel',
+      skipBack: '15 Sekunden zurückspringen',
+      skipForward: '15 Sekunden vorspulen'
+    },
+    ja: {
+      play: '再生',
+      pause: '一時停止',
+      mute: 'ミュート',
+      unmute: 'ミュート解除',
+      volume: '音量',
+      fullscreen: 'フルスクリーン',
+      exitFullscreen: 'フルスクリーン解除',
+      transcript: 'トランスクリプトを表示',
+      captions: 'キャプション',
+      skipBack: '15秒戻す',
+      skipForward: '15秒進む'
+    }
+  };
 
   // Function to set ARIA attributes and localization
   function setAccessibility(button, action, lang) {
