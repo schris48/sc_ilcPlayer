@@ -171,4 +171,96 @@ videojs.registerPlugin('accessibilityPlugin', function() {
       localizeButtonText();
     });
   });
+
+  // Remove the picture-in-picture button in the player which is enabled by default.
+  var pip_control = player.el().getElementsByClassName("vjs-picture-in-picture-control")[0];
+  if (typeof(pip_control) != 'undefined' && pip_control != null) {
+    pip_control.parentNode.removeChild(pip_control);
+  }
+
+  // Initialize player
+  player.on('loadstart', function() {
+    var numTracks = player.mediainfo.textTracks.length;
+
+    for (var i = 0; i < numTracks; i++) {
+      if (player.mediainfo.textTracks[i].kind == "metadata") {
+        var bcTxtButton = document.createElement('button');
+        bcTxtButton.className = 'vjs-transcript-control vjs-control vjs-button';
+        bcTxtButton.setAttribute('style', 'z-index:1');
+        bcTxtButton.setAttribute('type', 'button');
+        bcTxtButton.setAttribute('title', localization[player.language()].transcript);
+        bcTxtButton.setAttribute('aria-disabled', 'false');
+        var bcSpanPlaceholder = document.createElement('span');
+        bcSpanPlaceholder.setAttribute('aria-hidden', 'true');
+        bcSpanPlaceholder.className = 'vjs-icon-placeholder';
+        var bcSpanText = document.createElement('span');
+        bcSpanText.className = 'vjs-control-text';
+        bcSpanText.setAttribute('aria-live', 'polite');
+        var bcSpanTextText = document.createTextNode(localization[player.language()].transcript);
+        bcTxtButton.appendChild(bcSpanPlaceholder);
+        bcSpanText.appendChild(bcSpanTextText);
+        bcTxtButton.appendChild(bcSpanText);
+        $(player.controlBar.customControlSpacer.el()).html(bcTxtButton);
+
+        var bcTextContainer = document.createElement('div');
+        var bcTextContent = document.createElement('div');
+        var bcTextFooter = document.createElement('div');
+        var bcRtnButton = document.createElement('button');
+        var rtnBtnText = document.createTextNode(localization[player.language()].transcript);
+        bcTextContainer.style.display = "none";
+        bcTextContainer.setAttribute('aria-hidden', 'true');
+        bcTextContainer.className = 'bcTextContainer';
+        bcTextContent.className = 'bcTextContent';
+        bcTextContent.setAttribute('tabindex', '0');
+        bcTextFooter.className = 'bcTextFooter';
+        bcRtnButton.className = 'bcRtnButton';
+        bcRtnButton.setAttribute('title', localization[player.language()].transcript);
+        bcRtnButton.setAttribute('type', 'button');
+        bcRtnButton.appendChild(rtnBtnText);
+        bcTextContainer.appendChild(bcTextContent);
+        bcTextFooter.appendChild(bcRtnButton);
+        bcTextContainer.appendChild(bcTextFooter);
+        $(bcTextContainer).insertAfter(player.el());
+
+        // Load the text track into the text box
+        var url = player.mediainfo.textTracks[i].src;
+        $.get(url, function(data, status) {
+          var newdata = data.slice(data.indexOf("-->") + 16);
+          bcTextContent.innerHTML = newdata;
+        });
+
+        // Hide transcript button if the video is full screen
+        player.on('fullscreenchange', function(evt) {
+          if (player.isFullscreen()) {
+            bcTxtButton.style.visibility = "hidden";
+            bcTxtButton.setAttribute('aria-hidden', 'true');
+          } else if (!player.isFullscreen()) {
+            bcTxtButton.style.visibility = "visible";
+            bcTxtButton.setAttribute('aria-hidden', 'false');
+          }
+        });
+
+        // Display transcript if transcript button clicked
+        $(bcTxtButton).click(function() {
+          player.pause();
+          player.el().style.display = "none";
+          player.el().setAttribute('aria-hidden', 'true');
+          bcTextContainer.style.display = "block";
+          bcTextContainer.setAttribute('aria-hidden', 'false');
+          bcTextContent.focus();
+        });
+
+        // Hide transcript if hide transcript button clicked
+        $(bcRtnButton).click(function() {
+          bcTextContainer.style.display = "none";
+          bcTextContainer.setAttribute('aria-hidden', 'true');
+          player.el().style.display = "block";
+          player.el().setAttribute('aria-hidden', 'false');
+          bcTxtButton.focus();
+        });
+
+        break; // Do not continue looping if at least 1 metadata track was found
+      }
+    }
+  });
 });
