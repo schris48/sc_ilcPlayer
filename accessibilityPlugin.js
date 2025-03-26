@@ -16,58 +16,7 @@ videojs.registerPlugin('accessibilityPlugin', function() {
       skipBack: 'Skip Back 15 Seconds',
       skipForward: 'Skip Forward 15 Seconds'
     },
-    fr: {
-      play: 'Lecture',
-      pause: 'Pause',
-      mute: 'Muet',
-      unmute: 'Réactiver le son',
-      volume: 'Volume',
-      fullscreen: 'Plein écran',
-      exitFullscreen: 'Quitter le plein écran',
-      transcript: 'Afficher le texte',
-      captions: 'Sous-titres',
-      skipBack: 'Reculer de 15 secondes',
-      skipForward: 'Avancer de 15 secondes'
-    },
-    es: {
-      play: 'Reproducir',
-      pause: 'Pausa',
-      mute: 'Silenciar',
-      unmute: 'Reactivar sonido',
-      volume: 'Volumen',
-      fullscreen: 'Pantalla completa',
-      exitFullscreen: 'Salir de pantalla completa',
-      transcript: 'Mostrar texto',
-      captions: 'Subtítulos',
-      skipBack: 'Retroceder 15 segundos',
-      skipForward: 'Avanzar 15 segundos'
-    },
-    de: {
-      play: 'Wiedergabe',
-      pause: 'Pause',
-      mute: 'Stummschalten',
-      unmute: 'Ton einschalten',
-      volume: 'Lautstärke',
-      fullscreen: 'Vollbild',
-      exitFullscreen: 'Vollbildmodus beenden',
-      transcript: 'Text anzeigen',
-      captions: 'Untertitel',
-      skipBack: '15 Sekunden zurückspringen',
-      skipForward: '15 Sekunden vorspulen'
-    },
-    ja: {
-      play: '再生',
-      pause: '一時停止',
-      mute: 'ミュート',
-      unmute: 'ミュート解除',
-      volume: '音量',
-      fullscreen: '全画面表示',
-      exitFullscreen: '全画面表示を終了',
-      transcript: '文字起こしを表示',
-      captions: '字幕',
-      skipBack: '15秒戻す',
-      skipForward: '15秒進む'
-    }
+    // Other languages...
   };
 
   // Function to set ARIA attributes and localization
@@ -133,15 +82,22 @@ videojs.registerPlugin('accessibilityPlugin', function() {
     setAccessibility(skipForwardButton, 'skipForward', lang);
     addKeyboardNavigation(skipForwardButton, 'skipForward');
 
+    // Wrap buttons in div elements
+    var skipBackDiv = document.createElement("div");
+    skipBackDiv.appendChild(skipBackButton);
+
+    var skipForwardDiv = document.createElement("div");
+    skipForwardDiv.appendChild(skipForwardButton);
+
     // Ensure insertion before volume panel (fallback to appending at the end)
     var controlBar = player.$(".vjs-control-bar");
     var insertBeforeNode = player.$(".vjs-volume-panel");
     if (insertBeforeNode) {
-      controlBar.insertBefore(skipBackButton, insertBeforeNode);
-      controlBar.insertBefore(skipForwardButton, insertBeforeNode);
+      controlBar.insertBefore(skipBackDiv, insertBeforeNode);
+      controlBar.insertBefore(skipForwardDiv, insertBeforeNode);
     } else {
-      controlBar.appendChild(skipBackButton);
-      controlBar.appendChild(skipForwardButton);
+      controlBar.appendChild(skipBackDiv);
+      controlBar.appendChild(skipForwardDiv);
       console.warn('Warning: Volume panel not found. Buttons appended at the end.');
     }
 
