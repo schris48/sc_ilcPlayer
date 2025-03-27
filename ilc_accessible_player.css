@@ -41,11 +41,1122 @@
   content: "\e000";
 }
 
+.bc-player-dykQDka9h_default {
+
+  /* Use the media dimensions specified in the configuration as a (low-
+   * priority) default
+   */
+
+  /* Some more defaults */
+  font-size: 14px;
+  overflow: hidden;
+}
+
+/*
+  Because we use VIDEOJS_NO_DYNAMIC_STYLE, we have to replicate the sizing
+  classes from Video.js and provide a default size for fluid players.
+ */
+.bc-player-dykQDka9h_default.vjs-fluid:not(.vjs-audio-only-mode),
+.bc-player-dykQDka9h_default.vjs-fluid.vjs-16-9:not(.vjs-audio-only-mode) {
+  padding-top: 56.25%;
+}
+
+.bc-player-dykQDka9h_default.vjs-fluid.vjs-4-3:not(.vjs-audio-only-mode) {
+  padding-top: 75%;
+}
+
+.bc-player-dykQDka9h_default.vjs-fill:not(.vjs-audio-only-mode) {
+  width: 100%;
+  height: 100%;
+}
+
+/* Iframe background color */
+.bc-iframe,
+.bc-iframe body,
+.bc-player-dykQDka9h_default,
+.bc-player-dykQDka9h_default .vjs-poster {
+  background-color: #151B17;
+}
+
+/* Iframe player sizing */
+.bc-iframe,
+.bc-iframe body,
+.bc-iframe .bc-player-dykQDka9h_default {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Fullscreen sizing */
+.bc-player-dykQDka9h_default.vjs-fullscreen,
+.bc-player-dykQDka9h_default.vjs-fullscreen .vjs-tech {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Style for caption settings selector */
+.bc-player-dykQDka9h_default .vjs-track-setting select {
+  color: black;
+  background-color: white;
+}
+
+/* Reverting the text-transform for BC Player to initial input */
+.bc-player-dykQDka9h_default .vjs-chapters-button .vjs-menu-item,
+.bc-player-dykQDka9h_default .vjs-descriptions-button .vjs-menu-item,
+.bc-player-dykQDka9h_default .vjs-subs-caps-button .vjs-menu-item,
+.bc-player-dykQDka9h_default .vjs-audio-button .vjs-menu-item {
+  text-transform: none;
+}
+
+/* Hide BPB while waiting for autoplay */
+.bc-player-dykQDka9h_default.vjs-waiting-for-autoplay .vjs-big-play-button {
+  opacity: 0;
+}
+
+/* Put the mouse time tooltip over the progress control tooltip */
+.bc-player-dykQDka9h_default .vjs-progress-control .vjs-mouse-display {
+  z-index: 2;
+}
+
+  /*! @name @brightcove/player-core @version 0.31.4 @license UNLICENSED */
+.vjs-modal-dialog.vjs-player-info-modal{background:rgba(0,0,0,.9)}.vjs-modal-dialog.vjs-player-info-modal .vjs-modal-dialog-content{overflow:auto;display:grid;grid-template-columns:1fr 1fr;grid-gap:1em}@media screen and (max-width:640px){.vjs-modal-dialog.vjs-player-info-modal .vjs-modal-dialog-content{grid-template-columns:1fr}}.vjs-modal-dialog.vjs-player-info-modal h2{font-size:1.1667em;margin:0 0 .4286em}.vjs-modal-dialog.vjs-player-info-modal table{border-bottom:1px solid #333;border-collapse:collapse;border-top:1px solid #333;margin-bottom:1.5em;width:100%}.vjs-modal-dialog.vjs-player-info-modal table.vjs-two td,.vjs-modal-dialog.vjs-player-info-modal table.vjs-two th{width:50%}.vjs-modal-dialog.vjs-player-info-modal table.vjs-three td,.vjs-modal-dialog.vjs-player-info-modal table.vjs-three th{width:33.333%}.vjs-modal-dialog.vjs-player-info-modal th{font-weight:400;text-align:left}.vjs-modal-dialog.vjs-player-info-modal td{border-bottom:1px solid #333;opacity:.5}.vjs-modal-dialog.vjs-player-info-modal tr:last-child td{border-bottom:0}.vjs-modal-dialog.vjs-player-info-modal tr:hover td{opacity:1}
+
+/* Playlist-specific styles */
+
+
+  .vjs-error-display{color:#fff;display:none;font-family:Helvetica, Arial, sans serif;font-size:16px;line-height:1.428}.vjs-error .vjs-error-display{display:block;position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5)}.vjs-error .vjs-error-display .vjs-modal-dialog-content{font-size:14px}.vjs-errors-dialog{text-align:left;border:1px #999 solid;overflow:hidden;position:absolute;top:2%;bottom:2%;left:5%;right:5%;padding-left:1%;padding-right:1%;background:rgba(24,24,24,0.8);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000)"}.vjs-errors-details{margin-top:15px}.vjs-errors-message{border:1px #999 solid;background-color:#2c2c2c;overflow:auto;margin-top:15px;padding:15px}.vjs-errors-ok-button-container{display:block;position:absolute;bottom:15px;left:15px;right:15px;text-align:center}.vjs-errors-ok-button{display:block;margin:0 auto;width:80px;height:36px;background-color:#000;border:1px #999 solid;border-radius:5px;color:#999;font-size:14px;cursor:pointer}.vjs-errors-ok-button:hover{border:1px #FFF solid;color:#CCC}.vjs-errors-content-container{overflow:auto;position:absolute;padding-bottom:15px;top:0;left:15px;right:15px;bottom:61px}.vjs-errors-headline{font-size:14px;font-weight:bold;padding-right:3em}.vjs-errors-dialog .vjs-control.vjs-close-button{width:3em;height:3em;top:0}.vjs-errors-flashmessage{float:right;font-size:9px;font-style:italic}.vjs-xs.vjs-error-display{font-size:14px;background-color:#000}.vjs-xs.vjs-error-display .vjs-errors-details,.vjs-xs.vjs-error-display .vjs-errors-message{display:none}.vjs-xs .vjs-errors-content-container{top:0}.vjs-xs .vjs-errors-headline{font-size:16px;font-weight:bold}.vjs-xs .vjs-errors-dialog{border:none;top:0;bottom:0;left:0;right:0}.vjs-xs.vjs-errors-flashmessage{display:none}@media (max-width: 600px), (max-height: 250px){.vjs-error-display{font-size:14px;background-color:#000}.vjs-error-display .vjs-errors-details,.vjs-error-display .vjs-errors-message{display:none}.vjs-error-display .vjs-errors-content-container{top:15px}.vjs-error-display .vjs-errors-headline{font-size:16px;font-weight:bold}.vjs-error-display .vjs-errors-dialog{border:none;top:0;bottom:0;left:0;right:0}.vjs-errors-flashmessage{display:none}}
+
+
+  .vjs-errors-ref-id {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75em;
+    margin: 0.5em 0 0;
+  }
+
+
+  /*! @name videojs-contextmenu-ui @version 5.2.0 @license Apache-2.0 */
+.vjs-contextmenu-ui-menu{position:absolute}.vjs-contextmenu-ui-menu .vjs-menu-content{background-color:#2b333f;background-color:rgba(43,51,63,.7);border-radius:.3em;padding:.25em}.vjs-contextmenu-ui-menu .vjs-menu-item{border-radius:.3em;cursor:pointer;margin:0 0 1px;padding:.5em 1em;font-size:1em;line-height:1.2;text-transform:none}.vjs-contextmenu-ui-menu .vjs-menu-item:active,.vjs-contextmenu-ui-menu .vjs-menu-item:hover{background-color:rgba(0,0,0,.5);text-shadow:0 0 1em #fff}
+
+
+    
+/* Control bar color */
+.bc-player-dykQDka9h_default .vjs-control-bar {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+/* Controls should inherit color from control bar */
+.bc-player-dykQDka9h_default .vjs-control {
+  color: inherit;
+}
+
+/* Makes the time tooltips not have rounded corners */
+.bc-player-dykQDka9h_default .vjs-mouse-display:after,
+.bc-player-dykQDka9h_default .vjs-play-progress:after {
+  border-radius: 0;
+}
+
+/* Makes the width of the volume control correct when hovering over the volume button */
+.bc-player-dykQDka9h_default.vjs-no-flex .vjs-menu-button-inline,
+.bc-player-dykQDka9h_default .vjs-menu-button-inline:hover {
+  width: 8.35em;
+}
+
+/* Focus on controls makes them glow */
+.bc-player-dykQDka9h_default .vjs-control:focus:before,
+.bc-player-dykQDka9h_default .vjs-control:hover:before {
+  text-shadow: 0em 0em 1em white, 0em 0em 1em white, 0em 0em 1em white;
+}
+
+/* Used to add empty space to the control bar between controls */
+.bc-player-dykQDka9h_default .vjs-spacer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+/* Layout for time controls (current time, slash, duration, etc.) */
+.bc-player-dykQDka9h_default .vjs-time-control {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 0 1 auto;
+  -moz-box-flex: 0 1 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: auto;
+}
+
+/* The slash between current time and duration */
+.bc-player-dykQDka9h_default .vjs-time-control.vjs-time-divider {
+  width: 14px;
+}
+.bc-player-dykQDka9h_default .vjs-time-control.vjs-time-divider div {
+  width: 100%;
+  text-align: center;
+}
+
+/* Current time */
+.bc-player-dykQDka9h_default .vjs-time-control.vjs-current-time {
+  margin-left: 1em;
+}
+
+/* Current time and duration */
+.bc-player-dykQDka9h_default .vjs-time-control .vjs-current-time-display,
+.bc-player-dykQDka9h_default .vjs-time-control .vjs-duration-display {
+  width: 100%;
+}
+
+/* Current time display (inside the current time control) */
+.bc-player-dykQDka9h_default .vjs-time-control .vjs-current-time-display {
+  text-align: right;
+}
+
+/* Duration display (inside the duration control) */
+.bc-player-dykQDka9h_default .vjs-time-control .vjs-duration-display {
+  text-align: left;
+}
+
+/* We don't display the remaining time control to users but it's available and used by default in videojs. First rule makes it unavailable, second removes the default usage.*/
+.bc-player-dykQDka9h_default .vjs-remaining-time {
+  display: none;
+}
+.bc-player-dykQDka9h_default.vjs-no-flex .vjs-time-control.vjs-remaining-time {
+  display: none;
+}
+
+/* Without flexbox, lay out time controls as table cells */
+.bc-player-dykQDka9h_default.vjs-no-flex .vjs-time-control {
+  display: table-cell;
+  width: 4em;
+}
+
+/* Custom progress bar/volume control color. Can be overridden in config. */
+.bc-player-dykQDka9h_default .vjs-play-progress,
+.bc-player-dykQDka9h_default .vjs-volume-level {
+  background-color: #08088c;
+}
+
+/* When an ad is playing, the progress bar/volume control change color */
+.bc-player-dykQDka9h_default.vjs-ad-playing .vjs-play-progress,
+.bc-player-dykQDka9h_default.vjs-ad-playing .vjs-volume-level {
+  background-color: #ffe400;
+}
+
+/* This hides the seekhead of the play progress and the level of the volume level. The little circle on the progress bar and volume slider in video.js. */
+.bc-player-dykQDka9h_default .vjs-play-progress:before,
+.bc-player-dykQDka9h_default .vjs-volume-level:before {
+  display: none;
+}
+.bc-player-dykQDka9h_default .vjs-volume-level:after {
+  display: none;
+}
+
+/* Layout for progress control, which contains the progress bar elements */
+.bc-player-dykQDka9h_default .vjs-progress-control {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1.5em;
+  top: -1.5em;
+}
+
+/* Progress bar elements */
+.bc-player-dykQDka9h_default .vjs-progress-control .vjs-play-progress,
+.bc-player-dykQDka9h_default .vjs-progress-control .vjs-load-progress,
+.bc-player-dykQDka9h_default .vjs-progress-control .vjs-progress-holder {
+  height: 100%;
+}
+
+/* Progress holder is inside vjs-progress-control and contains everything else */
+.bc-player-dykQDka9h_default .vjs-progress-control .vjs-progress-holder {
+  margin: 0;
+}
+
+/* Progress control gets bigger when you hover over it */
+.bc-player-dykQDka9h_default .vjs-progress-control:hover {
+  height: 1.5em;
+  top: -1.5em;
+}
+
+/* Animate it when user becomes active and control bar shows up */
+.bc-player-dykQDka9h_default .vjs-control-bar:not(.vjs-focus-within) {
+  -webkit-transition: -webkit-transform 0.1s ease 0s;
+  -moz-transition: -moz-transform 0.1s ease 0s;
+  -ms-transition: -ms-transform 0.1s ease 0s;
+  -o-transition: -o-transform 0.1s ease 0s;
+  transition: transform 0.1s ease 0s;
+}
+
+/* Animate it when user becomes inactive and control bar hides */
+
+/* Controls should be hidden on desktop if: cursor is outside of the player, content playback is paused, and user is active but not when user tabs in to control bar or when menu is open */
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+
+/* Controls should be hidden on desktop if: cursor is outside of the player, content is currently playing, and user is active but not when user tabs in to control bar or when menu is open*/
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+
+/* Controls should be hidden on desktop if: cursor is outside of the player, content playback is paused, and user is inactive but not when user tabs in to control bar or when menu is open */
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+
+/* Controls should be hidden on desktop if: cursor is outside of the player, content is currently playing, and user is inactive but not when user tabs in to control bar or when menu is open */
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+
+/* Controls should be hidden on desktop if: cursor is hovering over the player, content is currently playing, and user is inactive but not when user tabs in to control bar or when menu is open
+ * They should also be hidden on mobile if: content is currently playing and user is inactive
+ */
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+
+/* Edge case: since vjs-paused remains on the player during ad playback when content tech isn't reused for ads,
+ * selecting vjs-paused and vjs-ad-playing here ensures that ad controls will still hide on mobile when the user becomes inactive
+ */
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar {
+  visibility: visible;
+  opacity: 1;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateY(3em);
+  -moz-transform: translateY(3em);
+  -ms-transform: translateY(3em);
+  -o-transform: translateY(3em);
+  transform: translateY(3em);
+  -webkit-transition: -webkit-transform 1s ease 0s;
+  -moz-transition: -moz-transform 1s ease 0s;
+  -ms-transition: -ms-transform 1s ease 0s;
+  -o-transition: -o-transform 1s ease 0s;
+  transition: transform 1s ease 0s;
+}
+
+/* Control bar becomes so tiny when user is inactive */
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control {
+  height: 0.3em;
+  top: -0.3em;
+  pointer-events: none;
+  -webkit-transition: height 1s, top 1s;
+  -moz-transition: height 1s, top 1s;
+  -ms-transition: height 1s, top 1s;
+  -o-transition: height 1s, top 1s;
+  transition: height 1s, top 1s;
+}
+
+/* In fullscreen, progress bar is not shown at all unless user is active */
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active.vjs-fullscreen .vjs-progress-control,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active.vjs-fullscreen .vjs-progress-control,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+/* This hides focused vertical volume control and other menus
+   when a user is inactive and control bar is minimised */
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-volume-vertical,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-volume-vertical,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-volume-vertical,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-volume-vertical,
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-volume-vertical,
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-volume-vertical,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-menu,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-menu,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-menu,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-menu,
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-menu,
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-menu
+{
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+/* when navigating with keyboard ensure that menus are visible */
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar-visible .vjs-menu,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar-visible .vjs-menu,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
+.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
+.bc-player-dykQDka9h_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu-item{
+  opacity: 1;
+}
+
+
+/* Position the live control */
+.bc-player-dykQDka9h_default.vjs-live .vjs-live-control {
+  margin-left: 1em;
+}
+
+/* Don't show current time / duration for live video */
+.bc-player-dykQDka9h_default.vjs-live .vjs-time-control.vjs-current-time,
+.bc-player-dykQDka9h_default.vjs-live .vjs-time-control.vjs-time-divider,
+.bc-player-dykQDka9h_default.vjs-live .vjs-time-control.vjs-duration {
+  display: none;
+}
+
+/* The Big Play Button */
+.bc-player-dykQDka9h_default .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  margin-left: -1em;
+  margin-top: -1em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border: none;
+  border-radius: 50%;
+  font-size: 3.5em;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  -webkit-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  -moz-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  -ms-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  -o-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+}
+
+/* Hover / active / focus color for Big Play Button */
+.bc-player-dykQDka9h_default:hover .vjs-big-play-button,
+.bc-player-dykQDka9h_default:active .vjs-big-play-button,
+.bc-player-dykQDka9h_default .vjs-big-play-button:active,
+.bc-player-dykQDka9h_default .vjs-big-play-button:focus {
+  background-color: #08088c;
+}
+
+/* Position for menus such as volume slider and chapter list */
+.bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu {
+  left: -3em;
+}
+
+/* Style for menus such as volume slider and chapter list */
+.bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+  background-color: transparent;
+  width: 12em;
+  left: -1.5em;
+  padding-bottom: 0.5em;
+}
+
+/* Style for menu items, such as chapters */
+.bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu .vjs-menu-title,
+.bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item {
+  background-color: #151B17;
+  margin: 0.3em 0;
+  padding: 0.5em;
+  border-radius: 0.3em;
+}
+
+/* Style for selected menu items */
+.bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item.vjs-selected {
+  background-color: #08088c;
+  color: #fff;
+}
+
+/* Active / focused menu items will glow */
+.bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:active,
+.bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus,
+.bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover {
+  text-shadow: 0em 0em 1em white, 0em 0em 1em white, 0em 0em 1em white;
+  color: white;
+}
+
+/* What does this do? */
+.bc-player-dykQDka9h_default.vjs-ad-playing .vjs-mouse-display,
+.bc-player-dykQDka9h_default.vjs-ad-playing .vjs-mouse-display:after {
+  display: none;
+}
+
+/* Prevent clickthrough when clicking progress bar during ads */
+.bc-player-dykQDka9h_default.vjs-ad-playing.vjs-ad-playing .vjs-progress-control:after {
+  pointer-events: auto;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: " ";
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+/* disable the new PiP button when ads are playing */
+.bc-player-dykQDka9h_default.vjs-ad-playing .vjs-picture-in-picture-control {
+  display: none;
+}
+
+/* No flexbox, so layout spacer as table cell */
+.bc-player-dykQDka9h_default.vjs-no-flex .vjs-spacer {
+  display: table-cell;
+}
+
+/* No flexbox, so layout time control as table cell */
+.bc-player-dykQDka9h_default.vjs-no-flex .vjs-time-control {
+  display: table-cell;
+  width: 4em;
+}
+
+/* No flexbox, so layout time control as table cell */
+.bc-player-dykQDka9h_default.vjs-no-flex .vjs-remaining-time {
+  display: none;
+}
+
+/* On mouse-controlled platforms, use smaller font size text */
+.vjs-mouse.bc-player-dykQDka9h_default .vjs-control-bar {
+  font-size: 10px;
+}
+
+/* On mouse-controlled platforms, use smaller progress bar */
+.vjs-mouse.bc-player-dykQDka9h_default .vjs-progress-control {
+  height: 0.5em;
+  top: -0.5em;
+}
+.vjs-mouse.bc-player-dykQDka9h_default .vjs-progress-control:hover {
+  height: 1.5em;
+  top: -1.5em;
+}
+
+/* I think this is a small reset for stuff like the caption settings menu when the player is used inside of CSS frameworks like Foundation that set select element widths to 100% by default. */
+.bc-player-dykQDka9h_default select {
+  width: inherit;
+}
+
+/* Show the progress control for responsive player sizes where it is hidden! */
+.bc-player-dykQDka9h_default.video-js:not(.vjs-fullscreen).vjs-layout-x-small.vjs-liveui .vjs-progress-control,
+.bc-player-dykQDka9h_default.video-js:not(.vjs-fullscreen).vjs-layout-tiny .vjs-progress-control {
+  display: block;
+}
+
+      /* Classes for Big Play Button customization */
+
+/* Hover: Glow */
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-hover-glow:hover .vjs-big-play-button,
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-hover-glow:active .vjs-big-play-button,
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-hover-glow .vjs-big-play-button:active,
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-hover-glow .vjs-big-play-button:focus {
+  box-shadow: 0 0 15px 3px white;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* Hover: Darken */
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-hover-darken:hover .vjs-big-play-button,
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-hover-darken:active .vjs-big-play-button,
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-hover-darken .vjs-big-play-button:active,
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-hover-darken .vjs-big-play-button:focus {
+  background-color: rgba(0, 0, 0, 0.85);;
+}
+
+/* Shape: Square */
+.bc-player-dykQDka9h_default.vjs-play-button-shape-square .vjs-big-play-button {
+  border-radius: 11px;
+  height: 2em;
+  width: 2em;
+  margin-left: -1em;
+  margin-top: -1em;
+}
+
+/* Shape: Rectangle */
+.bc-player-dykQDka9h_default.vjs-play-button-shape-rectangle .vjs-big-play-button {
+  border-radius: 21px;
+  height: 2em;
+  width: 3em;
+  margin-left: -1.5em;
+  margin-top: -1em;
+}
+
+/* Position: Top Left */
+.bc-player-dykQDka9h_default.vjs-play-button-position-top-left .vjs-big-play-button {
+  margin: 0;
+  left: 17px;
+  top: 17px;
+}
+
+/* Position: Top Right */
+.bc-player-dykQDka9h_default.vjs-play-button-position-top-right .vjs-big-play-button {
+  margin: 0;
+  right: 17px;
+  left: auto;
+  top: 17px;
+}
+
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-position-top-right .vjs-dock-text,
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-position-top-right .vjs-dock-shelf,
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-position-top-left .vjs-dock-text,
+.bc-player-dykQDka9h_default.video-js.vjs-play-button-position-top-left .vjs-dock-shelf {
+  display: none;
+}
+
+  
+  .bc-player-dykQDka9h_default .vjs-control-bar,
+  .bc-player-dykQDka9h_default .vjs-big-play-button,
+  .bc-player-dykQDka9h_default .vjs-big-play-state.vjs-play-control.vjs-control {
+    background-color: rgb(22, 23, 37);
+  }
+
+  .bc-player-dykQDka9h_default .vjs-control-bar,
+  .bc-player-dykQDka9h_default .vjs-big-play-button,
+  .bc-player-dykQDka9h_default .vjs-big-play-state {
+    color: white;
+  }
+
+  .bc-player-dykQDka9h_default .vjs-play-progress,
+  .bc-player-dykQDka9h_default .vjs-volume-level,
+  .bc-player-dykQDka9h_default:hover .vjs-big-play-button,
+  .bc-player-dykQDka9h_default:active .vjs-big-play-button,
+  .bc-player-dykQDka9h_default .vjs-big-play-button:active,
+  .bc-player-dykQDka9h_default .vjs-big-play-button:focus,
+  .bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item.vjs-selected,
+  .bc-iframe .vjs-playlist-sidebar .vjs-playlist-show-hide button:hover {
+    background-color: rgb(231, 19, 26);
+  }
+
+
+
+/* Do not collapse control bar after first play regardless of user activity and focus when audio-mode is turned on */
+.bc-player-dykQDka9h_default.vjs-audio-mode.vjs-has-started.vjs-focus-within.video-js.video-js.video-js .vjs-control-bar,
+.bc-player-dykQDka9h_default.vjs-audio-mode.vjs-has-started.vjs-user-inactive.video-js.video-js.video-js .vjs-control-bar,
+.bc-player-dykQDka9h_default.vjs-audio-mode.vjs-has-started.vjs-user-active.video-js.video-js.video-js .vjs-control-bar:not(.vjs-focus-within){
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* Hide poster element when in audio only mode. */
+.bc-player-dykQDka9h_default.vjs-audio-only-mode .vjs-poster {
+  display: none;
+}
+
+.bc-player-dykQDka9h_default.vjs-audio-only-mode .vjs-progress-control {
+  height: 1.5em;
+  top: -1.5em;
+}
+
+
+
+
+.vjs-bumper-video  .vjs-play-progress.vjs-play-progress-resetting {
+  transition: width 0s linear;
+}
+
+.vjs-bumper-video  .vjs-dock-text {
+  display: none;
+}
+
+
+    /*! @name @brightcove/videojs-bc-airplay @version 1.1.0 @license UNLICENSED */
+.video-js.vjs-bc-airplay{display:block}.video-js.vjs-bc-airplay .remove-me,.video-js.vjs-bc-airplay .remove-me-too,.video-js.vjs-bc-airplay.finally-remove-me{color:red;font-size:504px}.vjs-button.vjs-airplay-button{cursor:pointer;flex:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' width='30' height='20' viewBox='0 0 48 48'%3E%3Cpath d='M42 6H6c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h8v-4H6V10h36v24h-8v4h8c2.2 0 4-1.8 4-4V10c0-2.2-1.8-4-4-4zM12 44h24L24 32z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}.vjs-button.vjs-airplay-button.airplay-on{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(76,139,245)' width='30' height='20' viewBox='0 0 48 48'%3E%3Cpath d='M42 6H6c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h8v-4H6V10h36v24h-8v4h8c2.2 0 4-1.8 4-4V10c0-2.2-1.8-4-4-4zM12 44h24L24 32z'/%3E%3C/svg%3E")}
+
+/*==== Icons ====*/
+
+
+@font-face {
+  font-family: 'VideoJS_tvo';
+ src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot');
+  src: url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.eot?#iefix') format('embedded-opentype'),
+       url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.woff') format('woff'),
+       url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.ttf') format('truetype'),
+       url('https://players.brightcove.net/18140038001/tvo-web-player/font/videojs_tvo.svg#VideoJS_tvo') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+/*==== Main ====*/
+
+
+
+
+/* Poster Image */
+
+.vjs-poster:before {
+content: "";
+background: #161725;
+opacity: 0.45;
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+}
+
+/* .video-js.vjs-paused:after{
+} */
+
+
+
+/* Big Play Button */
+
+.video-js .vjs-big-play-button {
+background: #E7131A;
+opacity: 1;
+border-radius: 100% !important;
+border: 0;
+transform: scale(1.3);
+}
+
+.video-js:hover .vjs-big-play-button, .video-js .vjs-big-play-button:hover {
+background: #E7131A !important;
+transform: scale(1.6);
+transition: 0.2s transform;
+      -webkit-transition: 0.2s transform;
+  -moz-transition: 0.2s transform;
+  -ms-transition: 0.2s transform;
+  -o-transition: 0.2s transform;
+box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+  content: "\f101" !important;
+  background: url(https://players.brightcove.net/18140038001/tvo-web-player/img/icon-play.svg) no-repeat;
+   background-size: 70%;
+  background-position: 55% 50%;
+  line-height: 2.1em;
+  transition: 0.2s transform;
+  font-size: 0 !important;
+  color: #ffffff00 !important;
+  /* top: 0.18em;*/
+}
+
+
+.video-js .vjs-big-play-button:active,
+.video-js .vjs-big-play-button:focus,
+.video-js:active .vjs-big-play-button,
+.video-js:hover .vjs-big-play-button{
+background: #E7131A;
+}
+
+
+
+
+
+
+
+/*==== Control Bar ====*/
+
+
+.video-js .vjs-control-bar {
+   color: #fff;
+  background: none;
+  visibility: hidden;
+  height: 4.5em;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  overflow: visible !important;
+  z-index: 1;
+}
+
+
+
+.video-js .vjs-control-bar:after {
+content: "";
+background: rgb(22 23 37 / 75%);
+background: linear-gradient(0deg,rgba(30,34,48,0.8) 5%,rgba(30,34,48,0) 75%, rgba(30,34,40,0) 100%);
+width: 100%;
+height: 120px;
+position: absolute;
+bottom: 0;
+left: 0;
+z-index: -1;
+transition: 0.4s opacity ease;
+transition-delay: 0s;
+}
+
+.video-js.vjs-playing.vjs-user-active.not-hover .vjs-control-bar:after,
+.video-js.vjs-playing.vjs-user-inactive .vjs-control-bar:after{
+  opacity: 0;
+  transition-delay: 5s;
+}
+
+.video-js .vjs-control.vjs-button{
+margin: 0px 4px 0px 0px;
+}
+
+.vjs-has-started .vjs-control-bar {
+visibility: visible;
+}
+
+
+
+
+/* Play Toggle */
+
+.video-js .vjs-play-control {
+}
+
+
+.vjs-control-bar {
+display: flex;
+opacity: 1;
+visibility: visible;
+display: initial;
+}
+
+.vjs-paused .vjs-dock-text, .vjs-paused .vjs-control-bar, .not-hover .vjs-control-bar{
+opacity: 1 !important;
+}
+
+.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible){
+    transform: translateY(6.65em) !important;
+}
+
+
+/* Volume Bar */
+.vjs-volume-bar.vjs-slider-bar.vjs-slider.vjs-slider-horizontal {
+color: #E7131A;
+height: 8px;
+border-radius: 40px;
+left: 0px;
+}
+
+.video-js .vjs-volume-bar {
+  top: 16px;
+  margin: 0;
+}
+
+
+/* Volume Level */
+.video-js .vjs-volume-level {
+background: #fff;
+border-radius: 40px;
+height: 8px;
+
+}
+
+.video-js .vjs-volume-level:before {
+color: #eee;
+height: 10px;
+display: none;
+}
+
+
+.video-js .vjs-volume-panel {
+  margin-right: 10px;
+  margin-left: 4px;
+}
+
+
+/* Current Time Display */
+.video-js .vjs-time-control{
+padding: 0;
+font-size: 0.85rem;
+color: #fff;
+line-height: 3em;
+}
+
+.video-js .vjs-time-control{
+min-width: 1em;
+}
+
+/* .video-js .vjs-time-control.vjs-control{
+margin:0px 0px 0px 5px;
+} */
+
+
+
+
+/* Progess Bar */
+
+.video-js .vjs-progress-control .vjs-progress-holder {
+  margin: 0px 15px 0px 15px;
+  width: 100%;
+}
+
+.vjs-progress-control{
+transition: 0.2s all;
+    -webkit-transition:0.2s all;
+  -moz-transition:0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
+}
+
+.vjs-mouse .vjs-progress-control
+{
+height: 0.5em !important;
+top: -0.5em !important;
+}
+.vjs-mouse .vjs-progress-control:hover
+{
+height: 0.8em !important;
+top: -0.8em !important;
+}
+.video-js .vjs-progress-control.vjs-control {
+color: #fff;
+width: 100%;
+}
+
+.vjs-button>.vjs-icon-placeholder:before {
+  font-size: 2.6em;
+  line-height: 1.6em;
+}
+
 .bc-player-Z5VxR5vq0_default .vjs-control-bar {
   display: flex;
   opacity: 1;
   visibility: visible;
 }
+
+/* Play Progress Bar */
+.vjs-slider,
+.vjs-load-progress,
+.vjs-slider-bar {
+  border-radius: 40px;
+}
+
+.video-js .vjs-slider{
+  background: rgba(225,225,225,0.6);
+  margin-bottom: 10px !important
+}
+
+.video-js .vjs-load-progress, .video-js .vjs-load-progress div {
+    background: rgba(225, 225,225,0.8);
+  border-radius: 40px !important;
+}
+
+.video-js .vjs-play-progress.vjs-slider-bar {
+  color: #E7131A;
+  background-color: #E7131A;
+}
+
+.video-js .vjs-play-progress.vjs-slider-bar:after {
+  content: "" !important;
+  border-radius: 100px;
+  background: #E7131A;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.3);
+  transition: 0.05s all ease-in;
+      -webkit-transition:0.05s all ease-in;
+    -moz-transition:0.05s all ease-in;
+    -ms-transition: 0.05s all ease-in;
+    -o-transition: 0.05s all ease-in;
+}
+
+
+.video-js .vjs-progress-control:hover .vjs-slider-bar:after {
+  width: 20px;
+  height: 20px;
+  top: -6px;
+  right: -7px;
+}
+
+.video-js .vjs-slider:focus {
+    text-shadow: 0 0 0em #fff;
+    box-shadow: 0 0 0em #fff;
+    border-radius: 40px !important;
+}
+
+
+.video-js.vjs-playing.vjs-user-inactive .vjs-control-bar{
+  opacity: 0;
+  transform: translateY(6.65em) !important;
+  transition: 0.4s transform;
+}
+
+
+.vjs-paused .vjs-control-bar{
+  transform: translateY(0em) !important;
+}
+
+
+
+
+
+/* Control Icon Font */
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before,
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before,
+.video-js .vjs-play-control .vjs-icon-placeholder:before,
+.vjs-icon-play:before,.video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder:before,
+.vjs-icon-pause:before, .video-js .vjs-captions-button .vjs-icon-placeholder:before,
+.video-js:lang(en) .vjs-subs-caps-button .vjs-icon-placeholder:before,
+.video-js:lang(fr-CA) .vjs-subs-caps-button .vjs-icon-placeholder:before,
+.vjs-icon-captions:before, .video-js .vjs-icon-placeholder, .vjs-icon-volume-mute,
+.video-js .vjs-mute-control .vjs-icon-placeholder:before,
+.vjs-icon-volume-high:before, .video-js .vjs-mute-control.vjs-vol-0 .vjs-icon-placeholder:before,
+.vjs-icon-volume-mute:before, .video-js .vjs-mute-control.vjs-vol-1 .vjs-icon-placeholder:before, .vjs-icon-volume-mute:before, .video-js .vjs-mute-control.vjs-vol-2 .vjs-icon-placeholder:before, .vjs-icon-volume-mute:before, .video-js .vjs-mute-control.vjs-vol-3 .vjs-icon-placeholder:before, .vjs-icon-volume-mute:before, .video-js .vjs-picture-in-picture-control .vjs-icon-placeholder:before, .vjs-icon-picture-in-picture-enter:before, .video-js.vjs-picture-in-picture .vjs-picture-in-picture-control .vjs-icon-placeholder:before, .vjs-icon-picture-in-picture-exit:before, .video-js .vjs-fullscreen-control .vjs-icon-placeholder:before, .vjs-icon-fullscreen-enter:before, .video-js.vjs-fullscreen .vjs-fullscreen-control .vjs-icon-placeholder:before, .vjs-icon-fullscreen-exit:before, .video-js .vjs-control.vjs-close-button .vjs-icon-placeholder:before, .vjs-icon-cancel:before, .video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before, .vjs-icon-replay:before, .video-js .vjs-airplay-button .vjs-icon-placeholder:before, .video-js .vjs-chapters-button .vjs-icon-placeholder:before,
+.vjs-icon-chapters:before, .vjs-icon-share:before, .vjs-icon-cog:before, .video-js .vjs-play-progress:before,
+.video-js .vjs-volume-level:before, .vjs-icon-circle:before, .vjs-seek-to-live-control .vjs-icon-placeholder:before, .vjs-icon-circle-outline:before, .vjs-icon-circle-inner-circle:before, .vjs-icon-hd:before, .video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before,
+.vjs-icon-replay:before, .vjs-icon-next-item:before, .vjs-icon-previous-item:before
+{
+  font-family: 'VideoJS_tvo' !important;
+}
+
+
+
+/* Control bar button colours */
+
+.vjs-button,
+.vjs-fullscreen-control.vjs-control,
+button.vjs-mute-control,
+.vjs-control.vjs-button.vjs-vol-3,
+.vjs-control.vjs-button,
+.video-js .vjs-play-control .vjs-icon-placeholder:before,
+.vjs-icon-play:before,
+.vjs-volume-level:before {
+  color: #eee;
+  background-color: rgba(0,0,0,0) !important;
+  transition: 0.1s all ease-in-out;
+       -webkit-transition: 0.1s all ease-in-out;
+    -moz-transition: 0.1s all ease-in-out;
+    -ms-transition:  0.1s all ease-in-out;
+    -o-transition: 0.1s all ease-in-out;
+}
+
+
+/* Control bar button colours - HOVER */
+.vjs-fullscreen-control.vjs-control:hover,
+button.vjs-mute-control:hover,
+.vjs-fullscreen-control:hover,
+.vjs-picture-in-picture-control:hover,
+.video-js .vjs-play-control:hover .vjs-icon-placeholder:before,
+.vjs-play-control:hover .vjs-icon-play:before,
+.vjs-volume-level:hover:before,
+.vjs-control.vjs-subs-caps-button.vjs-hover .vjs-button,
+.vjs-control.vjs-volume-panel-horizontal.vjs-hover .vjs-button {
+  color: #fff;
+  border: 0 !important;
+  transform: scale(1.1);
+
+}
+
+/*==== Menu ====*/
+
+
+.vjs-menu {
+  color: #fff;
+}
+
+ul.vjs-menu-content {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+  border-radius: 4px;
+  padding: 4px 0px 0px 0px !important;
+  background-color: #1E222E !important;
+  bottom: 26px;
+}
+
+.vjs-menu-content li {
+  font-size: 14px !important;
+  line-height: 18px !important;
+  margin: 0px 4px 4px 4px !important;
+  background-color: rgba(225,225,225,0.1) !important;
+  opacity: 0.8;
+}
+
+.vjs-menu-content li.vjs-texttrack-settings{
+    background-color: rgba(225,225,225,0) !important;
+
+}
+
+.vjs-menu-content li span {
+  color: #fff !important;
+  letter-spacing: 0 !important;
+  font-weight: normal !important;
+  text-transform: capitalize;
+  font-size: 0.85em;
+
+}
+
+.vjs-menu-content li:last-child {
+  margin: 0;
+}
+
+.vjs-menu-content li.vjs-selected {
+  border-left: 5px #E7131A solid;
+  background-color: #fff !important;
+  opacity: 1;
+}
+
+li.vjs-selected span {
+  color: #000 !important;
+}
+
+
+.vjs-menu-button-popup .vjs-menu .vjs-menu-item:active, .vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus, .vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover{
+  text-shadow: none;
+  opacity: 1;
+}
+
+
+
+
+/* Caption Dialog */
+
+.vjs-modal-dialog.vjs-text-track-settings {
+  background-color: #161725;
+  background-color: #161725e3;
+  color: #fff;
+  height: 100%;
+}
+
+.vjs-track-setting select {
+  border-radius: 10px;
+  padding: 4px;
+}
+
+
+.vjs-text-track-settings fieldset span>select {
+    max-width: initial;
+}
+
+
+.video-js .vjs-control:focus, .video-js .vjs-control:focus:before, .video-js .vjs-control:hover:before,.bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:active, .bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus, .bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover{
+  text-shadow: none;
+}
+
+.vjs-track-settings-controls button {
+  background-color: #225BE4;
+  background-image: none;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 4px 20px;
+  transition: 0.2s all;
+      -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -ms-transition: 0.2s all;
+    -o-transition: 0.2s all;
+}
+
+.vjs-track-settings-controls button:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.vjs-track-settings-controls button:active, .vjs-track-settings-controls button:focus {
+    background-image: initial;
+}
+
 
 .bcTextContainer {
   font-family: SuisseIntl, Helvetica, Arial, sans-serif;
