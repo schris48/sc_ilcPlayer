@@ -140,7 +140,7 @@ Big Play Button
   }
    */
 /* The Big Play Button */
-/* .bc-player-dykQDka9h_default .vjs-big-play-button {
+/* .bc-player-Z5VxR5vq0_default .vjs-big-play-button {
     top: 50%;
     left: 50%;
     margin-left: -1em;
@@ -161,15 +161,15 @@ Big Play Button
   } */
   
   /* Hover / active / focus color for Big Play Button */
-  /* .bc-player-dykQDka9h_default:hover .vjs-big-play-button,
-  .bc-player-dykQDka9h_default:active .vjs-big-play-button,
-  .bc-player-dykQDka9h_default .vjs-big-play-button:active,
-  .bc-player-dykQDka9h_default .vjs-big-play-button:focus {
+  /* .bc-player-Z5VxR5vq0_default:hover .vjs-big-play-button,
+  .bc-player-Z5VxR5vq0_default:active .vjs-big-play-button,
+  .bc-player-Z5VxR5vq0_default .vjs-big-play-button:active,
+  .bc-player-Z5VxR5vq0_default .vjs-big-play-button:focus {
     background-color: #08088c;
   }
    */
   /* Position for menus such as volume slider and chapter list */
-  /* .bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu {
+  /* .bc-player-Z5VxR5vq0_default .vjs-menu-button-popup .vjs-menu {
     left: -3em;
   }   */
   
@@ -530,11 +530,6 @@ background: #008800;
     transform: scale(1.1);
   
   }
-  
-  
-  
-  
-  
   
   .vjs-control.vjs-subs-caps-button .vjs-button{
       transition: 0.2s all;
