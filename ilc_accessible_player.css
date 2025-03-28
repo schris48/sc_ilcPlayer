@@ -135,7 +135,7 @@ Big Play Button
   }
    */
 /* The Big Play Button */
-.bc-player-dykQDka9h_default .vjs-big-play-button {
+/* .bc-player-dykQDka9h_default .vjs-big-play-button {
     top: 50%;
     left: 50%;
     margin-left: -1em;
@@ -153,21 +153,62 @@ Big Play Button
     -ms-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
     -o-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
     transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
-  }
+  } */
   
   /* Hover / active / focus color for Big Play Button */
-  .bc-player-dykQDka9h_default:hover .vjs-big-play-button,
+  /* .bc-player-dykQDka9h_default:hover .vjs-big-play-button,
   .bc-player-dykQDka9h_default:active .vjs-big-play-button,
   .bc-player-dykQDka9h_default .vjs-big-play-button:active,
   .bc-player-dykQDka9h_default .vjs-big-play-button:focus {
     background-color: #08088c;
   }
-  
+   */
   /* Position for menus such as volume slider and chapter list */
-  .bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu {
+  /* .bc-player-dykQDka9h_default .vjs-menu-button-popup .vjs-menu {
     left: -3em;
-  }  
+  }   */
   
+/* Big Play Button */
+
+.video-js .vjs-big-play-button {
+  background: rgba(0,0,0,0.55);
+  opacity: 1;
+  border-radius: 100% !important;
+  border: 0;
+  transform: scale(1.3);
+}
+
+.video-js:hover .vjs-big-play-button, .video-js .vjs-big-play-button:hover {
+  background: #008800 !important;
+  transform: scale(1.6);
+  transition: 0.2s transform;
+        -webkit-transition: 0.2s transform;
+    -moz-transition: 0.2s transform;
+    -ms-transition: 0.2s transform;
+    -o-transition: 0.2s transform;
+  box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+    content: "\f101" !important;
+    background: url(https://players.brightcove.net/18140038001/tvo-web-player/img/icon-play.svg) no-repeat;
+     background-size: 70%;
+    background-position: 55% 50%;
+    line-height: 2.1em;
+    transition: 0.2s transform;
+    font-size: 0 !important;
+    color: #ffffff00 !important;
+    /* top: 0.18em;*/
+}
+
+
+.video-js .vjs-big-play-button:active,
+.video-js .vjs-big-play-button:focus,
+.video-js:active .vjs-big-play-button,
+.video-js:hover .vjs-big-play-button{
+background: #008800;
+}
+
   /*==== Control Bar ====*/
   .video-js .vjs-control-bar {
        color: #fff;
