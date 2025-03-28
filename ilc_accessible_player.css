@@ -53,6 +53,11 @@
   content: "\e000";
 }
 
+/* Override default font size */
+.vjs-mouse.bc-player-Z5VxR5vq0_default .vjs-control-bar {
+    font-size: 18px !important;
+}
+
 /* Control bar becomes so tiny when user is inactive */
 .bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,
 .bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,
