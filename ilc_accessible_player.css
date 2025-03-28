@@ -59,12 +59,12 @@
 }
 
 /* Control bar becomes so tiny when user is inactive */
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
-.bc-player-dykQDka9h_default.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
-.bc-player-dykQDka9h_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control {
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-Z5VxR5vq0_default.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-Z5VxR5vq0_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control {
   height: 0.3em;
   top: -0.3em;
   pointer-events: none;
@@ -76,11 +76,11 @@
 }
 
 /* In fullscreen, progress bar is not shown at all unless user is active */
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active.vjs-fullscreen .vjs-progress-control,
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active.vjs-fullscreen .vjs-progress-control,
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
-.bc-player-dykQDka9h_default.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control {
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active.vjs-fullscreen .vjs-progress-control,
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active.vjs-fullscreen .vjs-progress-control,
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
+.bc-player-Z5VxR5vq0_default.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control {
   opacity: 0;
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
@@ -90,12 +90,12 @@
 }
 
 /* when navigating with keyboard ensure that menus are visible */
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar-visible .vjs-menu,
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar-visible .vjs-menu,
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
-.bc-player-dykQDka9h_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
-.bc-player-dykQDka9h_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
-.bc-player-dykQDka9h_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu-item{
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar-visible .vjs-menu,
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar-visible .vjs-menu,
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
+.bc-player-Z5VxR5vq0_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
+.bc-player-Z5VxR5vq0_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
+.bc-player-Z5VxR5vq0_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu-item{
   opacity: 1;
 }
 /* 
