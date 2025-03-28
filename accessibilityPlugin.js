@@ -182,6 +182,25 @@ videojs.registerPlugin('accessibilityPlugin', function() {
       lang = player.language() || 'en';
       localizeButtonText();
     });
+
+    // Adjust inline styles for progress bar
+    var progressBar = player.$('.vjs-progress-holder');
+    progressBar.style.width = '100%';
+    progressBar.style.left = '0%';
+    progressBar.style.width = '100%';
+
+    var loadProgress = player.$('.vjs-load-progress');
+    loadProgress.style.width = '100%';
+
+    var mouseDisplay = player.$('.vjs-mouse-display');
+    mouseDisplay.style.left = '668px';
+
+    var timeTooltip = player.$('.vjs-time-tooltip');
+    timeTooltip.style.right = '-26px';
+
+    var playProgress = player.$('.vjs-play-progress');
+    playProgress.style.width = '3.97%';
+    playProgress.style.right = '0px';
   });
 
   // Remove the picture-in-picture button in the player which is enabled by default.
