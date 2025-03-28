@@ -25,7 +25,7 @@
 .vjs-skip-back .vjs-icon-placeholder:before, .vjs-skip-ahead .vjs-icon-placeholder:before {
   content: "\e000"; /* Replace with appropriate icon content */
   font-family: tvo-custom;
-  font-size: 20px; /* Adjust size as needed */
+  font-size: 16px; /* Adjust size as needed */
   color: #fff; /* Example icon color */
 }
 
