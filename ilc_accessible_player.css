@@ -1,3 +1,5 @@
+/* Tested 10:00am April 1 */
+
 @charset "UTF-8";
  /*==== Icons ====*/
 @font-face {
@@ -676,7 +678,7 @@ li.vjs-selected span {
   height: calc(100% - 42px);
   overflow: auto;
   background-color: white;
-  font-size: 14px;
+  font-size: 14px !important; 
   padding: 10px;
   box-sizing: border-box;
   border: 1px solid grey;
@@ -706,7 +708,7 @@ These rules duplicate the look and feel of each browser's default behaviour.*/
   color: white;
   background-color: grey;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 /*Add the hi-lite on our custom button when it gets focus.
@@ -765,7 +767,7 @@ A lot of people do this because it's ugly, but this is normally left on in the B
 .vjs-skip-back .vjs-icon-placeholder:before, .vjs-skip-ahead .vjs-icon-placeholder:before {
   content: "\e000"; /* Replace with appropriate icon content */
   font-family: tvo-custom;
-  font-size: 14px; /* Adjust size as needed */
+  font-size: 14px !important; /* Adjust size as needed */
   color: #fff; /* Example icon color */
 }
 
@@ -806,13 +808,13 @@ A lot of people do this because it's ugly, but this is normally left on in the B
 }
 
 .vjs-mouse.bc-player-Z5VxR5vq0_default .vjs-control-bar {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .bc-player-Z5VxR5vq0_default *,.bc-player-Z5VxR5vq0_default :after,.bc-player-Z5VxR5vq0_default :before {
       /* display: inline-block; */
       box-sizing: inherit;
-      font-size: 14px;
+      font-size: 14px !important;
       color: inherit;
       line-height: inherit
   }
@@ -820,7 +822,7 @@ A lot of people do this because it's ugly, but this is normally left on in the B
   .bc-player-Z5VxR5vq0_default {
       width: 300px;
       height: 150px;
-      font-size: 14px;
+      font-size: 14px !important;
       overflow: hidden
   }
 
