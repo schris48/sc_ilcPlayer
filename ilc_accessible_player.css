@@ -765,7 +765,7 @@ A lot of people do this because it's ugly, but this is normally left on in the B
 .vjs-skip-back .vjs-icon-placeholder:before, .vjs-skip-ahead .vjs-icon-placeholder:before {
   content: "\e000"; /* Replace with appropriate icon content */
   font-family: tvo-custom;
-  font-size: 18px; /* Adjust size as needed */
+  font-size: 14px; /* Adjust size as needed */
   color: #fff; /* Example icon color */
 }
 
@@ -805,10 +805,14 @@ A lot of people do this because it's ugly, but this is normally left on in the B
     content: "\f129" !important;
 }
 
+.vjs-mouse.bc-player-Z5VxR5vq0_default .vjs-control-bar {
+  font-size: 14px;
+}
+
 .bc-player-Z5VxR5vq0_default *,.bc-player-Z5VxR5vq0_default :after,.bc-player-Z5VxR5vq0_default :before {
       /* display: inline-block; */
       box-sizing: inherit;
-      font-size: 18px;
+      font-size: 14px;
       color: inherit;
       line-height: inherit
   }
