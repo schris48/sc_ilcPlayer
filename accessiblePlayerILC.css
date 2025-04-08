@@ -2297,57 +2297,61 @@ video::-webkit-media-text-track-display {
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-time-control.vjs-time-divider {
-    width: 14px
+    width: 14px;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-time-control.vjs-time-divider div {
     width: 100%;
-    text-align: center
+    text-align: center;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-time-control.vjs-current-time {
-    margin-left: 1em
+    margin-left: 1em;
 }
 
-.bc-player-X1BqDrTaDO_default .vjs-time-control .vjs-current-time-display,.bc-player-X1BqDrTaDO_default .vjs-time-control .vjs-duration-display {
-    width: 100%
+.bc-player-X1BqDrTaDO_default .vjs-time-control .vjs-current-time-display,
+.bc-player-X1BqDrTaDO_default .vjs-time-control .vjs-duration-display {
+    width: 100%;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-time-control .vjs-current-time-display {
-    text-align: right
+    text-align: right;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-time-control .vjs-duration-display {
-    text-align: left
+    text-align: left;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-remaining-time {
-    display: none
+    display: none;
 }
 
 .bc-player-X1BqDrTaDO_default.vjs-no-flex .vjs-time-control.vjs-remaining-time {
-    display: none
+    display: none;
 }
 
 .bc-player-X1BqDrTaDO_default.vjs-no-flex .vjs-time-control {
     display: table-cell;
-    width: 4em
+    width: 4em;
 }
 
-.bc-player-X1BqDrTaDO_default .vjs-play-progress,.bc-player-X1BqDrTaDO_default .vjs-volume-level {
-    background-color: #08088c
+.bc-player-X1BqDrTaDO_default .vjs-play-progress,
+.bc-player-X1BqDrTaDO_default .vjs-volume-level {
+    background-color: #d52484;
 }
 
-.bc-player-X1BqDrTaDO_default.vjs-ad-playing .vjs-play-progress,.bc-player-X1BqDrTaDO_default.vjs-ad-playing .vjs-volume-level {
-    background-color: #ffe400
+.bc-player-X1BqDrTaDO_default.vjs-ad-playing .vjs-play-progress,
+.bc-player-X1BqDrTaDO_default.vjs-ad-playing .vjs-volume-level {
+    background-color: #ffe400;
 }
 
-.bc-player-X1BqDrTaDO_default .vjs-play-progress:before,.bc-player-X1BqDrTaDO_default .vjs-volume-level:before {
-    display: none
+.bc-player-X1BqDrTaDO_default .vjs-play-progress:before,
+.bc-player-X1BqDrTaDO_default .vjs-volume-level:before {
+    display: none;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-volume-level:after {
-    display: none
+    display: none;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-progress-control {
@@ -2356,78 +2360,112 @@ video::-webkit-media-text-track-display {
     right: 0;
     width: 100%;
     height: 1.5em;
-    top: -1.5em
+    top: -1.5em;
 }
 
-.bc-player-X1BqDrTaDO_default .vjs-progress-control .vjs-load-progress,.bc-player-X1BqDrTaDO_default .vjs-progress-control .vjs-play-progress,.bc-player-X1BqDrTaDO_default .vjs-progress-control .vjs-progress-holder {
-    height: 100%
+.bc-player-X1BqDrTaDO_default .vjs-progress-control .vjs-load-progress,
+.bc-player-X1BqDrTaDO_default .vjs-progress-control .vjs-play-progress,
+.bc-player-X1BqDrTaDO_default .vjs-progress-control .vjs-progress-holder {
+    height: 100%;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-progress-control .vjs-progress-holder {
-    margin: 0
+    margin: 0;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-progress-control:hover {
     height: 1.5em;
-    top: -1.5em
+    top: -1.5em;
 }
 
 .bc-player-X1BqDrTaDO_default .vjs-control-bar:not(.vjs-focus-within) {
-    -webkit-transition: -webkit-transform .1s ease 0s;
-    -moz-transition: -moz-transform .1s ease 0s;
-    -ms-transition: -ms-transform .1s ease 0s;
-    -o-transition: -o-transform .1s ease 0s;
-    transition: transform .1s ease 0s
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
 }
 
-.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible) {
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible) {
     visibility: visible;
     opacity: 1;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateY(3em);
-    -moz-transform: translateY(3em);
-    -ms-transform: translateY(3em);
-    -o-transform: translateY(3em);
-    transform: translateY(3em);
-    -webkit-transition: -webkit-transform 1s ease 0s;
-    -moz-transition: -moz-transform 1s ease 0s;
-    -ms-transition: -ms-transform 1s ease 0s;
-    -o-transition: -o-transform 1s ease 0s;
-    transition: transform 1s ease 0s
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
 }
 
-.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control {
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive:not(.vjs-audio-only-mode) .vjs-progress-control {
     height: .3em;
     top: -.3em;
     pointer-events: none;
-    -webkit-transition: height 1s,top 1s;
-    -moz-transition: height 1s,top 1s;
-    -ms-transition: height 1s,top 1s;
-    -o-transition: height 1s,top 1s;
-    transition: height 1s,top 1s
+    -webkit-transition: height 1s, top 1s;
+    -moz-transition: height 1s, top 1s;
+    -ms-transition: height 1s, top 1s;
+    -o-transition: height 1s, top 1s;
+    transition: height 1s, top 1s;
 }
 
-.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active.vjs-fullscreen .vjs-progress-control,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active.vjs-fullscreen .vjs-progress-control,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control {
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active.vjs-fullscreen .vjs-progress-control,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active.vjs-fullscreen .vjs-progress-control,
+.bcqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control {
     opacity: 0;
     -webkit-transition: opacity 1s;
     -moz-transition: opacity 1s;
     -ms-transition: opacity 1s;
     -o-transition: opacity 1s;
-    transition: opacity 1s
+    transition: opacity 1s;
 }
 
-.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-menu,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-volume-vertical,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-menu,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-volume-vertical,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-menu,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-volume-vertical,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-menu,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-volume-vertical,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-menu,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-volume-vertical,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-menu,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-volume-vertical {
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-menu,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-volume-vertical,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-menu,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-volume-vertical,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-menu,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-volume-vertical,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-menu,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-volume-vertical,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-menu,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-volume-vertical,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-menu,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-volume-vertical {
     opacity: 0;
     -webkit-transition: opacity 1s;
     -moz-transition: opacity 1s;
     -ms-transition: opacity 1s;
     -o-transition: opacity 1s;
-    transition: opacity 1s
+    transition: opacity 1s;
 }
 
-.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar-visible .vjs-menu,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar-visible .vjs-menu,.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu-item,.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu {
-    opacity: 1
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar-visible .vjs-menu,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar-visible .vjs-menu,
+.bc-player-X1BqDrTaDO_default.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu-item,
+.bc-player-X1BqDrTaDO_default.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar-visible .vjs-menu {
+    opacity: 1;
+}
+
+.bc-player-X1BqDrTaDO_default .vjs-control-bar {
+    visibility: visible;
+    opacity: 1;
 }
 
 .bc-player-X1BqDrTaDO_default.vjs-live .vjs-live-control {
