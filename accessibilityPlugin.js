@@ -117,21 +117,21 @@ videojs.registerPlugin('accessibilityPlugin', function() {
       setAccessibility(captionsButton, 'captions', lang);
       addKeyboardNavigation(captionsButton, 'captions');
   
-      // Create Skip Back Button
-      var skipBackButton = document.createElement("button");
-      skipBackButton.className = 'vjs-control vjs-button vjs-skip-back';
-      skipBackButton.setAttribute('type', 'button');
-      skipBackButton.innerHTML = "<span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span>";
-      setAccessibility(skipBackButton, 'skipBack', lang);
-      addKeyboardNavigation(skipBackButton, 'skipBack');
+    //   // Create Skip Back Button
+    //   var skipBackButton = document.createElement("button");
+    //   skipBackButton.className = 'vjs-control vjs-button vjs-skip-back';
+    //   skipBackButton.setAttribute('type', 'button');
+    //   skipBackButton.innerHTML = "<span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span>";
+    //   setAccessibility(skipBackButton, 'skipBack', lang);
+    //   addKeyboardNavigation(skipBackButton, 'skipBack');
   
-      // Create Skip Forward Button
-      var skipForwardButton = document.createElement("button");
-      skipForwardButton.className = 'vjs-control vjs-button vjs-skip-ahead';
-      skipForwardButton.setAttribute('type', 'button');
-      skipForwardButton.innerHTML = "<span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span>";
-      setAccessibility(skipForwardButton, 'skipForward', lang);
-      addKeyboardNavigation(skipForwardButton, 'skipForward');
+    //   // Create Skip Forward Button
+    //   var skipForwardButton = document.createElement("button");
+    //   skipForwardButton.className = 'vjs-control vjs-button vjs-skip-ahead';
+    //   skipForwardButton.setAttribute('type', 'button');
+    //   skipForwardButton.innerHTML = "<span class='vjs-icon-placeholder' aria-hidden='true'></span><span class='vjs-control-text' aria-live='polite'></span>";
+    //   setAccessibility(skipForwardButton, 'skipForward', lang);
+    //   addKeyboardNavigation(skipForwardButton, 'skipForward');
   
       // Wrap buttons in div elements
       var skipBackDiv = document.createElement("div");
