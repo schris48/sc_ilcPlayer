@@ -8,7 +8,7 @@
     display: none
 }
 
-.bc-player-mLPSmEWSk_default *,.bc-player-mLPSmEWSk_default :after,.bc-player-mLPSmEWSk_default :before {
+.bc-player-xhWxssznM_default *,.bc-player-xhWxssznM_default :after,.bc-player-xhWxssznM_default :before {
     box-sizing: inherit;
     font-size: inherit;
     color: inherit;
@@ -19,17 +19,17 @@
     box-sizing: inherit
 }
 
-.bc-player-mLPSmEWSk_default .vjs-big-play-button,.bc-player-mLPSmEWSk_default .vjs-big-play-state,.bc-player-mLPSmEWSk_default .vjs-control-bar {
+.bc-player-xhWxssznM_default .vjs-big-play-button,.bc-player-xhWxssznM_default .vjs-big-play-state,.bc-player-xhWxssznM_default .vjs-control-bar {
     color: #fff
 }
 
-.bc-player-mLPSmEWSk_default .vjs-control-bar {
+.bc-player-xhWxssznM_default .vjs-control-bar {
     display: flex;
     opacity: 1;
     visibility: visible
 }
 
-.bc-player-mLPSmEWSk_default {
+.bc-player-xhWxssznM_default {
     width: 300px;
     height: 150px;
     font-size: 14px;
