@@ -434,7 +434,7 @@ Big Play Button
   .vjs-icon-play:before,.video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder:before,
   .vjs-icon-pause:before, .video-js .vjs-captions-button .vjs-icon-placeholder:before,
 /*   .video-js:lang(en) .vjs-subs-caps-button .vjs-icon-placeholder:before, */
-  .video-js:lang(fr-CA) .vjs-subs-caps-button .vjs-icon-placeholder:before,
+/*   .video-js:lang(fr-CA) .vjs-subs-caps-button .vjs-icon-placeholder:before, */
   .vjs-icon-captions:before, .video-js .vjs-icon-placeholder, .vjs-icon-volume-mute,
   .video-js .vjs-mute-control .vjs-icon-placeholder:before,
   .vjs-icon-volume-high:before, .video-js .vjs-mute-control.vjs-vol-0 .vjs-icon-placeholder:before,
