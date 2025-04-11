@@ -761,28 +761,26 @@ A lot of people do this because it's ugly, but this is normally left on in the B
   content: "\e000";
 }
 
-/* Styles for skip back and skip forward buttons */
+/* Styles for skip back and skip forward buttons
 .vjs-skip-back, .vjs-skip-ahead {
   display: inline-block;
   width: 30px;
   height: 30px;
-  background-color: #333; /* Example background color */
-  color: #fff; /* Example text color */
+  background-color: #333;
+  color: #fff;
   border: none;
   cursor: pointer;
-  margin-left: 5px; /* Adjust margin as needed */
+  margin-left: 5px; 
 }
 
 .vjs-skip-back .vjs-icon-placeholder:before, .vjs-skip-ahead .vjs-icon-placeholder:before {
-  content: "\e000"; /* Replace with appropriate icon content */
+  content: "\e000";
   font-family: tvo-custom;
-  font-size: 14px !important; /* Adjust size as needed */
-  color: #fff; /* Example icon color */
-}
+  font-size: 14px !important; 
+  color: #fff; 
+} */
 
-
-/*  Skip buttons */
-.vjs-skip-back, .vjs-skip-ahead{
+/* .vjs-skip-back, .vjs-skip-ahead{
   opacity: 0.94;
   transition: 0.2s;
   -webkit-transition: 0.2s;
@@ -814,7 +812,7 @@ A lot of people do this because it's ugly, but this is normally left on in the B
 
 .vjs-skip-ahead .vjs-icon-placeholder:before {
     content: "\f129" !important;
-}
+} */
 
 .vjs-mouse.bc-player-Z5VxR5vq0_default .vjs-control-bar {
   font-size: 14px !important;
