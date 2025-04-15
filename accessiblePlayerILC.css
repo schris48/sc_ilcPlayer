@@ -599,12 +599,12 @@ Big Play Button
   }
   
   
-  .video-js .vjs-control:focus, .video-js .vjs-control:focus:before, .video-js .vjs-control:hover:before,.bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:active, .bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus, .bc-player-HEy9xYDa7_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover{
+  .video-js .vjs-control:focus, .video-js .vjs-control:focus:before, .video-js .vjs-control:hover:before,.bc-player-xhWxssznM_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:active, .bc-player-xhWxssznM_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:focus, .bc-player-xhWxssznM_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item:hover{
     text-shadow: none;
   }
   
   .vjs-track-settings-controls button {
-    background-color: #225BE4;
+    background-color: #008800;
     background-image: none;
     color: #FFF;
     cursor: pointer;
@@ -626,7 +626,7 @@ Big Play Button
       background-image: initial;
   }  
 
-.bc-player-Z5VxR5vq0_default .vjs-control-bar {
+.bc-player-xhWxssznM_default .vjs-control-bar {
   display: flex;
   opacity: 1;
   visibility: visible;
@@ -776,7 +776,7 @@ A lot of people do this because it's ugly, but this is normally left on in the B
     content: "\f129" !important;
 }
 
-.bc-player-Z5VxR5vq0_default *,.bc-player-Z5VxR5vq0_default :after,.bc-player-Z5VxR5vq0_default :before {
+.bc-player-xhWxssznM_default *,.bc-player-xhWxssznM_default :after,.bc-player-xhWxssznM_default :before {
       /* display: inline-block; */
       box-sizing: inherit;
       font-size: inherit;
@@ -784,56 +784,56 @@ A lot of people do this because it's ugly, but this is normally left on in the B
       line-height: inherit
   }
 
-  .bc-player-Z5VxR5vq0_default {
+  .bc-player-xhWxssznM_default {
       width: 300px;
       height: 150px;
       font-size: 14px;
       overflow: hidden
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-fluid.vjs-16-9:not(.vjs-audio-only-mode),.bc-player-Z5VxR5vq0_default.vjs-fluid:not(.vjs-audio-only-mode) {
+  .bc-player-xhWxssznM_default.vjs-fluid.vjs-16-9:not(.vjs-audio-only-mode),.bc-player-xhWxssznM_default.vjs-fluid:not(.vjs-audio-only-mode) {
       padding-top: 56.25%
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-fluid.vjs-4-3:not(.vjs-audio-only-mode) {
+  .bc-player-xhWxssznM_default.vjs-fluid.vjs-4-3:not(.vjs-audio-only-mode) {
       padding-top: 75%
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-fill:not(.vjs-audio-only-mode) {
+  .bc-player-xhWxssznM_default.vjs-fill:not(.vjs-audio-only-mode) {
       width: 100%;
       height: 100%
   }
 
-  .bc-iframe,.bc-iframe body,.bc-player-Z5VxR5vq0_default,.bc-player-Z5VxR5vq0_default .vjs-poster {
+  .bc-iframe,.bc-iframe body,.bc-player-xhWxssznM_default,.bc-player-xhWxssznM_default .vjs-poster {
       background-color: #151B17
   }
 
-  .bc-iframe,.bc-iframe .bc-player-Z5VxR5vq0_default,.bc-iframe body {
+  .bc-iframe,.bc-iframe .bc-player-xhWxssznM_default,.bc-iframe body {
       margin: 0;
       width: 100%;
       height: 100%;
       overflow: hidden
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-fullscreen,.bc-player-Z5VxR5vq0_default.vjs-fullscreen .vjs-tech {
+  .bc-player-xhWxssznM_default.vjs-fullscreen,.bc-player-xhWxssznM_default.vjs-fullscreen .vjs-tech {
       width: 100%!important;
       height: 100%!important
   }
 
-  .bc-player-Z5VxR5vq0_default .vjs-track-setting select {
+  .bc-player-xhWxssznM_default .vjs-track-setting select {
       color: #000;
       background-color: #fff
   }
 
-  .bc-player-Z5VxR5vq0_default .vjs-audio-button .vjs-menu-item,.bc-player-Z5VxR5vq0_default .vjs-chapters-button .vjs-menu-item,.bc-player-Z5VxR5vq0_default .vjs-descriptions-button .vjs-menu-item,.bc-player-Z5VxR5vq0_default .vjs-subs-caps-button .vjs-menu-item {
+  .bc-player-xhWxssznM_default .vjs-audio-button .vjs-menu-item,.bc-player-xhWxssznM_default .vjs-chapters-button .vjs-menu-item,.bc-player-xhWxssznM_default .vjs-descriptions-button .vjs-menu-item,.bc-player-xhWxssznM_default .vjs-subs-caps-button .vjs-menu-item {
       text-transform: none
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-waiting-for-autoplay .vjs-big-play-button {
+  .bc-player-xhWxssznM_default.vjs-waiting-for-autoplay .vjs-big-play-button {
       opacity: 0
   }
 
-  .bc-player-Z5VxR5vq0_default .vjs-progress-control .vjs-mouse-display {
+  .bc-player-xhWxssznM_default .vjs-progress-control .vjs-mouse-display {
       z-index: 2
   }
 
@@ -1085,7 +1085,7 @@ A lot of people do this because it's ugly, but this is normally left on in the B
     content: "\f129" !important;
 }
 
-.bc-player-Z5VxR5vq0_default *,.bc-player-Z5VxR5vq0_default :after,.bc-player-Z5VxR5vq0_default :before {
+.bc-player-xhWxssznM_default *,.bc-player-xhWxssznM_default :after,.bc-player-xhWxssznM_default :before {
       /* display: inline-block; */
       box-sizing: inherit;
       font-size: inherit;
@@ -1093,56 +1093,56 @@ A lot of people do this because it's ugly, but this is normally left on in the B
       line-height: inherit
   }
 
-  .bc-player-Z5VxR5vq0_default {
+  .bc-player-xhWxssznM_default {
       width: 300px;
       height: 150px;
       font-size: 14px;
       overflow: hidden
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-fluid.vjs-16-9:not(.vjs-audio-only-mode),.bc-player-Z5VxR5vq0_default.vjs-fluid:not(.vjs-audio-only-mode) {
+  .bc-player-xhWxssznM_default.vjs-fluid.vjs-16-9:not(.vjs-audio-only-mode),.bc-player-xhWxssznM_default.vjs-fluid:not(.vjs-audio-only-mode) {
       padding-top: 56.25%
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-fluid.vjs-4-3:not(.vjs-audio-only-mode) {
+  .bc-player-xhWxssznM_default.vjs-fluid.vjs-4-3:not(.vjs-audio-only-mode) {
       padding-top: 75%
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-fill:not(.vjs-audio-only-mode) {
+  .bc-player-xhWxssznM_default.vjs-fill:not(.vjs-audio-only-mode) {
       width: 100%;
       height: 100%
   }
 
-  .bc-iframe,.bc-iframe body,.bc-player-Z5VxR5vq0_default,.bc-player-Z5VxR5vq0_default .vjs-poster {
+  .bc-iframe,.bc-iframe body,.bc-player-xhWxssznM_default,.bc-player-xhWxssznM_default .vjs-poster {
       background-color: #151B17
   }
 
-  .bc-iframe,.bc-iframe .bc-player-Z5VxR5vq0_default,.bc-iframe body {
+  .bc-iframe,.bc-iframe .bc-player-xhWxssznM_default,.bc-iframe body {
       margin: 0;
       width: 100%;
       height: 100%;
       overflow: hidden
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-fullscreen,.bc-player-Z5VxR5vq0_default.vjs-fullscreen .vjs-tech {
+  .bc-player-xhWxssznM_default.vjs-fullscreen,.bc-player-xhWxssznM_default.vjs-fullscreen .vjs-tech {
       width: 100%!important;
       height: 100%!important
   }
 
-  .bc-player-Z5VxR5vq0_default .vjs-track-setting select {
+  .bc-player-xhWxssznM_default .vjs-track-setting select {
       color: #000;
       background-color: #fff
   }
 
-  .bc-player-Z5VxR5vq0_default .vjs-audio-button .vjs-menu-item,.bc-player-Z5VxR5vq0_default .vjs-chapters-button .vjs-menu-item,.bc-player-Z5VxR5vq0_default .vjs-descriptions-button .vjs-menu-item,.bc-player-Z5VxR5vq0_default .vjs-subs-caps-button .vjs-menu-item {
+  .bc-player-xhWxssznM_default .vjs-audio-button .vjs-menu-item,.bc-player-xhWxssznM_default .vjs-chapters-button .vjs-menu-item,.bc-player-xhWxssznM_default .vjs-descriptions-button .vjs-menu-item,.bc-player-xhWxssznM_default .vjs-subs-caps-button .vjs-menu-item {
       text-transform: none
   }
 
-  .bc-player-Z5VxR5vq0_default.vjs-waiting-for-autoplay .vjs-big-play-button {
+  .bc-player-xhWxssznM_default.vjs-waiting-for-autoplay .vjs-big-play-button {
       opacity: 0
   }
 
-  .bc-player-Z5VxR5vq0_default .vjs-progress-control .vjs-mouse-display {
+  .bc-player-xhWxssznM_default .vjs-progress-control .vjs-mouse-display {
       z-index: 2
   }
 
