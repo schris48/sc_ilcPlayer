@@ -133,24 +133,24 @@ videojs.registerPlugin('accessibilityPlugin', function() {
     //   setAccessibility(skipForwardButton, 'skipForward', lang);
     //   addKeyboardNavigation(skipForwardButton, 'skipForward');
   
-      // Wrap buttons in div elements
-      var skipBackDiv = document.createElement("div");
-      skipBackDiv.appendChild(skipBackButton);
+      // // Wrap buttons in div elements
+      // var skipBackDiv = document.createElement("div");
+      // skipBackDiv.appendChild(skipBackButton);
   
-      var skipForwardDiv = document.createElement("div");
-      skipForwardDiv.appendChild(skipForwardButton);
+      // var skipForwardDiv = document.createElement("div");
+      // skipForwardDiv.appendChild(skipForwardButton);
   
-      // Ensure insertion before volume panel (fallback to appending at the end)
-      var controlBar = player.$(".vjs-control-bar");
-      var insertBeforeNode = player.$(".vjs-volume-panel");
-      if (insertBeforeNode) {
-        controlBar.insertBefore(skipBackDiv, insertBeforeNode);
-        controlBar.insertBefore(skipForwardDiv, insertBeforeNode);
-      } else {
-        controlBar.appendChild(skipBackDiv);
-        controlBar.appendChild(skipForwardDiv);
-        console.warn('Warning: Volume panel not found. Buttons appended at the end.');
-      }
+      // // Ensure insertion before volume panel (fallback to appending at the end)
+      // var controlBar = player.$(".vjs-control-bar");
+      // var insertBeforeNode = player.$(".vjs-volume-panel");
+      // if (insertBeforeNode) {
+      //   controlBar.insertBefore(skipBackDiv, insertBeforeNode);
+      //   controlBar.insertBefore(skipForwardDiv, insertBeforeNode);
+      // } else {
+      //   controlBar.appendChild(skipBackDiv);
+      //   controlBar.appendChild(skipForwardDiv);
+      //   console.warn('Warning: Volume panel not found. Buttons appended at the end.');
+      // }
   
       // Event handlers for button functionality
       skipBackButton.addEventListener("click", function() {
