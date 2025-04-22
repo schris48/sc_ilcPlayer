@@ -503,21 +503,7 @@ Big Play Button
       -o-transition: 0.2s all;
   }
   
-  .vjs-transcript-control span[class="vjs-icon-placeholder"]:before {
-    line-height: 2;
-    font-size: 1.5em;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
   /*==== Menu ====*/
-  
-  
   .vjs-menu {
     color: #fff;
   }
