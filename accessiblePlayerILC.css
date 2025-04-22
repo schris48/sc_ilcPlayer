@@ -438,10 +438,7 @@ Big Play Button
   .video-js .vjs-big-play-button .vjs-icon-placeholder:before,
   .video-js .vjs-play-control .vjs-icon-placeholder:before,
   .vjs-icon-play:before,.video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder:before,
-  .vjs-icon-pause:before, .video-js .vjs-captions-button .vjs-icon-placeholder:before,
-/*   .video-js:lang(en) .vjs-subs-caps-button .vjs-icon-placeholder:before, */
-/*   .video-js:lang(fr-CA) .vjs-subs-caps-button .vjs-icon-placeholder:before, */
-  .vjs-icon-captions:before, .video-js .vjs-icon-placeholder, .vjs-icon-volume-mute,
+  .vjs-icon-pause:before,.video-js .vjs-icon-placeholder, .vjs-icon-volume-mute,
   .video-js .vjs-mute-control .vjs-icon-placeholder:before,
   .vjs-icon-volume-high:before, .video-js .vjs-mute-control.vjs-vol-0 .vjs-icon-placeholder:before,
   .vjs-icon-volume-mute:before, .video-js .vjs-mute-control.vjs-vol-1 .vjs-icon-placeholder:before, .vjs-icon-volume-mute:before, .video-js .vjs-mute-control.vjs-vol-2 .vjs-icon-placeholder:before, .vjs-icon-volume-mute:before, .video-js .vjs-mute-control.vjs-vol-3 .vjs-icon-placeholder:before, .vjs-icon-volume-mute:before, .video-js .vjs-picture-in-picture-control .vjs-icon-placeholder:before, .vjs-icon-picture-in-picture-enter:before, .video-js.vjs-picture-in-picture .vjs-picture-in-picture-control .vjs-icon-placeholder:before, .vjs-icon-picture-in-picture-exit:before, .video-js .vjs-fullscreen-control .vjs-icon-placeholder:before, .vjs-icon-fullscreen-enter:before, .video-js.vjs-fullscreen .vjs-fullscreen-control .vjs-icon-placeholder:before, .vjs-icon-fullscreen-exit:before, .video-js .vjs-control.vjs-close-button .vjs-icon-placeholder:before, .vjs-icon-cancel:before, .video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before, .vjs-icon-replay:before, .video-js .vjs-airplay-button .vjs-icon-placeholder:before, .video-js .vjs-chapters-button .vjs-icon-placeholder:before,
@@ -451,6 +448,14 @@ Big Play Button
   {
     font-family: 'VideoJS_tvo' !important;
   }
+
+.video-js .vjs-captions-button .vjs-icon-placeholder:before,
+.video-js:lang(en) .vjs-subs-caps-button .vjs-icon-placeholder:before,
+.video-js:lang(fr-CA) .vjs-subs-caps-button .vjs-icon-placeholder:before,
+.vjs-icon-captions:before
+{
+  font-family: 'VideoJS' !important;
+}
   
   
   
