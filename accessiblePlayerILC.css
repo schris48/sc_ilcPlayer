@@ -320,6 +320,12 @@ Big Play Button
   .video-js .vjs-progress-control.vjs-control {
     color: #fff;
     width: 100%;
+    cursor: pointer;
+    flex: auto;
+    display: flex;
+    align-items: center;
+    min-width: 4em;
+    touch-action: none
   }
   
   .vjs-button>.vjs-icon-placeholder:before {
