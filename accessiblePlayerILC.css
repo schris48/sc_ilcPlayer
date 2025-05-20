@@ -207,10 +207,20 @@ Big Play Button
       opacity: 0;
       transition-delay: 5s;
   }
-  
-  .video-js .vjs-control.vjs-button{
-   margin: 0px 4px 0px 0px;
+
+  .video-js .vjs-control {
+      position: relative;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 4em;
+      flex: none
   }
+  
+     /*   .video-js .vjs-control.vjs-button{
+        margin: 0px 4px 0px 0px;
+       } */
   
   .vjs-has-started .vjs-control-bar {
     visibility: visible;
