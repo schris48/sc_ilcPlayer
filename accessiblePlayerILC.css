@@ -260,7 +260,7 @@ Big Play Button
   .video-js .vjs-volume-level:before {
     color: #eee;
     height: 10px;
-    display: none;
+    display: block;
   }
   
   
