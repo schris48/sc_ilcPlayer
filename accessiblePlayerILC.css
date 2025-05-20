@@ -292,7 +292,7 @@ Big Play Button
   
   .video-js .vjs-progress-control .vjs-progress-holder {
       margin: 0px 15px 0px 15px;
-      width: 100%;
+       /*       width: 100%; */
   }
   
   
@@ -319,7 +319,7 @@ Big Play Button
   }
   .video-js .vjs-progress-control.vjs-control {
     color: #fff;
-    width: 100%;
+          /*     width: 100%; */
     cursor: pointer;
     flex: auto;
     display: flex;
