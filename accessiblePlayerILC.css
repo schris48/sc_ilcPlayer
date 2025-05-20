@@ -218,9 +218,9 @@ Big Play Button
       flex: none
   }
   
-     /*   .video-js .vjs-control.vjs-button{
-        margin: 0px 4px 0px 0px;
-       } */
+  .video-js .vjs-control.vjs-button{
+   margin: 0px 4px 0px 0px;
+  }
   
   .vjs-has-started .vjs-control-bar {
     visibility: visible;
